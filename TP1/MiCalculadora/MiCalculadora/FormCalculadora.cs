@@ -39,7 +39,7 @@ namespace MiCalculadora
             txtNumero1.Text = "0";
             txtNumero2.Text = "0";
             lblResultado.Text = "";
-            cmbOperador.Text = "/";
+            cmbOperador.Text = "+";
             btnConvertirABinario.Enabled = false;
             btnConvertirADecimal.Enabled = false;
         }
@@ -51,13 +51,11 @@ namespace MiCalculadora
 
         private void btnOperar_Click(object sender, EventArgs e)
         {
-            primerNumero = new Numero(txtNumero1.Text);
-            segundoNumero= new Numero(txtNumero2.Text);
-            lblResultado.Text =Calculadora.Operar(primerNumero, segundoNumero, cmbOperador.Text).ToString();
-            if (double.Parse(lblResultado.Text)>0)
+            lblResultado.Text = Operar(txtNumero1.Text, txtNumero2.Text, cmbOperador.Text).ToString();
+
+            if (double.Parse(lblResultado.Text)!=0)
             {
                 btnConvertirABinario.Enabled = Enabled;
-                btnConvertirADecimal.Enabled = Enabled;
             }else
             {
                 btnConvertirABinario.Enabled = false;
@@ -67,13 +65,25 @@ namespace MiCalculadora
 
         private void btnConvertirADecimal_Click(object sender, EventArgs e)
         {
-             lblResultado.Text = Numero.BinarioDecimal(lblResultado.Text);
-            
+            lblResultado.Text = Numero.BinarioDecimal(lblResultado.Text);
+            btnConvertirABinario.Enabled = Enabled;
+            btnConvertirADecimal.Enabled = false;
         }
 
         private void btnConvertirABinario_Click(object sender, EventArgs e)
         {
             lblResultado.Text = Numero.DecimalBinario(lblResultado.Text);
+            btnConvertirABinario.Enabled = false;
+            btnConvertirADecimal.Enabled = Enabled;
+        }
+
+
+        private double Operar(string numero1, string numero2,string operador)
+        {
+            Numero objNum1 = new Numero(numero1);
+            Numero objNum2 = new Numero(numero2);
+
+            return Calculadora.Operar(objNum1, objNum2, operador);
         }
     }
 }

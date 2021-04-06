@@ -8,18 +8,37 @@ namespace Entidades
 {
     public static class Calculadora
     {
-        public static double Operar(Numero num1, Numero num2,String operador)
+
+        private static string ValidarOperador(char operador)
         {
-            if(operador == "+")
-                return (num1 + num2);
-            if (operador == "-")
-                return (num1 - num2);
-            if (operador == "/")
-                return (num1 / num2);
-            if (operador == "*")
-                return (num1 * num2);
-            else
-                return 0;
+            if(operador == '+' || operador == '-' || operador == '*' || operador == '/')
+            {
+                return operador.ToString();
+            }
+            return "+";
+        }
+
+        public static double Operar(Numero num1, Numero num2, string operador)
+        {
+            double cuenta = 0;
+            if (operador == "")
+                operador = "+";
+            switch (ValidarOperador(Convert.ToChar(operador)))
+            {
+                case "+":
+                    cuenta = num1 + num2;
+                    break;
+                case "-":
+                    cuenta = num1 - num2;
+                    break;
+                case "*":
+                    cuenta = num1 * num2;
+                    break;
+                case "/":
+                    cuenta = num1 / num2;
+                    break;
+            }
+            return cuenta;
         }
     }
 }
