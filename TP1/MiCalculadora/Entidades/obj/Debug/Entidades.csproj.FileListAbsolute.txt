@@ -10,3 +10,9 @@ C:\Users\Alvaro\Desktop\MiCalculadora\Entidades\obj\Debug\Entidades.csprojAssemb
 C:\Users\Alvaro\Desktop\MiCalculadora\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
 C:\Users\Alvaro\Desktop\MiCalculadora\Entidades\obj\Debug\Entidades.dll
 C:\Users\Alvaro\Desktop\MiCalculadora\Entidades\obj\Debug\Entidades.pdb
+C:\Users\Alvaro\Desktop\tp_laboratorio_2\TP1\MiCalculadora\Entidades\bin\Debug\Entidades.dll
+C:\Users\Alvaro\Desktop\tp_laboratorio_2\TP1\MiCalculadora\Entidades\bin\Debug\Entidades.pdb
+C:\Users\Alvaro\Desktop\tp_laboratorio_2\TP1\MiCalculadora\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+C:\Users\Alvaro\Desktop\tp_laboratorio_2\TP1\MiCalculadora\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\Alvaro\Desktop\tp_laboratorio_2\TP1\MiCalculadora\Entidades\obj\Debug\Entidades.dll
+C:\Users\Alvaro\Desktop\tp_laboratorio_2\TP1\MiCalculadora\Entidades\obj\Debug\Entidades.pdb
