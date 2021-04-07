@@ -149,6 +149,7 @@ namespace Entidades
             return binario;
         }
 
+
         public static string DecimalBinario(double numero)
         {
             int num = (int)numero;
@@ -159,7 +160,6 @@ namespace Entidades
                 num = num / 2;
             } while (num >= 1);
             return binario;
-           
         }
     }
 }
