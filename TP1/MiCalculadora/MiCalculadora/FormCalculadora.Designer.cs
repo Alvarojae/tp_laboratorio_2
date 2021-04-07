@@ -155,7 +155,6 @@ namespace MiCalculadora
             this.Name = "FormCalculadora";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Calculadora de Alvaro Elena del curso 2°D";
-            this.Load += new System.EventHandler(this.FormCalculadora_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

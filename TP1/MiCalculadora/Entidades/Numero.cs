@@ -22,7 +22,7 @@ namespace Entidades
         /// <summary>
         /// constructor que inicializa su atributo con un doble
         /// </summary>
-        /// <param name="numero"></param>
+        /// <param name="numero">valos que va a tomar el atributo</param>
         public Numero(double numero)
         {
             this.numero = numero;

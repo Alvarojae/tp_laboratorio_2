@@ -24,11 +24,6 @@ namespace MiCalculadora
             btnConvertirADecimal.Enabled = false;
         }
 
-        private void FormCalculadora_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             limpiar();
@@ -51,7 +46,7 @@ namespace MiCalculadora
 
         private void btnOperar_Click(object sender, EventArgs e)
         {
-            if (ValidarTextBox())
+            if(ValidarTextBox())
             {
                 lblResultado.Text = Operar(txtNumero1.Text, txtNumero2.Text, cmbOperador.Text).ToString();
 
