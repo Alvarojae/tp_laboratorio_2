@@ -42,7 +42,7 @@ namespace MiCalculadora
             // 
             // btnOperar
             // 
-            this.btnOperar.Location = new System.Drawing.Point(18, 96);
+            this.btnOperar.Location = new System.Drawing.Point(18, 117);
             this.btnOperar.Name = "btnOperar";
             this.btnOperar.Size = new System.Drawing.Size(145, 39);
             this.btnOperar.TabIndex = 3;
@@ -52,7 +52,7 @@ namespace MiCalculadora
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(169, 96);
+            this.btnLimpiar.Location = new System.Drawing.Point(169, 117);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(151, 39);
             this.btnLimpiar.TabIndex = 4;
@@ -62,7 +62,7 @@ namespace MiCalculadora
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(326, 96);
+            this.btnCerrar.Location = new System.Drawing.Point(326, 117);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(145, 39);
             this.btnCerrar.TabIndex = 5;
@@ -93,17 +93,19 @@ namespace MiCalculadora
             // lblResultado
             // 
             this.lblResultado.AutoSize = true;
-            this.lblResultado.Location = new System.Drawing.Point(427, 10);
+            this.lblResultado.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResultado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblResultado.Location = new System.Drawing.Point(13, 64);
             this.lblResultado.Name = "lblResultado";
             this.lblResultado.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblResultado.Size = new System.Drawing.Size(13, 13);
+            this.lblResultado.Size = new System.Drawing.Size(109, 25);
             this.lblResultado.TabIndex = 5;
-            this.lblResultado.Text = "0";
-            this.lblResultado.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblResultado.Text = "Resultado";
+            this.lblResultado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtNumero2
             // 
-            this.txtNumero2.Location = new System.Drawing.Point(326, 42);
+            this.txtNumero2.Location = new System.Drawing.Point(326, 22);
             this.txtNumero2.Name = "txtNumero2";
             this.txtNumero2.Size = new System.Drawing.Size(145, 20);
             this.txtNumero2.TabIndex = 2;
@@ -111,7 +113,7 @@ namespace MiCalculadora
             // 
             // txtNumero1
             // 
-            this.txtNumero1.Location = new System.Drawing.Point(18, 41);
+            this.txtNumero1.Location = new System.Drawing.Point(18, 21);
             this.txtNumero1.Name = "txtNumero1";
             this.txtNumero1.Size = new System.Drawing.Size(145, 20);
             this.txtNumero1.TabIndex = 0;
@@ -126,7 +128,7 @@ namespace MiCalculadora
             "+",
             "-",
             "*"});
-            this.cmbOperador.Location = new System.Drawing.Point(198, 42);
+            this.cmbOperador.Location = new System.Drawing.Point(198, 22);
             this.cmbOperador.MaxLength = 1;
             this.cmbOperador.Name = "cmbOperador";
             this.cmbOperador.Size = new System.Drawing.Size(92, 21);

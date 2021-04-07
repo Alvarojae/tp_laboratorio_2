@@ -51,16 +51,31 @@ namespace MiCalculadora
 
         private void btnOperar_Click(object sender, EventArgs e)
         {
-            lblResultado.Text = Operar(txtNumero1.Text, txtNumero2.Text, cmbOperador.Text).ToString();
+            if (ValidarTextBox())
+            {
+                lblResultado.Text = Operar(txtNumero1.Text, txtNumero2.Text, cmbOperador.Text).ToString();
 
-            if (double.Parse(lblResultado.Text)!=0)
-            {
-                btnConvertirABinario.Enabled = Enabled;
-            }else
-            {
-                btnConvertirABinario.Enabled = false;
-                btnConvertirADecimal.Enabled = false;
+                if (lblResultado.Text != "0")
+                {
+                    btnConvertirADecimal.Enabled = false;
+                    btnConvertirABinario.Enabled = Enabled;
+                }
+                else
+                {
+                    btnConvertirABinario.Enabled = false;
+                    btnConvertirADecimal.Enabled = false;
+                }
             }
+            else
+                lblResultado.Text = "Ingrese un numero en las dos casillas";
+
+
+        }
+        private bool ValidarTextBox()
+        {
+            if (txtNumero1.Text != "" && txtNumero2.Text != "")
+                return true;
+            return false;
         }
 
         private void btnConvertirADecimal_Click(object sender, EventArgs e)
@@ -72,9 +87,14 @@ namespace MiCalculadora
 
         private void btnConvertirABinario_Click(object sender, EventArgs e)
         {
-            lblResultado.Text = Numero.DecimalBinario(lblResultado.Text);
-            btnConvertirABinario.Enabled = false;
-            btnConvertirADecimal.Enabled = Enabled;
+            if (Numero.DecimalBinario(lblResultado.Text) != "-1")
+            {
+                lblResultado.Text = Numero.DecimalBinario(lblResultado.Text);
+                btnConvertirABinario.Enabled = false;
+                btnConvertirADecimal.Enabled = Enabled;
+            }
+            else
+                lblResultado.Text = "Valor invalido";
         }
 
 

@@ -16,3 +16,9 @@ C:\Users\Alvaro\Desktop\tp_laboratorio_2\TP1\MiCalculadora\Entidades\obj\Debug\E
 C:\Users\Alvaro\Desktop\tp_laboratorio_2\TP1\MiCalculadora\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
 C:\Users\Alvaro\Desktop\tp_laboratorio_2\TP1\MiCalculadora\Entidades\obj\Debug\Entidades.dll
 C:\Users\Alvaro\Desktop\tp_laboratorio_2\TP1\MiCalculadora\Entidades\obj\Debug\Entidades.pdb
+C:\Users\Trabajo\Documents\GitHub\tp_laboratorio_2\TP1\MiCalculadora\Entidades\bin\Debug\Entidades.dll
+C:\Users\Trabajo\Documents\GitHub\tp_laboratorio_2\TP1\MiCalculadora\Entidades\bin\Debug\Entidades.pdb
+C:\Users\Trabajo\Documents\GitHub\tp_laboratorio_2\TP1\MiCalculadora\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+C:\Users\Trabajo\Documents\GitHub\tp_laboratorio_2\TP1\MiCalculadora\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\Trabajo\Documents\GitHub\tp_laboratorio_2\TP1\MiCalculadora\Entidades\obj\Debug\Entidades.dll
+C:\Users\Trabajo\Documents\GitHub\tp_laboratorio_2\TP1\MiCalculadora\Entidades\obj\Debug\Entidades.pdb
