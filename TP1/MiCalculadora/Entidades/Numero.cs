@@ -54,7 +54,7 @@ namespace Entidades
         /// </summary>
         /// <param name="binario">string pasado para validar</param>
         /// <returns>true if is binary, false if is not </returns>
-        private static bool EsBinario(string binario)
+        private bool EsBinario(string binario)
         {
             for (int i = 0; i < binario.Length; i++)
                 if (!(binario[i] == '0' || binario[i] == '1'))
@@ -69,7 +69,7 @@ namespace Entidades
         /// </summary>
         /// <param name="binario">binario pasado para la convercion </param>
         /// <returns> result of the convertion if is correct, 0 if isnt binary</returns>
-        public static string BinarioDecimal(string binario)
+        public string BinarioDecimal(string binario)
         {
             int potencia=1;
             int resultado=0;
@@ -89,7 +89,7 @@ namespace Entidades
         /// </summary>
         /// <param name="numero">string sent to convert to binary </param>
         /// <returns>value of the convert or "-1" if cant convert the decimal </returns>
-        public static string DecimalBinario(string numero)
+        public string DecimalBinario(string numero)
         {
             int resultado = 0;
             if (int.TryParse(numero, out resultado))
@@ -112,7 +112,7 @@ namespace Entidades
         /// </summary>
         /// <param name="numero">double sent to convert to binary </param>
         /// <returns>value of the convert </returns>
-        public static string DecimalBinario(double numero)
+        public string DecimalBinario(double numero)
         {
             int num = Math.Abs((int)numero);
             string binario = String.Empty;
@@ -131,7 +131,7 @@ namespace Entidades
         /// </summary>
         /// <param name="strNumero">numero a validar</param>
         /// <returns>retorna numero si es correcto , 0 si no lo pasado no es un numero </returns>
-        private static double ValidarNumero(string strNumero)
+        private double ValidarNumero(string strNumero)
         {
             double resultado = 0;
             if (double.TryParse(strNumero, out resultado))
