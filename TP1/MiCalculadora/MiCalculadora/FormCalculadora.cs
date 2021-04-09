@@ -69,7 +69,7 @@ namespace MiCalculadora
         /// <param name="numero1">string with the number to operate</param>
         /// <param name="numero2">string with the number to operate</param>
         /// <param name="operador">string with the operator symbol</param>
-        /// <returns>returns the resulto of the operations</returns>
+        /// <returns>returns the result of the operations</returns>
         private double Operar(string numero1, string numero2,string operador)
         {
             Numero objNum1 = new Numero(numero1);
@@ -90,7 +90,7 @@ namespace MiCalculadora
         }
 
         /// <summary>
-        /// Clean the form 
+        /// Clean the form and disable binary/decimal botons
         /// </summary>
         private void limpiar()
         {
