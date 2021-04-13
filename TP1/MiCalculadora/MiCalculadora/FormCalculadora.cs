@@ -14,7 +14,7 @@ namespace MiCalculadora
     public partial class FormCalculadora : Form
     {
         Numero aux = new Numero(0);
-
+        
         public FormCalculadora()
         {
             InitializeComponent();
@@ -23,7 +23,7 @@ namespace MiCalculadora
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            limpiar();
+            Limpiar();
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -36,7 +36,6 @@ namespace MiCalculadora
             if(ValidarTextBox())
             {
                 lblResultado.Text = Operar(txtNumero1.Text, txtNumero2.Text, cmbOperador.Text).ToString();
-
                 if (lblResultado.Text != "0")
                     ActivarBotones(1);
                 else
@@ -70,11 +69,10 @@ namespace MiCalculadora
         /// <param name="numero2">string with the number to operate</param>
         /// <param name="operador">string with the operator symbol</param>
         /// <returns>returns the result of the operations</returns>
-        private double Operar(string numero1, string numero2,string operador)
+        private static double Operar(string numero1, string numero2,string operador)
         {
             Numero objNum1 = new Numero(numero1);
             Numero objNum2 = new Numero(numero2);
-
             return Calculadora.Operar(objNum1, objNum2, operador);
         }
 
@@ -92,7 +90,7 @@ namespace MiCalculadora
         /// <summary>
         /// Clean the form and disable binary/decimal botons
         /// </summary>
-        private void limpiar()
+        private void Limpiar()
         {
             txtNumero1.Text = "0";
             txtNumero2.Text = "0";
@@ -109,9 +107,9 @@ namespace MiCalculadora
         {
             btnConvertirABinario.Enabled = false;
             btnConvertirADecimal.Enabled = false;
-            if (estado == 1)
+            if(estado == 1)
                 btnConvertirABinario.Enabled = Enabled;
-            else if (estado == 2)
+            else if(estado == 2)
                 btnConvertirADecimal.Enabled = Enabled;
         }
     }

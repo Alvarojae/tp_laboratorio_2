@@ -46,9 +46,6 @@ namespace Entidades
             }
         }
 
-      
-
-
         /// <summary>
         /// validatios of a string if is binary
         /// </summary>
@@ -91,17 +88,10 @@ namespace Entidades
         /// <returns>value of the convert or "-1" if cant convert the decimal </returns>
         public string DecimalBinario(string numero)
         {
-            int resultado = 0;
-            if (int.TryParse(numero, out resultado))
+            double resultado = 0;
+            if (double.TryParse(numero, out resultado))
             {
-                int num = Math.Abs(resultado);
-                string binario = String.Empty;
-                do
-                {
-                    binario = Convert.ToString(num % 2) + binario;
-                    num = num / 2;
-                } while (num >= 1);
-                return binario;
+                return DecimalBinario(resultado);
             }
             else
                 return "-1";
@@ -114,7 +104,7 @@ namespace Entidades
         /// <returns>value of the convert </returns>
         public string DecimalBinario(double numero)
         {
-            int num = Math.Abs((int)numero);
+            int num = (int)Math.Abs(numero);
             string binario = String.Empty;
             do
             {
