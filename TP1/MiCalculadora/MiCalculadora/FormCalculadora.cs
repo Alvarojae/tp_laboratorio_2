@@ -21,19 +21,27 @@ namespace MiCalculadora
             ActivarBotones(0);
         }
 
+        /// <summary>
+        /// botton clean
+        /// </summary>
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             Limpiar();
         }
-
+        /// <summary>
+        /// botton close
+        /// </summary>
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// botton operar
+        /// </summary>
         private void btnOperar_Click(object sender, EventArgs e)
         {
-            if(ValidarTextBox())
+            if(txtNumero1.Text != "" && txtNumero2.Text != "" && cmbOperador.Text != "")
             {
                 lblResultado.Text = Operar(txtNumero1.Text, txtNumero2.Text, cmbOperador.Text).ToString();
                 if (lblResultado.Text != "0")
@@ -42,15 +50,20 @@ namespace MiCalculadora
                     ActivarBotones(0);              
             }
             else
-                lblResultado.Text = "Ingrese un numero en las casillas";
+                lblResultado.Text = "Ingrese un numero o operador en las casillas";
         }
-      
+        /// <summary>
+        /// button to convert to decimal
+        /// </summary>
         private void btnConvertirADecimal_Click(object sender, EventArgs e)
         {
             lblResultado.Text = aux.BinarioDecimal(lblResultado.Text);
             ActivarBotones(1);
         }
 
+        /// <summary>
+        /// button to convert to binary
+        /// </summary>
         private void btnConvertirABinario_Click(object sender, EventArgs e)
         {
             if (aux.DecimalBinario(lblResultado.Text) != "-1")
@@ -74,17 +87,6 @@ namespace MiCalculadora
             Numero objNum1 = new Numero(numero1);
             Numero objNum2 = new Numero(numero2);
             return Calculadora.Operar(objNum1, objNum2, operador);
-        }
-
-        /// <summary>
-        /// validate if the user completes the text box
-        /// </summary>
-        /// <returns></returns>
-        private bool ValidarTextBox()
-        {
-            if (txtNumero1.Text != "" && txtNumero2.Text != "")
-                return true;
-            return false;
         }
 
         /// <summary>

@@ -139,7 +139,7 @@ namespace MiCalculadora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(522, 237);
+            this.ClientSize = new System.Drawing.Size(489, 237);
             this.Controls.Add(this.cmbOperador);
             this.Controls.Add(this.txtNumero1);
             this.Controls.Add(this.txtNumero2);

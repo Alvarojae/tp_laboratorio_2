@@ -11,23 +11,18 @@ namespace Entidades
         private double numero;
 
         /// <summary>
-        /// constructor predeterminado que setea al atributo en 0
-        /// </summary>
-        public Numero()
-        {
-            this.numero = 0;
-        }
-
-
-        /// <summary>
         /// constructor que inicializa su atributo con un doble
         /// </summary>
         /// <param name="numero">valos que va a tomar el atributo</param>
-        public Numero(double numero)
+        public Numero(double numero) //:this (numero.ToString())
         {
             this.numero = numero;
         }
 
+        /// <summary>
+        /// constructor predeterminado que setea al atributo en 0
+        /// </summary>
+        public Numero() : this(0) {}
 
         /// <summary>
         /// constructor que inicializa su atributo con un string pasandolo anteriormente por una validacion
@@ -130,23 +125,45 @@ namespace Entidades
                 return 0;
         }
 
-
-
+        /// <summary>
+        /// permite utilizar el operador + entre los objetos 
+        /// </summary>
+        /// <param name="n1">first object to operate</param>
+        /// <param name="n2">second object to operate</param>
+        /// <returns>devuelve la suma de los atributos</returns>
         public static double operator +(Numero n1, Numero n2)
         {
             return n1.numero + n2.numero;
         }
 
+        /// <summary>
+        /// permite utilizar el operador * entre los objetos 
+        /// </summary>
+        /// <param name="n1">first object to operate</param>
+        /// <param name="n2">second object to operate</param>
+        /// <returns>devuelve la multiplicacion de los atributos</returns>
         public static double operator *(Numero n1, Numero n2)
         {
             return n1.numero * n2.numero;
         }
 
+        /// <summary>
+        /// permite utilizar el operador - entre los objetos 
+        /// </summary>
+        /// <param name="n1">first object to operate</param>
+        /// <param name="n2">second object to operate</param>
+        /// <returns>devuelve la resta de los atributos</returns>
         public static double operator -(Numero n1, Numero n2)
         {
             return n1.numero - n2.numero;
         }
 
+        /// <summary>
+        /// permite utilizar el operador / entre los objetos 
+        /// </summary>
+        /// <param name="n1">first object to operate</param>
+        /// <param name="n2">second object to operate</param>
+        /// <returns>devuelve la division de los atributos</returns>
         public static double operator /(Numero n1, Numero n2)
         {
           if (n2.numero == 0)

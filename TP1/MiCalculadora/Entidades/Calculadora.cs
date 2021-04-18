@@ -28,27 +28,30 @@ namespace Entidades
         /// <param name="num1">first object to operate</param>
         /// <param name="num2">second object to operate</param>
         /// <param name="operador">the operator of the math account </param>
-        /// <returns>accout result</returns>
+        /// <returns>account result</returns>
         public static double Operar(Numero num1, Numero num2, string operador)
         {
             double cuenta = 0;
-            if (operador == "")
-                operador = "+";
-            switch (ValidarOperador(Convert.ToChar(operador)))
+            if (operador != "")
             {
-                case "+":
-                    cuenta = num1 + num2;
-                    break;
-                case "-":
-                    cuenta = num1 - num2;
-                    break;
-                case "*":
-                    cuenta = num1 * num2;
-                    break;
-                case "/":
-                    cuenta = num1 / num2;
-                    break;
-            }
+                switch (ValidarOperador(Convert.ToChar(operador)))
+                {
+                    case "+":
+                        cuenta = num1 + num2;
+                        break;
+                    case "-":
+                        cuenta = num1 - num2;
+                        break;
+                    case "*":
+                        cuenta = num1 * num2;
+                        break;
+                    case "/":
+                        cuenta = num1 / num2;
+                        break;
+                }
+            }  else
+                cuenta = num1 + num2;
+
             return cuenta;
         }
     }
