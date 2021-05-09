@@ -16,10 +16,17 @@ namespace Entidades
        
 
         #region "Constructores"
+        /// <summary>
+        /// inicializa la lista
+        /// </summary>
         private Taller()
         {
             this.vehiculos = new List<Vehiculo>();
         }
+        /// <summary>
+        /// constructor de taller que llama tmb al inicializador de la lista
+        /// </summary>
+        /// <param name="espacioDisponible">espacio disponibles de vehiculos </param>
         public Taller(int espacioDisponible):this()
         {
             this.espacioDisponible = espacioDisponible;
@@ -112,11 +119,12 @@ namespace Entidades
                     break;
                 }
             }
-
             return taller;
         }
         #endregion
-
+        /// <summary>
+        /// Enumerado de los diferentes tipos de vehiculos (Ciclomotor, Sedan, SUV, Todos)
+        /// </summary>
         public enum ETipo
         {
             Ciclomotor, Sedan, SUV, Todos

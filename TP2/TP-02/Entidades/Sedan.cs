@@ -25,6 +25,13 @@ namespace Entidades
             tipo = ETipo.CuatroPuertas;
         }
 
+        /// <summary>
+        /// Constructor de Sedan
+        /// </summary>
+        /// <param name="marca">Marca del Sedan</param>
+        /// <param name="chasis">chasis del Sedan</param>
+        /// <param name="color">color del Sedan</param>
+        /// <param name="tipo">Cantidad de puertas</param>
         public Sedan(EMarca marca, string chasis, ConsoleColor color, ETipo tipo)
           : base(chasis, marca, color)
         {
@@ -44,6 +51,10 @@ namespace Entidades
             }
         }
 
+        /// <summary>
+        /// Muestra todos los datos del objeto del tipo sedan
+        /// </summary>
+        /// <returns>string con los datos del sedan</returns>
         public override sealed string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
@@ -58,6 +69,9 @@ namespace Entidades
             return sb.ToString();
         }
 
+        /// <summary>
+        /// Enumerado de los diferentes tipos de puertas (CuatroPuertas, CincoPuertas)
+        /// </summary>
         public enum ETipo { CuatroPuertas, CincoPuertas }
     }
 }

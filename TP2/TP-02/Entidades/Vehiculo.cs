@@ -15,6 +15,12 @@ namespace Entidades
         private string chasis;
         private  ConsoleColor color;
 
+        /// <summary>
+        /// Constructor de Vehiculo
+        /// </summary>
+        /// <param name="marca">Marca del Ciclomotor</param>
+        /// <param name="chasis">chasis del Ciclomotor</param>
+        /// <param name="color">color del Ciclomotor</param>
         public Vehiculo(string chasis, EMarca marca, ConsoleColor color)
         {
             this.marca = marca;
@@ -34,6 +40,7 @@ namespace Entidades
         /// Publica todos los datos del Vehiculo.
         /// </summary>
         /// <returns></returns>
+    
         public virtual string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
@@ -45,7 +52,10 @@ namespace Entidades
 
             return sb.ToString();
         }
-
+        /// <summary>
+        /// Muestra la informacion casteando 
+        /// </summary>
+        /// <param name="p">vehiculo a mostrar</param>
         public static explicit operator string(Vehiculo p)
         {
             return p.Mostrar();
@@ -72,10 +82,18 @@ namespace Entidades
             return !(v1.chasis == v2.chasis);
         }
 
+
+        /// <summary>
+        /// Enumerado de los diferentes marca de autos (Chevrolet, Ford, Renault, Toyota, BMW, Honda, HarleyDavidson)
+        /// </summary>
         public enum EMarca
         {
             Chevrolet, Ford, Renault, Toyota, BMW, Honda, HarleyDavidson
         }
+
+        /// <summary>
+        /// Enumerado de los diferentes tamaños de vehiculos (Chico, Mediano, Grande)
+        /// </summary>
         public enum ETamanio
         {
             Chico, Mediano, Grande
