@@ -1,0 +1,10 @@
+C:\Users\Alvaro\Desktop\Clase_19\Ejercicio_Clase_Resuelto\View\bin\Debug\View.exe.config
+C:\Users\Alvaro\Desktop\Clase_19\Ejercicio_Clase_Resuelto\View\bin\Debug\View.exe
+C:\Users\Alvaro\Desktop\Clase_19\Ejercicio_Clase_Resuelto\View\bin\Debug\View.pdb
+C:\Users\Alvaro\Desktop\Clase_19\Ejercicio_Clase_Resuelto\View\bin\Debug\Logic.dll
+C:\Users\Alvaro\Desktop\Clase_19\Ejercicio_Clase_Resuelto\View\bin\Debug\Logic.pdb
+C:\Users\Alvaro\Desktop\Clase_19\Ejercicio_Clase_Resuelto\View\obj\Debug\View.csprojAssemblyReference.cache
+C:\Users\Alvaro\Desktop\Clase_19\Ejercicio_Clase_Resuelto\View\obj\Debug\View.csproj.CoreCompileInputs.cache
+C:\Users\Alvaro\Desktop\Clase_19\Ejercicio_Clase_Resuelto\View\obj\Debug\View.csproj.CopyComplete
+C:\Users\Alvaro\Desktop\Clase_19\Ejercicio_Clase_Resuelto\View\obj\Debug\View.exe
+C:\Users\Alvaro\Desktop\Clase_19\Ejercicio_Clase_Resuelto\View\obj\Debug\View.pdb

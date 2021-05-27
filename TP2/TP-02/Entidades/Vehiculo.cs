@@ -49,6 +49,7 @@ namespace Entidades
             sb.AppendFormat("MARCA : {0}\r\n", this.marca.ToString());
             sb.AppendFormat("COLOR : {0}\r\n", this.color.ToString());
             sb.AppendLine("---------------------");
+            sb.AppendFormat("TAMAÑIO : {0}\r", this.Tamanio.ToString());
 
             return sb.ToString();
         }
@@ -79,7 +80,7 @@ namespace Entidades
         /// <returns></returns>
         public static bool operator !=(Vehiculo v1, Vehiculo v2)
         {
-            return !(v1.chasis == v2.chasis);
+            return !(v1 == v2);
         }
 
 

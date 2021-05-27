@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfPersona xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Persona>
+    <Nombre>Fede</Nombre>
+    <Apellido>Dávila</Apellido>
+    <FechaNacimiento>1984-03-14T00:00:00</FechaNacimiento>
+  </Persona>
+  <Persona>
+    <Nombre>Mauricio</Nombre>
+    <Apellido>Cerizza</Apellido>
+    <FechaNacimiento>1992-02-09T00:00:00</FechaNacimiento>
+  </Persona>
+</ArrayOfPersona>

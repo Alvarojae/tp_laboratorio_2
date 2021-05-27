@@ -1,0 +1,6 @@
+C:\Users\Alvaro\Desktop\Clase_19\Ejercicio_Clase_Resuelto\Logic\bin\Debug\Logic.dll
+C:\Users\Alvaro\Desktop\Clase_19\Ejercicio_Clase_Resuelto\Logic\bin\Debug\Logic.pdb
+C:\Users\Alvaro\Desktop\Clase_19\Ejercicio_Clase_Resuelto\Logic\obj\Debug\Logic.csprojAssemblyReference.cache
+C:\Users\Alvaro\Desktop\Clase_19\Ejercicio_Clase_Resuelto\Logic\obj\Debug\Logic.csproj.CoreCompileInputs.cache
+C:\Users\Alvaro\Desktop\Clase_19\Ejercicio_Clase_Resuelto\Logic\obj\Debug\Logic.dll
+C:\Users\Alvaro\Desktop\Clase_19\Ejercicio_Clase_Resuelto\Logic\obj\Debug\Logic.pdb
