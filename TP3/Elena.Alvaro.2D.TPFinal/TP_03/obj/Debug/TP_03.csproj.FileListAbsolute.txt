@@ -1,0 +1,13 @@
+D:\Users\Trabajo\Desktop\tp_laboratorio_2\TP3\Elena.Alvaro.2D.TPFinal\TP_03\bin\Debug\TP_03.exe.config
+D:\Users\Trabajo\Desktop\tp_laboratorio_2\TP3\Elena.Alvaro.2D.TPFinal\TP_03\bin\Debug\TP_03.exe
+D:\Users\Trabajo\Desktop\tp_laboratorio_2\TP3\Elena.Alvaro.2D.TPFinal\TP_03\bin\Debug\TP_03.pdb
+D:\Users\Trabajo\Desktop\tp_laboratorio_2\TP3\Elena.Alvaro.2D.TPFinal\TP_03\obj\Debug\TP_03.csprojAssemblyReference.cache
+D:\Users\Trabajo\Desktop\tp_laboratorio_2\TP3\Elena.Alvaro.2D.TPFinal\TP_03\obj\Debug\TP_03.FrmFabrica.resources
+D:\Users\Trabajo\Desktop\tp_laboratorio_2\TP3\Elena.Alvaro.2D.TPFinal\TP_03\obj\Debug\TP_03.Properties.Resources.resources
+D:\Users\Trabajo\Desktop\tp_laboratorio_2\TP3\Elena.Alvaro.2D.TPFinal\TP_03\obj\Debug\TP_03.csproj.GenerateResource.cache
+D:\Users\Trabajo\Desktop\tp_laboratorio_2\TP3\Elena.Alvaro.2D.TPFinal\TP_03\obj\Debug\TP_03.csproj.CoreCompileInputs.cache
+D:\Users\Trabajo\Desktop\tp_laboratorio_2\TP3\Elena.Alvaro.2D.TPFinal\TP_03\obj\Debug\TP_03.exe
+D:\Users\Trabajo\Desktop\tp_laboratorio_2\TP3\Elena.Alvaro.2D.TPFinal\TP_03\obj\Debug\TP_03.pdb
+D:\Users\Trabajo\Desktop\tp_laboratorio_2\TP3\Elena.Alvaro.2D.TPFinal\TP_03\bin\Debug\Entidades.dll
+D:\Users\Trabajo\Desktop\tp_laboratorio_2\TP3\Elena.Alvaro.2D.TPFinal\TP_03\bin\Debug\Entidades.pdb
+D:\Users\Trabajo\Desktop\tp_laboratorio_2\TP3\Elena.Alvaro.2D.TPFinal\TP_03\obj\Debug\TP_03.csproj.CopyComplete
