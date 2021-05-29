@@ -10,12 +10,12 @@ namespace Entidades
     {
         protected int id;
         protected int stock;
-        protected float peso;
-        protected float valor;
+        protected int peso;
+        protected int valor;
         protected string nombre;
         
 
-        public Producto(int id,float valor,int stock ,string nombre, float peso)
+        public Producto(int id, int valor,int stock ,string nombre, int peso)
         {
             this.id = id;
             this.valor = valor;

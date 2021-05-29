@@ -4,3 +4,9 @@ D:\Users\Trabajo\Desktop\tp_laboratorio_2\TP3\Elena.Alvaro.2D.TPFinal\Entidades\
 D:\Users\Trabajo\Desktop\tp_laboratorio_2\TP3\Elena.Alvaro.2D.TPFinal\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
 D:\Users\Trabajo\Desktop\tp_laboratorio_2\TP3\Elena.Alvaro.2D.TPFinal\Entidades\obj\Debug\Entidades.dll
 D:\Users\Trabajo\Desktop\tp_laboratorio_2\TP3\Elena.Alvaro.2D.TPFinal\Entidades\obj\Debug\Entidades.pdb
+C:\Users\Alvaro\Desktop\tp_laboratorio_2\TP3\Elena.Alvaro.2D.TPFinal\Entidades\bin\Debug\Entidades.dll
+C:\Users\Alvaro\Desktop\tp_laboratorio_2\TP3\Elena.Alvaro.2D.TPFinal\Entidades\bin\Debug\Entidades.pdb
+C:\Users\Alvaro\Desktop\tp_laboratorio_2\TP3\Elena.Alvaro.2D.TPFinal\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+C:\Users\Alvaro\Desktop\tp_laboratorio_2\TP3\Elena.Alvaro.2D.TPFinal\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\Alvaro\Desktop\tp_laboratorio_2\TP3\Elena.Alvaro.2D.TPFinal\Entidades\obj\Debug\Entidades.dll
+C:\Users\Alvaro\Desktop\tp_laboratorio_2\TP3\Elena.Alvaro.2D.TPFinal\Entidades\obj\Debug\Entidades.pdb

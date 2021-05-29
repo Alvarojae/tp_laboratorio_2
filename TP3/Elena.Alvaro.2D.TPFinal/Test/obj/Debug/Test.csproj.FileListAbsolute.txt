@@ -8,3 +8,13 @@ D:\Users\Trabajo\Desktop\tp_laboratorio_2\TP3\Elena.Alvaro.2D.TPFinal\Test\obj\D
 D:\Users\Trabajo\Desktop\tp_laboratorio_2\TP3\Elena.Alvaro.2D.TPFinal\Test\bin\Debug\Entidades.dll
 D:\Users\Trabajo\Desktop\tp_laboratorio_2\TP3\Elena.Alvaro.2D.TPFinal\Test\bin\Debug\Entidades.pdb
 D:\Users\Trabajo\Desktop\tp_laboratorio_2\TP3\Elena.Alvaro.2D.TPFinal\Test\obj\Debug\Test.csproj.CopyComplete
+C:\Users\Alvaro\Desktop\tp_laboratorio_2\TP3\Elena.Alvaro.2D.TPFinal\Test\bin\Debug\Test.exe.config
+C:\Users\Alvaro\Desktop\tp_laboratorio_2\TP3\Elena.Alvaro.2D.TPFinal\Test\bin\Debug\Test.exe
+C:\Users\Alvaro\Desktop\tp_laboratorio_2\TP3\Elena.Alvaro.2D.TPFinal\Test\bin\Debug\Test.pdb
+C:\Users\Alvaro\Desktop\tp_laboratorio_2\TP3\Elena.Alvaro.2D.TPFinal\Test\bin\Debug\Entidades.dll
+C:\Users\Alvaro\Desktop\tp_laboratorio_2\TP3\Elena.Alvaro.2D.TPFinal\Test\bin\Debug\Entidades.pdb
+C:\Users\Alvaro\Desktop\tp_laboratorio_2\TP3\Elena.Alvaro.2D.TPFinal\Test\obj\Debug\Test.csprojAssemblyReference.cache
+C:\Users\Alvaro\Desktop\tp_laboratorio_2\TP3\Elena.Alvaro.2D.TPFinal\Test\obj\Debug\Test.csproj.CoreCompileInputs.cache
+C:\Users\Alvaro\Desktop\tp_laboratorio_2\TP3\Elena.Alvaro.2D.TPFinal\Test\obj\Debug\Test.csproj.CopyComplete
+C:\Users\Alvaro\Desktop\tp_laboratorio_2\TP3\Elena.Alvaro.2D.TPFinal\Test\obj\Debug\Test.exe
+C:\Users\Alvaro\Desktop\tp_laboratorio_2\TP3\Elena.Alvaro.2D.TPFinal\Test\obj\Debug\Test.pdb

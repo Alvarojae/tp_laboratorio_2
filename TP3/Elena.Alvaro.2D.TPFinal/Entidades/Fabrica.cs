@@ -9,21 +9,21 @@ namespace Entidades
     public class Fabrica<T> where T : Producto
     {
         public string nombre;
-        public static List<Producto> productos;
+        public List<T> productos;
 
-        static Fabrica()
+        public Fabrica()
         {
-            productos = new List<Producto>();
+            productos = new List<T>();
         }
 
-        public Fabrica(string nombre)
+        public Fabrica(string nombre):this()
         {
             this.nombre = nombre;
         }
 
         public static bool operator +(Fabrica<T> fabrica, T item)
         {
-            Fabrica<T>.productos.Add((Producto)item);
+            fabrica.productos.Add(item);
             return true;
         }
     }

@@ -11,7 +11,7 @@ namespace Entidades
         protected string material;
         protected string marca;
 
-        public Herramienta(int id, float valor, int stock, string nombre, int peso, string material, string marca)
+        public Herramienta(int id, int valor, int stock, string nombre, int peso, string material, string marca)
             :base(id, valor, stock, nombre, peso)
         {
             this.material = material;

@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class Comida : Producto
+    public class Alimento : Producto
     {
-        protected float calorias;
+        protected int calorias;
         protected string sabor;
         protected string ingredientes;
 
-        public Comida(int id, float valor, int stock, string nombre, float peso, float calorias, string sabor, string ingredientes) 
+        public Alimento(int id, int valor, int stock, string nombre, int peso, int calorias, string sabor, string ingredientes) 
             :base( id,  valor,  stock,  nombre,  peso)
         {
             this.calorias = calorias;
