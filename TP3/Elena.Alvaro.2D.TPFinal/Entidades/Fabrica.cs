@@ -9,11 +9,11 @@ namespace Entidades
     public class Fabrica<T> where T : Producto
     {
         public string nombre;
-        public List<T> productos;
+        public List<T> Listaproductos;
 
         public Fabrica()
         {
-            productos = new List<T>();
+            this.Listaproductos = new List<T>();
         }
 
         public Fabrica(string nombre):this()
@@ -21,9 +21,9 @@ namespace Entidades
             this.nombre = nombre;
         }
 
-        public static bool operator +(Fabrica<T> fabrica, T item)
+        public static bool operator +(Fabrica<T> lista, T item)
         {
-            fabrica.productos.Add(item);
+            lista.Listaproductos.Add(item);
             return true;
         }
     }

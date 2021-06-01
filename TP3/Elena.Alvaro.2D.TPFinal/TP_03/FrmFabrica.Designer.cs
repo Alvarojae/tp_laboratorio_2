@@ -29,8 +29,7 @@ namespace TP_03
         /// </summary>
         private void InitializeComponent()
         {
-            this.lstStock = new System.Windows.Forms.ListBox();
-            this.rtbLnInforme = new System.Windows.Forms.RichTextBox();
+            this.lstProductos = new System.Windows.Forms.ListBox();
             this.btnGuardarInforme = new System.Windows.Forms.Button();
             this.btnVerInforme = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
@@ -57,6 +56,7 @@ namespace TP_03
             this.nudValor = new System.Windows.Forms.NumericUpDown();
             this.nudCalorias = new System.Windows.Forms.NumericUpDown();
             this.btMostrar = new System.Windows.Forms.Button();
+            this.lstMateriales = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPeso)).BeginInit();
@@ -64,22 +64,13 @@ namespace TP_03
             ((System.ComponentModel.ISupportInitialize)(this.nudCalorias)).BeginInit();
             this.SuspendLayout();
             // 
-            // lstStock
+            // lstProductos
             // 
-            this.lstStock.FormattingEnabled = true;
-            this.lstStock.Location = new System.Drawing.Point(415, 12);
-            this.lstStock.Name = "lstStock";
-            this.lstStock.Size = new System.Drawing.Size(314, 563);
-            this.lstStock.TabIndex = 9;
-            // 
-            // rtbLnInforme
-            // 
-            this.rtbLnInforme.Location = new System.Drawing.Point(735, 226);
-            this.rtbLnInforme.Name = "rtbLnInforme";
-            this.rtbLnInforme.ReadOnly = true;
-            this.rtbLnInforme.Size = new System.Drawing.Size(280, 348);
-            this.rtbLnInforme.TabIndex = 8;
-            this.rtbLnInforme.Text = "";
+            this.lstProductos.FormattingEnabled = true;
+            this.lstProductos.Location = new System.Drawing.Point(415, 12);
+            this.lstProductos.Name = "lstProductos";
+            this.lstProductos.Size = new System.Drawing.Size(314, 563);
+            this.lstProductos.TabIndex = 9;
             // 
             // btnGuardarInforme
             // 
@@ -92,7 +83,7 @@ namespace TP_03
             // 
             // btnVerInforme
             // 
-            this.btnVerInforme.Location = new System.Drawing.Point(12, 367);
+            this.btnVerInforme.Location = new System.Drawing.Point(15, 410);
             this.btnVerInforme.Name = "btnVerInforme";
             this.btnVerInforme.Size = new System.Drawing.Size(397, 35);
             this.btnVerInforme.TabIndex = 6;
@@ -309,11 +300,20 @@ namespace TP_03
             this.btMostrar.UseVisualStyleBackColor = true;
             this.btMostrar.Click += new System.EventHandler(this.btMostrar_Click);
             // 
+            // lstMateriales
+            // 
+            this.lstMateriales.FormattingEnabled = true;
+            this.lstMateriales.Location = new System.Drawing.Point(735, 226);
+            this.lstMateriales.Name = "lstMateriales";
+            this.lstMateriales.Size = new System.Drawing.Size(280, 225);
+            this.lstMateriales.TabIndex = 37;
+            // 
             // FrmFabrica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1027, 586);
+            this.Controls.Add(this.lstMateriales);
             this.Controls.Add(this.btMostrar);
             this.Controls.Add(this.nudCalorias);
             this.Controls.Add(this.nudValor);
@@ -337,8 +337,7 @@ namespace TP_03
             this.Controls.Add(this.nudId);
             this.Controls.Add(this.rbHerramienta);
             this.Controls.Add(this.rbComida);
-            this.Controls.Add(this.lstStock);
-            this.Controls.Add(this.rtbLnInforme);
+            this.Controls.Add(this.lstProductos);
             this.Controls.Add(this.btnGuardarInforme);
             this.Controls.Add(this.btnVerInforme);
             this.Controls.Add(this.btnAgregar);
@@ -358,8 +357,7 @@ namespace TP_03
 
         #endregion
 
-        private System.Windows.Forms.ListBox lstStock;
-        private System.Windows.Forms.RichTextBox rtbLnInforme;
+        private System.Windows.Forms.ListBox lstProductos;
         private System.Windows.Forms.Button btnGuardarInforme;
         private System.Windows.Forms.Button btnVerInforme;
         private System.Windows.Forms.Button btnAgregar;
@@ -386,6 +384,7 @@ namespace TP_03
         private System.Windows.Forms.NumericUpDown nudValor;
         private System.Windows.Forms.NumericUpDown nudCalorias;
         private System.Windows.Forms.Button btMostrar;
+        private System.Windows.Forms.ListBox lstMateriales;
     }
 }
 

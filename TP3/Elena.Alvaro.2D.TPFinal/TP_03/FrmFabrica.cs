@@ -19,7 +19,7 @@ namespace TP_03
             
         }
         Fabrica<Producto> alvaroFabrica = new Fabrica<Producto>("Alvaro");
-
+        List<Materiales> listaMateriales = new List<Materiales>();
 
         /// <summary>
         /// Consulta si se desea cerrar el programa con un cuadro de si o no
@@ -36,9 +36,10 @@ namespace TP_03
 
         private void FrmFabrica_Load(object sender, EventArgs e)
         {
-          
+            listaMateriales.Add(new Materiales("Materiales para comida", 25, true));
+            listaMateriales.Add(new Materiales("Materiales para herramientas", 35, false));
+            ActualizarMateriales();
 
-            
         }
 
         private void rbComida_MouseClick(object sender, MouseEventArgs e)
@@ -83,12 +84,13 @@ namespace TP_03
                 if (ValidarCasillas(1))
                 {
                     Alimento aux = new Alimento((int)nudId.Value, (int)nudValor.Value, (int)nudStock.Value, tbNombre.Text, (int)nudPeso.Value, (int)nudCalorias.Value, tbSabor.Text, tbIngredientes.Text);
-                    if (alvaroFabrica + aux)
+                    if (Materiales.UtilizarMateriales(listaMateriales, true, (int)nudStock.Value) && alvaroFabrica + aux)
                     {
-                        lstStock.Items.Add(aux);
+                        lstProductos.Items.Add(aux);
                         MessageBox.Show("Se agreo correctamente un alimento");
                         CleanAll();
-                    }
+                    }else
+                        MessageBox.Show("No tiene suficiente materiales para crear el producto", "Error");
                 }
 
 
@@ -100,25 +102,27 @@ namespace TP_03
                 if(ValidarCasillas(0))
                 {
                     Herramienta aux = new Herramienta((int)nudId.Value, (int)nudValor.Value, (int)nudStock.Value, tbNombre.Text, (int)nudPeso.Value, tbMaterial.Text, tbMarca.Text);
-                    if (alvaroFabrica + aux)
+                    if (Materiales.UtilizarMateriales(listaMateriales, false, (int)nudStock.Value) && alvaroFabrica + aux)
                     {
-                        lstStock.Items.Add(aux);
+                        lstProductos.Items.Add(aux);
                         MessageBox.Show("Se agreo correctamente una herramienta");
                         CleanAll();
-                    }
+                    }else
+                        MessageBox.Show("No tiene suficiente materiales para crear el producto", "Error");
                 }
                
             }
             else
                 MessageBox.Show("Es necesario marcar un tipo de producto", "Error");
-            
+
+            ActualizarMateriales();
         }
 
         private void btMostrar_Click(object sender, EventArgs e)
         {
-            if(lstStock.SelectedItem!=null)
+            if(lstProductos.SelectedItem!=null)
             {
-                Producto aux = (Producto)lstStock.SelectedItem;
+                Producto aux = (Producto)lstProductos.SelectedItem;
                 MessageBox.Show(aux.Informacion(), "Informacion del producto");
             }else
             {
@@ -186,6 +190,18 @@ namespace TP_03
             MessageBox.Show(ValidarCasillas(1).ToString());
             //MessageBox.Show(nudId.Value.ToString());
         }
+
+        private void ActualizarMateriales()
+        {
+            lstMateriales.Items.Clear();
+            foreach (Materiales item in listaMateriales)
+            {
+                lstMateriales.Items.Add(item);
+            }
+        }
+
+      
+
 
     }
 }
