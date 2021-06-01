@@ -38,8 +38,6 @@ namespace TP_03
             this.nudId = new System.Windows.Forms.NumericUpDown();
             this.tbNombre = new System.Windows.Forms.TextBox();
             this.tbSabor = new System.Windows.Forms.TextBox();
-            this.tbIngredientes = new System.Windows.Forms.TextBox();
-            this.tbMaterial = new System.Windows.Forms.TextBox();
             this.tbMarca = new System.Windows.Forms.TextBox();
             this.lblId = new System.Windows.Forms.Label();
             this.lblStock = new System.Windows.Forms.Label();
@@ -49,7 +47,6 @@ namespace TP_03
             this.lblCalorias = new System.Windows.Forms.Label();
             this.lblSabor = new System.Windows.Forms.Label();
             this.lblIngredientes = new System.Windows.Forms.Label();
-            this.lblMaterial = new System.Windows.Forms.Label();
             this.lblMarca = new System.Windows.Forms.Label();
             this.nudStock = new System.Windows.Forms.NumericUpDown();
             this.nudPeso = new System.Windows.Forms.NumericUpDown();
@@ -57,6 +54,9 @@ namespace TP_03
             this.nudCalorias = new System.Windows.Forms.NumericUpDown();
             this.btMostrar = new System.Windows.Forms.Button();
             this.lstMateriales = new System.Windows.Forms.ListBox();
+            this.cmbIngredientes = new System.Windows.Forms.ComboBox();
+            this.lblMaterial = new System.Windows.Forms.Label();
+            this.tbMaterial = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPeso)).BeginInit();
@@ -147,22 +147,6 @@ namespace TP_03
             this.tbSabor.Size = new System.Drawing.Size(117, 20);
             this.tbSabor.TabIndex = 18;
             // 
-            // tbIngredientes
-            // 
-            this.tbIngredientes.Enabled = false;
-            this.tbIngredientes.Location = new System.Drawing.Point(159, 199);
-            this.tbIngredientes.Name = "tbIngredientes";
-            this.tbIngredientes.Size = new System.Drawing.Size(117, 20);
-            this.tbIngredientes.TabIndex = 19;
-            // 
-            // tbMaterial
-            // 
-            this.tbMaterial.Enabled = false;
-            this.tbMaterial.Location = new System.Drawing.Point(292, 107);
-            this.tbMaterial.Name = "tbMaterial";
-            this.tbMaterial.Size = new System.Drawing.Size(117, 20);
-            this.tbMaterial.TabIndex = 20;
-            // 
             // tbMarca
             // 
             this.tbMarca.Enabled = false;
@@ -237,20 +221,11 @@ namespace TP_03
             // lblIngredientes
             // 
             this.lblIngredientes.AutoSize = true;
-            this.lblIngredientes.Location = new System.Drawing.Point(156, 183);
+            this.lblIngredientes.Location = new System.Drawing.Point(246, 183);
             this.lblIngredientes.Name = "lblIngredientes";
             this.lblIngredientes.Size = new System.Drawing.Size(65, 13);
             this.lblIngredientes.TabIndex = 29;
             this.lblIngredientes.Text = "Ingredientes";
-            // 
-            // lblMaterial
-            // 
-            this.lblMaterial.AutoSize = true;
-            this.lblMaterial.Location = new System.Drawing.Point(289, 92);
-            this.lblMaterial.Name = "lblMaterial";
-            this.lblMaterial.Size = new System.Drawing.Size(44, 13);
-            this.lblMaterial.TabIndex = 30;
-            this.lblMaterial.Text = "Material";
             // 
             // lblMarca
             // 
@@ -303,16 +278,42 @@ namespace TP_03
             // lstMateriales
             // 
             this.lstMateriales.FormattingEnabled = true;
-            this.lstMateriales.Location = new System.Drawing.Point(735, 226);
+            this.lstMateriales.Location = new System.Drawing.Point(735, 151);
             this.lstMateriales.Name = "lstMateriales";
             this.lstMateriales.Size = new System.Drawing.Size(280, 225);
             this.lstMateriales.TabIndex = 37;
+            // 
+            // cmbIngredientes
+            // 
+            this.cmbIngredientes.FormattingEnabled = true;
+            this.cmbIngredientes.Location = new System.Drawing.Point(159, 199);
+            this.cmbIngredientes.Name = "cmbIngredientes";
+            this.cmbIngredientes.Size = new System.Drawing.Size(250, 21);
+            this.cmbIngredientes.TabIndex = 38;
+            // 
+            // lblMaterial
+            // 
+            this.lblMaterial.AutoSize = true;
+            this.lblMaterial.Location = new System.Drawing.Point(289, 92);
+            this.lblMaterial.Name = "lblMaterial";
+            this.lblMaterial.Size = new System.Drawing.Size(44, 13);
+            this.lblMaterial.TabIndex = 30;
+            this.lblMaterial.Text = "Material";
+            // 
+            // tbMaterial
+            // 
+            this.tbMaterial.Enabled = false;
+            this.tbMaterial.Location = new System.Drawing.Point(292, 107);
+            this.tbMaterial.Name = "tbMaterial";
+            this.tbMaterial.Size = new System.Drawing.Size(117, 20);
+            this.tbMaterial.TabIndex = 20;
             // 
             // FrmFabrica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1027, 586);
+            this.Controls.Add(this.cmbIngredientes);
             this.Controls.Add(this.lstMateriales);
             this.Controls.Add(this.btMostrar);
             this.Controls.Add(this.nudCalorias);
@@ -331,7 +332,6 @@ namespace TP_03
             this.Controls.Add(this.lblId);
             this.Controls.Add(this.tbMarca);
             this.Controls.Add(this.tbMaterial);
-            this.Controls.Add(this.tbIngredientes);
             this.Controls.Add(this.tbSabor);
             this.Controls.Add(this.tbNombre);
             this.Controls.Add(this.nudId);
@@ -366,8 +366,6 @@ namespace TP_03
         private System.Windows.Forms.NumericUpDown nudId;
         private System.Windows.Forms.TextBox tbNombre;
         private System.Windows.Forms.TextBox tbSabor;
-        private System.Windows.Forms.TextBox tbIngredientes;
-        private System.Windows.Forms.TextBox tbMaterial;
         private System.Windows.Forms.TextBox tbMarca;
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.Label lblStock;
@@ -377,7 +375,6 @@ namespace TP_03
         private System.Windows.Forms.Label lblCalorias;
         private System.Windows.Forms.Label lblSabor;
         private System.Windows.Forms.Label lblIngredientes;
-        private System.Windows.Forms.Label lblMaterial;
         private System.Windows.Forms.Label lblMarca;
         private System.Windows.Forms.NumericUpDown nudStock;
         private System.Windows.Forms.NumericUpDown nudPeso;
@@ -385,6 +382,9 @@ namespace TP_03
         private System.Windows.Forms.NumericUpDown nudCalorias;
         private System.Windows.Forms.Button btMostrar;
         private System.Windows.Forms.ListBox lstMateriales;
+        private System.Windows.Forms.ComboBox cmbIngredientes;
+        private System.Windows.Forms.Label lblMaterial;
+        private System.Windows.Forms.TextBox tbMaterial;
     }
 }
 

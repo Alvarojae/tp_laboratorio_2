@@ -50,7 +50,8 @@ namespace Entidades
                 return this.alimento;
             }
         }
-        private bool ConsumirMateriales(int cantidad)
+
+        public bool ConsumirMateriales(int cantidad)
         {
             if(this.Cantidad>= cantidad)
             {
@@ -60,27 +61,6 @@ namespace Entidades
             return false;
         }
 
-        private static Materiales EncontrarMaterial(List<Materiales> listaMateriales, bool material)
-        {
-            foreach (Materiales item in listaMateriales)
-            {
-                if (material == item.Material)
-                    return item;
-            }
-            return null;
-        }
-
-        public static bool UtilizarMateriales(List<Materiales> listaMateriales, bool material,int cantidad)
-        {
-            Materiales aux = EncontrarMaterial(listaMateriales, material);
-            if(aux!=null)
-            {
-                if(aux.ConsumirMateriales(cantidad))
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
+    
     }
 }

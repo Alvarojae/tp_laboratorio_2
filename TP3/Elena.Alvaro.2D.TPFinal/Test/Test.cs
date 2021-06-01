@@ -22,7 +22,7 @@ namespace Test
 
             Fabrica<Producto> alvaroFabrica = new Fabrica<Producto>("Alvaro");
             bool aux;
-            aux = alvaroFabrica + new Alimento(1, 15, 2, "Cindor", 500, 250, "Chocolate", "vaca batida");
+            aux = alvaroFabrica + new Alimento(1, 15, 2, "Cindor", 500, 250, "Chocolate");
             aux = alvaroFabrica + new Herramienta(2, 1050, 5, "Pinza multiuso", 560, "Metal", "Black & Decker");
 
             foreach (Producto item in alvaroFabrica.Listaproductos)

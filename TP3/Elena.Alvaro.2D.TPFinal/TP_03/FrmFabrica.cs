@@ -36,10 +36,16 @@ namespace TP_03
 
         private void FrmFabrica_Load(object sender, EventArgs e)
         {
-            listaMateriales.Add(new Materiales("Materiales para comida", 25, true));
-            listaMateriales.Add(new Materiales("Materiales para herramientas", 35, false));
-            ActualizarMateriales();
+            listaMateriales.Add(new Materiales("Harina", 25, true));
+            listaMateriales.Add(new Materiales("Leche", 25, true));
+            listaMateriales.Add(new Materiales("Chocolate", 25, true));
 
+            listaMateriales.Add(new Materiales("Hierro", 35, false));
+            listaMateriales.Add(new Materiales("Aluminio", 35, false)); 
+            listaMateriales.Add(new Materiales("Cobre", 35, false));
+
+            ActualizarMateriales();
+            
         }
 
         private void rbComida_MouseClick(object sender, MouseEventArgs e)
@@ -53,25 +59,27 @@ namespace TP_03
         }
 
 
-        protected void ActivarBotones(int Estado)
+        protected void ActivarBotones(int estado)
         {
 
             nudCalorias.Enabled=false;
-            tbIngredientes.Enabled = false;
             tbSabor.Enabled = false;
 
             tbMaterial.Enabled = false;
             tbMarca.Enabled = false;
 
 
-            if (Estado == 1)
+            if (estado == 1)
             {
+                CleanAll();
+                ActualizarIngredientes(estado);
                 nudCalorias.Enabled = true;
-                tbIngredientes.Enabled = true;
                 tbSabor.Enabled = true;
             }
-            else if(Estado== 0)
+            else if(estado == 0)
             {
+                CleanAll();
+                ActualizarIngredientes(estado);
                 tbMaterial.Enabled = true;
                 tbMarca.Enabled = true;
             }
@@ -83,8 +91,8 @@ namespace TP_03
             {
                 if (ValidarCasillas(1))
                 {
-                    Alimento aux = new Alimento((int)nudId.Value, (int)nudValor.Value, (int)nudStock.Value, tbNombre.Text, (int)nudPeso.Value, (int)nudCalorias.Value, tbSabor.Text, tbIngredientes.Text);
-                    if (Materiales.UtilizarMateriales(listaMateriales, true, (int)nudStock.Value) && alvaroFabrica + aux)
+                    Alimento aux = new Alimento((int)nudId.Value, (int)nudValor.Value, (int)nudStock.Value, tbNombre.Text, (int)nudPeso.Value, (int)nudCalorias.Value, tbSabor.Text);
+                    if (((Materiales)cmbIngredientes.SelectedItem).ConsumirMateriales((int)nudStock.Value) && alvaroFabrica + aux)
                     {
                         lstProductos.Items.Add(aux);
                         MessageBox.Show("Se agreo correctamente un alimento");
@@ -102,7 +110,7 @@ namespace TP_03
                 if(ValidarCasillas(0))
                 {
                     Herramienta aux = new Herramienta((int)nudId.Value, (int)nudValor.Value, (int)nudStock.Value, tbNombre.Text, (int)nudPeso.Value, tbMaterial.Text, tbMarca.Text);
-                    if (Materiales.UtilizarMateriales(listaMateriales, false, (int)nudStock.Value) && alvaroFabrica + aux)
+                    if (((Materiales)cmbIngredientes.SelectedItem).ConsumirMateriales((int)nudStock.Value) && alvaroFabrica + aux)
                     {
                         lstProductos.Items.Add(aux);
                         MessageBox.Show("Se agreo correctamente una herramienta");
@@ -116,6 +124,7 @@ namespace TP_03
                 MessageBox.Show("Es necesario marcar un tipo de producto", "Error");
 
             ActualizarMateriales();
+            ActivarBotones(3);
         }
 
         private void btMostrar_Click(object sender, EventArgs e)
@@ -135,11 +144,11 @@ namespace TP_03
 
         private bool ValidarCasillas(int tipoDeProducto)
         {
-            if (nudId.Value != 0 && nudValor.Value != 0 && nudStock.Value != 0 && tbNombre.Text != "" && nudPeso.Value != 0)
+            if (nudId.Value != 0 && nudValor.Value != 0 && nudStock.Value != 0 && tbNombre.Text != "" && nudPeso.Value != 0 && cmbIngredientes.Text != "")
             {
                 if (tipoDeProducto == 0 && tbMaterial.Text != "" && tbMarca.Text != "")
                     return true;
-                else if (tipoDeProducto == 1 && nudCalorias.Value != 0 && tbSabor.Text != "" && tbIngredientes.Text != "")
+                else if (tipoDeProducto == 1 && nudCalorias.Value != 0 && tbSabor.Text != "" )
                     return true;
                 else
                     MessageBox.Show("No ingresaste dato de Alimentos o Herramientas", "Error");
@@ -178,11 +187,12 @@ namespace TP_03
             nudPeso.Value = 0;
 
             nudCalorias.Value = 0;
-            tbIngredientes.Text = "";
             tbSabor.Text = "";
 
             tbMaterial.Text = "";
             tbMarca.Text = "";
+
+            cmbIngredientes.Text = "";
         }
 
         private void btnVerInforme_Click(object sender, EventArgs e)
@@ -197,11 +207,20 @@ namespace TP_03
             foreach (Materiales item in listaMateriales)
             {
                 lstMateriales.Items.Add(item);
+                
             }
         }
 
-      
-
-
+        private void ActualizarIngredientes(int estado)
+        {
+            cmbIngredientes.Items.Clear();
+            foreach (Materiales item in listaMateriales)
+            {
+                if(estado == 1 && item.Material)
+                    cmbIngredientes.Items.Add(item);
+                else if (estado == 0 && !item.Material)
+                    cmbIngredientes.Items.Add(item);
+            }        
+        }
     }
 }

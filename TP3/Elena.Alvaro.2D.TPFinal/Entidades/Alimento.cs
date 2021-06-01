@@ -10,14 +10,14 @@ namespace Entidades
     {
         protected int calorias;
         protected string sabor;
-        protected string ingredientes;
+        
 
-        public Alimento(int id, int valor, int stock, string nombre, int peso, int calorias, string sabor, string ingredientes) 
+        public Alimento(int id, int valor, int stock, string nombre, int peso, int calorias, string sabor) 
             :base( id,  valor,  stock,  nombre,  peso)
         {
             this.calorias = calorias;
             this.sabor = sabor;
-            this.ingredientes = ingredientes;
+
         }
 
         public override string Informacion()
@@ -26,7 +26,6 @@ namespace Entidades
             sb.Append(base.Informacion());
             sb.AppendLine($"Calorias: {this.calorias}");
             sb.AppendLine($"Sabor: {this.sabor}");
-            sb.AppendLine($"Ingredientes: {this.ingredientes}");
 
             return sb.ToString();
         }
