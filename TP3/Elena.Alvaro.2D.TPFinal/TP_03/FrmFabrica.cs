@@ -128,6 +128,7 @@ namespace TP_03
         }
 
 
+
         private bool ValidarCasillas(int tipoDeProducto)
         {
             if (nudId.Value != 0 && nudValor.Value != 0 && nudStock.Value != 0 && tbNombre.Text != "" && nudPeso.Value != 0)
@@ -138,22 +139,22 @@ namespace TP_03
                     return true;
                 else
                     MessageBox.Show("No ingresaste dato de Alimentos o Herramientas", "Error");
-
-            }else
+            }
+            else
                 MessageBox.Show("No ingresaste datos de la primera columna o unos de los valores es 0", "Error");
 
             return false;
 
-            //if (nudId.Value != 0) 
+            //if (nudId.Value != 0)
             //    if (nudValor.Value != 0)
             //        if (nudStock.Value != 0)
             //            if (tbNombre.Text != "")
             //                if (nudPeso.Value != 0)
             //                    return true;
-            //                else 
-            //                    MessageBox.Show( "El peso esta vacio o es igual a 0","Error");
+            //                else
+            //                    MessageBox.Show("El peso esta vacio o es igual a 0", "Error");
             //            else
-            //                MessageBox.Show( "El nombre esta vacio", "Error");
+            //                MessageBox.Show("El nombre esta vacio", "Error");
             //        else
             //            MessageBox.Show("El Stock esta vacio o es igual a 0", "Error");
             //    else
@@ -185,5 +186,6 @@ namespace TP_03
             MessageBox.Show(ValidarCasillas(1).ToString());
             //MessageBox.Show(nudId.Value.ToString());
         }
+
     }
 }

@@ -11,7 +11,7 @@ namespace Entidades
     /// </summary>
     public abstract class Vehiculo
     {
-       private EMarca marca;
+        private EMarca marca;
         private string chasis;
         private  ConsoleColor color;
 
