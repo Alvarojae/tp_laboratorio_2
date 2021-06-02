@@ -21,18 +21,7 @@ namespace TP_03
         Fabrica<Producto> alvaroFabrica = new Fabrica<Producto>("Alvaro");
         List<Materiales> listaMateriales = new List<Materiales>();
 
-        /// <summary>
-        /// Consulta si se desea cerrar el programa con un cuadro de si o no
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void FrmFabrica_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            DialogResult dialogo = MessageBox.Show("¿Desea cerrar el programa?",
-            "Cerrar el programa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dialogo == DialogResult.No)
-                e.Cancel = true;
-        }
+  
 
         private void FrmFabrica_Load(object sender, EventArgs e)
         {
@@ -48,10 +37,34 @@ namespace TP_03
             
         }
 
+
+        /// <summary>
+        /// Consulta si se desea cerrar el programa con un cuadro de si o no
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void FrmFabrica_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult dialogo = MessageBox.Show("¿Desea cerrar el programa?",
+            "Cerrar el programa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogo == DialogResult.No)
+                e.Cancel = true;
+        }
+
+
+
+        /// <summary>
+        /// Activa los botones cuando es cliqueado el radio buton de comida
+        /// </summary>
+
         private void rbComida_MouseClick(object sender, MouseEventArgs e)
         {
             ActivarBotones(1);
         }
+
+        /// <summary>
+        /// Activa los botones cuando es cliqueado el radio buton de herramita
+        /// </summary>
 
         private void rbHerramienta_MouseClick(object sender, MouseEventArgs e)
         {
@@ -59,31 +72,9 @@ namespace TP_03
         }
 
 
-        protected void ActivarBotones(int estado)
-        {
-
-            nudCalorias.Enabled=false;
-            tbSabor.Enabled = false;
-
-            tbMaterial.Enabled = false;
-            tbMarca.Enabled = false;
-
-
-            if (estado == 1)
-            {
-                CleanAll();
-                ActualizarIngredientes(estado);
-                nudCalorias.Enabled = true;
-                tbSabor.Enabled = true;
-            }
-            else if(estado == 0)
-            {
-                CleanAll();
-                ActualizarIngredientes(estado);
-                tbMaterial.Enabled = true;
-                tbMarca.Enabled = true;
-            }
-        }
+        /// <summary>
+        /// Agrega el producto tomando todos los datos del form y validando todo(Creo)
+        /// </summary>
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
@@ -127,6 +118,9 @@ namespace TP_03
             ActivarBotones(3);
         }
 
+        /// <summary>
+        /// Muestra la informacion de la lista de productos creados
+        /// </summary>
         private void btMostrar_Click(object sender, EventArgs e)
         {
             if(lstProductos.SelectedItem!=null)
@@ -142,6 +136,11 @@ namespace TP_03
 
 
 
+        /// <summary>
+        /// Valida que segun el tipo de producto elegido esten las casillas completadas
+        /// </summary>
+        /// <param name="tipoDeProducto">Tipo del producto </param>
+        /// <returns></returns>
         private bool ValidarCasillas(int tipoDeProducto)
         {
             if (nudId.Value != 0 && nudValor.Value != 0 && nudStock.Value != 0 && tbNombre.Text != "" && nudPeso.Value != 0 && cmbIngredientes.Text != "")
@@ -158,26 +157,11 @@ namespace TP_03
 
             return false;
 
-            //if (nudId.Value != 0)
-            //    if (nudValor.Value != 0)
-            //        if (nudStock.Value != 0)
-            //            if (tbNombre.Text != "")
-            //                if (nudPeso.Value != 0)
-            //                    return true;
-            //                else
-            //                    MessageBox.Show("El peso esta vacio o es igual a 0", "Error");
-            //            else
-            //                MessageBox.Show("El nombre esta vacio", "Error");
-            //        else
-            //            MessageBox.Show("El Stock esta vacio o es igual a 0", "Error");
-            //    else
-            //        MessageBox.Show("El Valor esta vacio o es igual a 0", "Error");
-            //else
-            //    MessageBox.Show("El Id esta vacio o es igual a 0", "Error");
-            //return false;
-
         }
 
+        /// <summary>
+        /// Limpia todo los valores del form
+        /// </summary>
         private void CleanAll()
         {
             nudId.Value = 0;
@@ -201,6 +185,9 @@ namespace TP_03
             //MessageBox.Show(nudId.Value.ToString());
         }
 
+        /// <summary>
+        /// Actualiza los materiales de la lista de materiales
+        /// </summary>
         private void ActualizarMateriales()
         {
             lstMateriales.Items.Clear();
@@ -211,6 +198,10 @@ namespace TP_03
             }
         }
 
+        /// <summary>
+        /// Actualiza el ComboBox segun el estado recibido
+        /// </summary>
+        /// <param name="estado">Revibe el el estado del tipo de producto</param>
         private void ActualizarIngredientes(int estado)
         {
             cmbIngredientes.Items.Clear();
@@ -222,5 +213,34 @@ namespace TP_03
                     cmbIngredientes.Items.Add(item);
             }        
         }
+
+
+        /// <summary>
+        /// Activa los botones segun el parametro recibido
+        /// </summary>
+        /// <param name="estado">1-Alimentos | 2-Herrramientas</param>
+        protected void ActivarBotones(int estado)
+        {
+            nudCalorias.Enabled = false;
+            tbSabor.Enabled = false;
+            tbMaterial.Enabled = false;
+            tbMarca.Enabled = false;
+
+            if (estado == 1)
+            {
+                ActualizarIngredientes(estado);
+                nudCalorias.Enabled = true;
+                tbSabor.Enabled = true;
+                cmbIngredientes.Text = "";
+            }
+            else if (estado == 0)
+            {
+                ActualizarIngredientes(estado);
+                tbMaterial.Enabled = true;
+                tbMarca.Enabled = true;
+                cmbIngredientes.Text = "";
+            }
+        }
+
     }
 }

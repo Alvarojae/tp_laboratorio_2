@@ -69,12 +69,12 @@ namespace TP_03
             this.lstProductos.FormattingEnabled = true;
             this.lstProductos.Location = new System.Drawing.Point(415, 12);
             this.lstProductos.Name = "lstProductos";
-            this.lstProductos.Size = new System.Drawing.Size(314, 563);
+            this.lstProductos.Size = new System.Drawing.Size(314, 472);
             this.lstProductos.TabIndex = 9;
             // 
             // btnGuardarInforme
             // 
-            this.btnGuardarInforme.Location = new System.Drawing.Point(12, 451);
+            this.btnGuardarInforme.Location = new System.Drawing.Point(15, 330);
             this.btnGuardarInforme.Name = "btnGuardarInforme";
             this.btnGuardarInforme.Size = new System.Drawing.Size(397, 35);
             this.btnGuardarInforme.TabIndex = 7;
@@ -83,7 +83,7 @@ namespace TP_03
             // 
             // btnVerInforme
             // 
-            this.btnVerInforme.Location = new System.Drawing.Point(15, 410);
+            this.btnVerInforme.Location = new System.Drawing.Point(15, 289);
             this.btnVerInforme.Name = "btnVerInforme";
             this.btnVerInforme.Size = new System.Drawing.Size(397, 35);
             this.btnVerInforme.TabIndex = 6;
@@ -93,10 +93,10 @@ namespace TP_03
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(12, 299);
+            this.btnAgregar.Location = new System.Drawing.Point(15, 248);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(397, 35);
-            this.btnAgregar.TabIndex = 5;
+            this.btnAgregar.TabIndex = 13;
             this.btnAgregar.Text = "Agregar Nuevo Producto";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
@@ -104,10 +104,10 @@ namespace TP_03
             // rbComida
             // 
             this.rbComida.AutoSize = true;
-            this.rbComida.Location = new System.Drawing.Point(159, 50);
+            this.rbComida.Location = new System.Drawing.Point(159, 30);
             this.rbComida.Name = "rbComida";
             this.rbComida.Size = new System.Drawing.Size(70, 17);
-            this.rbComida.TabIndex = 10;
+            this.rbComida.TabIndex = 6;
             this.rbComida.TabStop = true;
             this.rbComida.Text = "Alimentos";
             this.rbComida.UseVisualStyleBackColor = true;
@@ -116,10 +116,10 @@ namespace TP_03
             // rbHerramienta
             // 
             this.rbHerramienta.AutoSize = true;
-            this.rbHerramienta.Location = new System.Drawing.Point(292, 50);
+            this.rbHerramienta.Location = new System.Drawing.Point(292, 30);
             this.rbHerramienta.Name = "rbHerramienta";
             this.rbHerramienta.Size = new System.Drawing.Size(87, 17);
-            this.rbHerramienta.TabIndex = 11;
+            this.rbHerramienta.TabIndex = 7;
             this.rbHerramienta.TabStop = true;
             this.rbHerramienta.Text = "Herramientas";
             this.rbHerramienta.UseVisualStyleBackColor = true;
@@ -127,38 +127,43 @@ namespace TP_03
             // 
             // nudId
             // 
-            this.nudId.Location = new System.Drawing.Point(15, 50);
+            this.nudId.Location = new System.Drawing.Point(15, 30);
+            this.nudId.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.nudId.Name = "nudId";
             this.nudId.Size = new System.Drawing.Size(117, 20);
-            this.nudId.TabIndex = 12;
+            this.nudId.TabIndex = 1;
             // 
             // tbNombre
             // 
-            this.tbNombre.Location = new System.Drawing.Point(15, 108);
+            this.tbNombre.Location = new System.Drawing.Point(15, 88);
             this.tbNombre.Name = "tbNombre";
             this.tbNombre.Size = new System.Drawing.Size(117, 20);
-            this.tbNombre.TabIndex = 16;
+            this.tbNombre.TabIndex = 2;
             // 
             // tbSabor
             // 
             this.tbSabor.Enabled = false;
-            this.tbSabor.Location = new System.Drawing.Point(159, 151);
+            this.tbSabor.Location = new System.Drawing.Point(159, 131);
             this.tbSabor.Name = "tbSabor";
             this.tbSabor.Size = new System.Drawing.Size(117, 20);
-            this.tbSabor.TabIndex = 18;
+            this.tbSabor.TabIndex = 9;
             // 
             // tbMarca
             // 
             this.tbMarca.Enabled = false;
-            this.tbMarca.Location = new System.Drawing.Point(292, 151);
+            this.tbMarca.Location = new System.Drawing.Point(292, 131);
             this.tbMarca.Name = "tbMarca";
             this.tbMarca.Size = new System.Drawing.Size(117, 20);
-            this.tbMarca.TabIndex = 21;
+            this.tbMarca.TabIndex = 11;
             // 
             // lblId
             // 
             this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(12, 34);
+            this.lblId.Location = new System.Drawing.Point(12, 12);
             this.lblId.Name = "lblId";
             this.lblId.Size = new System.Drawing.Size(16, 13);
             this.lblId.TabIndex = 22;
@@ -167,16 +172,16 @@ namespace TP_03
             // lblStock
             // 
             this.lblStock.AutoSize = true;
-            this.lblStock.Location = new System.Drawing.Point(12, 135);
+            this.lblStock.Location = new System.Drawing.Point(12, 115);
             this.lblStock.Name = "lblStock";
-            this.lblStock.Size = new System.Drawing.Size(35, 13);
+            this.lblStock.Size = new System.Drawing.Size(49, 13);
             this.lblStock.TabIndex = 23;
-            this.lblStock.Text = "Stock";
+            this.lblStock.Text = "Cantidad";
             // 
             // lblPeso
             // 
             this.lblPeso.AutoSize = true;
-            this.lblPeso.Location = new System.Drawing.Point(12, 180);
+            this.lblPeso.Location = new System.Drawing.Point(12, 160);
             this.lblPeso.Name = "lblPeso";
             this.lblPeso.Size = new System.Drawing.Size(31, 13);
             this.lblPeso.TabIndex = 24;
@@ -185,7 +190,7 @@ namespace TP_03
             // lblValor
             // 
             this.lblValor.AutoSize = true;
-            this.lblValor.Location = new System.Drawing.Point(12, 226);
+            this.lblValor.Location = new System.Drawing.Point(12, 206);
             this.lblValor.Name = "lblValor";
             this.lblValor.Size = new System.Drawing.Size(31, 13);
             this.lblValor.TabIndex = 25;
@@ -194,7 +199,7 @@ namespace TP_03
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(12, 92);
+            this.lblNombre.Location = new System.Drawing.Point(12, 72);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(44, 13);
             this.lblNombre.TabIndex = 26;
@@ -203,7 +208,7 @@ namespace TP_03
             // lblCalorias
             // 
             this.lblCalorias.AutoSize = true;
-            this.lblCalorias.Location = new System.Drawing.Point(156, 92);
+            this.lblCalorias.Location = new System.Drawing.Point(156, 72);
             this.lblCalorias.Name = "lblCalorias";
             this.lblCalorias.Size = new System.Drawing.Size(44, 13);
             this.lblCalorias.TabIndex = 27;
@@ -212,7 +217,7 @@ namespace TP_03
             // lblSabor
             // 
             this.lblSabor.AutoSize = true;
-            this.lblSabor.Location = new System.Drawing.Point(156, 137);
+            this.lblSabor.Location = new System.Drawing.Point(156, 117);
             this.lblSabor.Name = "lblSabor";
             this.lblSabor.Size = new System.Drawing.Size(35, 13);
             this.lblSabor.TabIndex = 28;
@@ -221,7 +226,7 @@ namespace TP_03
             // lblIngredientes
             // 
             this.lblIngredientes.AutoSize = true;
-            this.lblIngredientes.Location = new System.Drawing.Point(246, 183);
+            this.lblIngredientes.Location = new System.Drawing.Point(246, 163);
             this.lblIngredientes.Name = "lblIngredientes";
             this.lblIngredientes.Size = new System.Drawing.Size(65, 13);
             this.lblIngredientes.TabIndex = 29;
@@ -230,7 +235,7 @@ namespace TP_03
             // lblMarca
             // 
             this.lblMarca.AutoSize = true;
-            this.lblMarca.Location = new System.Drawing.Point(289, 135);
+            this.lblMarca.Location = new System.Drawing.Point(289, 115);
             this.lblMarca.Name = "lblMarca";
             this.lblMarca.Size = new System.Drawing.Size(37, 13);
             this.lblMarca.TabIndex = 31;
@@ -238,32 +243,52 @@ namespace TP_03
             // 
             // nudStock
             // 
-            this.nudStock.Location = new System.Drawing.Point(15, 151);
+            this.nudStock.Location = new System.Drawing.Point(15, 131);
+            this.nudStock.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.nudStock.Name = "nudStock";
             this.nudStock.Size = new System.Drawing.Size(117, 20);
-            this.nudStock.TabIndex = 32;
+            this.nudStock.TabIndex = 3;
             // 
             // nudPeso
             // 
-            this.nudPeso.Location = new System.Drawing.Point(15, 199);
+            this.nudPeso.Location = new System.Drawing.Point(15, 179);
+            this.nudPeso.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.nudPeso.Name = "nudPeso";
             this.nudPeso.Size = new System.Drawing.Size(117, 20);
-            this.nudPeso.TabIndex = 33;
+            this.nudPeso.TabIndex = 4;
             // 
             // nudValor
             // 
-            this.nudValor.Location = new System.Drawing.Point(15, 242);
+            this.nudValor.Location = new System.Drawing.Point(15, 222);
+            this.nudValor.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.nudValor.Name = "nudValor";
             this.nudValor.Size = new System.Drawing.Size(117, 20);
-            this.nudValor.TabIndex = 34;
+            this.nudValor.TabIndex = 5;
             // 
             // nudCalorias
             // 
             this.nudCalorias.Enabled = false;
-            this.nudCalorias.Location = new System.Drawing.Point(159, 108);
+            this.nudCalorias.Location = new System.Drawing.Point(159, 88);
+            this.nudCalorias.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.nudCalorias.Name = "nudCalorias";
             this.nudCalorias.Size = new System.Drawing.Size(117, 20);
-            this.nudCalorias.TabIndex = 35;
+            this.nudCalorias.TabIndex = 8;
             // 
             // btMostrar
             // 
@@ -278,7 +303,7 @@ namespace TP_03
             // lstMateriales
             // 
             this.lstMateriales.FormattingEnabled = true;
-            this.lstMateriales.Location = new System.Drawing.Point(735, 151);
+            this.lstMateriales.Location = new System.Drawing.Point(735, 259);
             this.lstMateriales.Name = "lstMateriales";
             this.lstMateriales.Size = new System.Drawing.Size(280, 225);
             this.lstMateriales.TabIndex = 37;
@@ -286,15 +311,15 @@ namespace TP_03
             // cmbIngredientes
             // 
             this.cmbIngredientes.FormattingEnabled = true;
-            this.cmbIngredientes.Location = new System.Drawing.Point(159, 199);
+            this.cmbIngredientes.Location = new System.Drawing.Point(159, 179);
             this.cmbIngredientes.Name = "cmbIngredientes";
             this.cmbIngredientes.Size = new System.Drawing.Size(250, 21);
-            this.cmbIngredientes.TabIndex = 38;
+            this.cmbIngredientes.TabIndex = 12;
             // 
             // lblMaterial
             // 
             this.lblMaterial.AutoSize = true;
-            this.lblMaterial.Location = new System.Drawing.Point(289, 92);
+            this.lblMaterial.Location = new System.Drawing.Point(289, 72);
             this.lblMaterial.Name = "lblMaterial";
             this.lblMaterial.Size = new System.Drawing.Size(44, 13);
             this.lblMaterial.TabIndex = 30;
@@ -303,16 +328,16 @@ namespace TP_03
             // tbMaterial
             // 
             this.tbMaterial.Enabled = false;
-            this.tbMaterial.Location = new System.Drawing.Point(292, 107);
+            this.tbMaterial.Location = new System.Drawing.Point(292, 87);
             this.tbMaterial.Name = "tbMaterial";
             this.tbMaterial.Size = new System.Drawing.Size(117, 20);
-            this.tbMaterial.TabIndex = 20;
+            this.tbMaterial.TabIndex = 10;
             // 
             // FrmFabrica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1027, 586);
+            this.ClientSize = new System.Drawing.Size(1027, 507);
             this.Controls.Add(this.cmbIngredientes);
             this.Controls.Add(this.lstMateriales);
             this.Controls.Add(this.btMostrar);

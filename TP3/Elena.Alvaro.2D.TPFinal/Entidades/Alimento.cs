@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class Alimento : Producto
+    public class Alimento : Producto , IClass
     {
         protected int calorias;
         protected string sabor;
@@ -20,6 +20,10 @@ namespace Entidades
 
         }
 
+        /// <summary>
+        /// Consigue toda la informacion de la clase Alimento y la convierte en string
+        /// </summary>
+        /// <returns>string con toda la informacion</returns>
         public override string Informacion()
         {
             StringBuilder sb = new StringBuilder();

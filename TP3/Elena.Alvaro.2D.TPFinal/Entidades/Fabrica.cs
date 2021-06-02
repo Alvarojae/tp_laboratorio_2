@@ -21,6 +21,12 @@ namespace Entidades
             this.nombre = nombre;
         }
 
+        /// <summary>
+        /// Ingresa un item generico es una lista generica del mismo tipo
+        /// </summary>
+        /// <param name="lista">Una lista generica de fabrica</param>
+        /// <param name="item"> un item generico</param>
+        /// <returns>true</returns>
         public static bool operator +(Fabrica<T> lista, T item)
         {
             lista.Listaproductos.Add(item);

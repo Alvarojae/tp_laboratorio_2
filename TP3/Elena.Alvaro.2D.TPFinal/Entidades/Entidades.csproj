@@ -44,6 +44,7 @@
     <Compile Include="Alimento.cs" />
     <Compile Include="Fabrica.cs" />
     <Compile Include="Herramienta.cs" />
+    <Compile Include="IClass.cs" />
     <Compile Include="Materiales.cs" />
     <Compile Include="Producto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
