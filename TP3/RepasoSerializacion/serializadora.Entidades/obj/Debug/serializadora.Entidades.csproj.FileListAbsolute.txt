@@ -15,3 +15,9 @@ D:\Users\Trabajo\Desktop\RepasoSerializacion\serializadora.Entidades\obj\Debug\s
 D:\Users\Trabajo\Desktop\RepasoSerializacion\serializadora.Entidades\obj\Debug\serializadora.Entidades.csproj.CoreCompileInputs.cache
 D:\Users\Trabajo\Desktop\RepasoSerializacion\serializadora.Entidades\obj\Debug\serializadora.Entidades.dll
 D:\Users\Trabajo\Desktop\RepasoSerializacion\serializadora.Entidades\obj\Debug\serializadora.Entidades.pdb
+D:\Users\Trabajo\Desktop\tp_laboratorio_2\TP3\RepasoSerializacion\serializadora.Entidades\bin\Debug\serializadora.Entidades.dll
+D:\Users\Trabajo\Desktop\tp_laboratorio_2\TP3\RepasoSerializacion\serializadora.Entidades\bin\Debug\serializadora.Entidades.pdb
+D:\Users\Trabajo\Desktop\tp_laboratorio_2\TP3\RepasoSerializacion\serializadora.Entidades\obj\Debug\serializadora.Entidades.csprojAssemblyReference.cache
+D:\Users\Trabajo\Desktop\tp_laboratorio_2\TP3\RepasoSerializacion\serializadora.Entidades\obj\Debug\serializadora.Entidades.csproj.CoreCompileInputs.cache
+D:\Users\Trabajo\Desktop\tp_laboratorio_2\TP3\RepasoSerializacion\serializadora.Entidades\obj\Debug\serializadora.Entidades.dll
+D:\Users\Trabajo\Desktop\tp_laboratorio_2\TP3\RepasoSerializacion\serializadora.Entidades\obj\Debug\serializadora.Entidades.pdb

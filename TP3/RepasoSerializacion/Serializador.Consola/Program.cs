@@ -11,12 +11,7 @@ namespace Serializador.Consola
     {
         static void Main(string[] args)
         {
-            List<Persona> personas = new List<Persona>();
-            personas.Add(new Persona("Alvaro", "Elena", 23));
-            personas.Add(new Persona("juan", "soliz", 23));
-            personas.Add(new Persona("Roberto", "perez", 23));
-            personas.Add(new Persona("Esteban", "Esteban", 23));
-            personas.Add(new Persona("Gordo", "Bondiola", 23));
+            
 
 
             //Persona persona1 = new Persona("Lautaro", "Lautaro", 23);
@@ -30,17 +25,23 @@ namespace Serializador.Consola
             //personas.Add(persona1);
             //personas.Add(persona2);
 
-            foreach (Persona item in personas)
-            {
-                if (serializadora.Guardar(item))
+            List<Persona> personas = new List<Persona>();
+            personas.Add(new Persona("Alvaro", "Elena", 23));
+            personas.Add(new Persona("juan", "soliz", 23));
+            personas.Add(new Persona("Roberto", "perez", 23));
+            personas.Add(new Persona("Esteban", "Esteban", 23));
+            personas.Add(new Persona("Gordo", "Bondiola", 23));
+
+      
+                if (serializadora.Guardar(personas))
                 {
                     Console.WriteLine("Archivo Guardado exitosamente");
                 }
                 else
                 {
-                    Console.WriteLine(serializadora.mensaje);
+                    //Console.WriteLine(serializadora.mensaje);
                 }
-            }
+            
           
 
 

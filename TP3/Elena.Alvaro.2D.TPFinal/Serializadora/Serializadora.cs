@@ -7,19 +7,17 @@ using Entidades;
 
 namespace Serializadora
 {
-    public class Serializadora<T>
+    public class Serializadora<T> : IArchivos<T>
     {
         public string mensaje;
-        public bool Guardar(T t)
+        public bool Guardar(string Ruta,T t)
         {
             bool retorno = false;
 
             try
             {
-                Xml<T> guardarPersona = new Xml<T>();
-
-                retorno = guardarPersona.Guardar(AppDomain.CurrentDomain.BaseDirectory + @"leche.xml", t);
-
+                Xml<T> guardarT = new Xml<T>();
+                retorno = guardarT.Guardar(AppDomain.CurrentDomain.BaseDirectory + @"leche.xml", t);
             }
             catch (MisExcepciones e)
             {
@@ -34,9 +32,9 @@ namespace Serializadora
             T t = default(T);
             try
             {
-                Xml<T> leerPersona = new Xml<T>();
+                Xml<T> leerT = new Xml<T>();
 
-                if (leerPersona.Leer(AppDomain.CurrentDomain.BaseDirectory + @"personas.xml", out T auxT))
+                if (leerT.Leer(AppDomain.CurrentDomain.BaseDirectory + @"leche.xml", out T auxT))
                 {
                     t = auxT;
                 }
@@ -50,6 +48,11 @@ namespace Serializadora
 
             return t;
 
+        }
+
+        bool IArchivos<T>.Leer(string archivo, out T datos)
+        {
+            throw new NotImplementedException();
         }
     }
 }

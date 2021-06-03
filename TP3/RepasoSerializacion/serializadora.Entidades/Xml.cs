@@ -5,12 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Serialization;
-
+using System.IO;
 namespace serializadora.Entidades
 {
-    public class Xml<T> : IArchivos<T>
+    public class Xml<T> 
     {
-        public bool Guardar(string ruta, T datos)
+        public bool Guardar(string ruta, List<T> datos)
         {
             bool retorno = false;
 
@@ -18,7 +18,7 @@ namespace serializadora.Entidades
             {
                 XmlSerializer nuevoXml = new XmlSerializer(typeof(T));
               
-                using (XmlTextWriter newTW = new XmlTextWriter(ruta, Encoding.UTF8))
+                using (FileStream newTW = new FileStream(ruta, FileMode.OpenOrCreate))
                 {
                     nuevoXml.Serialize(newTW, datos);
                     retorno = true;
@@ -26,11 +26,8 @@ namespace serializadora.Entidades
             }
             catch (Exception e)
             {
-
                 throw new MisExcepciones(e);
             }
-
-
             return retorno;
 
         }

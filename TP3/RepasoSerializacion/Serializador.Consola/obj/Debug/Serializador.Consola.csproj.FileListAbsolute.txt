@@ -38,3 +38,13 @@ D:\Users\Trabajo\Desktop\RepasoSerializacion\Serializador.Consola\obj\Debug\Seri
 D:\Users\Trabajo\Desktop\RepasoSerializacion\Serializador.Consola\obj\Debug\Serializador.Consola.csproj.CopyComplete
 D:\Users\Trabajo\Desktop\RepasoSerializacion\Serializador.Consola\obj\Debug\Serializador.Consola.exe
 D:\Users\Trabajo\Desktop\RepasoSerializacion\Serializador.Consola\obj\Debug\Serializador.Consola.pdb
+D:\Users\Trabajo\Desktop\tp_laboratorio_2\TP3\RepasoSerializacion\Serializador.Consola\bin\Debug\Serializador.Consola.exe.config
+D:\Users\Trabajo\Desktop\tp_laboratorio_2\TP3\RepasoSerializacion\Serializador.Consola\bin\Debug\Serializador.Consola.exe
+D:\Users\Trabajo\Desktop\tp_laboratorio_2\TP3\RepasoSerializacion\Serializador.Consola\bin\Debug\Serializador.Consola.pdb
+D:\Users\Trabajo\Desktop\tp_laboratorio_2\TP3\RepasoSerializacion\Serializador.Consola\bin\Debug\serializadora.Entidades.dll
+D:\Users\Trabajo\Desktop\tp_laboratorio_2\TP3\RepasoSerializacion\Serializador.Consola\bin\Debug\serializadora.Entidades.pdb
+D:\Users\Trabajo\Desktop\tp_laboratorio_2\TP3\RepasoSerializacion\Serializador.Consola\obj\Debug\Serializador.Consola.csprojAssemblyReference.cache
+D:\Users\Trabajo\Desktop\tp_laboratorio_2\TP3\RepasoSerializacion\Serializador.Consola\obj\Debug\Serializador.Consola.csproj.CoreCompileInputs.cache
+D:\Users\Trabajo\Desktop\tp_laboratorio_2\TP3\RepasoSerializacion\Serializador.Consola\obj\Debug\Serializador.Consola.csproj.CopyComplete
+D:\Users\Trabajo\Desktop\tp_laboratorio_2\TP3\RepasoSerializacion\Serializador.Consola\obj\Debug\Serializador.Consola.exe
+D:\Users\Trabajo\Desktop\tp_laboratorio_2\TP3\RepasoSerializacion\Serializador.Consola\obj\Debug\Serializador.Consola.pdb

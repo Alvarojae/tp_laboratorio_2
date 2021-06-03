@@ -9,16 +9,16 @@ namespace serializadora.Entidades
     public class Serializadora<T>
     {
         public string mensaje;
-        public bool Guardar(T t)
+        public bool Guardar(List<T> t)
         {
             bool retorno = false;
 
             try
             {
-                Xml<T> guardarPersona = new Xml<T>();
+                Xml<T> guardarT = new Xml<T>();
 
-                retorno = guardarPersona.Guardar(AppDomain.CurrentDomain.BaseDirectory + @"personas.xml", t);
-                
+                retorno = guardarT.Guardar(AppDomain.CurrentDomain.BaseDirectory + @"Personas.xml", t);
+
             }
             catch (MisExcepciones e)
             {
@@ -33,11 +33,11 @@ namespace serializadora.Entidades
             T t = default(T);
             try
             {
-                Xml<T> leerPersona = new Xml<T>();
+                Xml<T> leerT = new Xml<T>();
 
-                if (leerPersona.Leer(AppDomain.CurrentDomain.BaseDirectory + @"personas.xml", out T auxt))
+                if (leerT.Leer(AppDomain.CurrentDomain.BaseDirectory + @"leche.xml", out T auxT))
                 {
-                    t = auxt;
+                    t = auxT;
                 }
 
             }

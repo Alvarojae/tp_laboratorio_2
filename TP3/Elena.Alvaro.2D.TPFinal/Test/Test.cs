@@ -59,8 +59,8 @@ namespace Test
 
             Console.WriteLine(leche.Informacion());
 
-            Serializadora<Materiales> material = new Serializadora<Materiales>();
-            if (material.Guardar(leche))
+            Serializadora<Materiales> serializadora = new Serializadora<Materiales>();
+            if (serializadora.Guardar(leche))
                 Console.WriteLine("Se guardo con exito");
             else
                 Console.WriteLine("Hubo un problema con el guardado");

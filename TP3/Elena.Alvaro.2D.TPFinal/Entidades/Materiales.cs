@@ -18,6 +18,7 @@ namespace Entidades
         /// <param name="nombre">nombre del materiales</param>
         /// <param name="cantidad">cantidad del materiales</param>
         /// <param name="alimento">si es alimento o no</param>
+        
         public Materiales(string nombre, int cantidad, bool alimento)
         {
             this.nombre = nombre;
@@ -25,6 +26,29 @@ namespace Entidades
             this.alimento = alimento;
         }
 
+        public Materiales()
+        {
+
+
+        }
+
+        public int Cantidad
+        {
+            get { return this.cantidad; }
+            set {this.cantidad = value; }
+        }
+
+        public bool Material
+        {
+            get {return this.alimento;}
+            set { this.alimento = value; }
+        }
+
+        public string Nombre
+        {
+            get { return this.nombre; }
+            set { this.nombre = value; }
+        }
         /// <summary>
         /// Consigue toda la informacion de la clase Materiales y la convierte en string
         /// </summary>
@@ -41,25 +65,7 @@ namespace Entidades
             return this.Informacion();
         }
 
-        public int Cantidad 
-        {
-            get
-            {
-                return this.cantidad;
-            }
-             set
-            {
-                this.cantidad = value;
-            }
-        }
-
-        public bool Material
-        {
-            get
-            {
-                return this.alimento;
-            }
-        }
+   
 
         public bool ConsumirMateriales(int cantidad)
         {
