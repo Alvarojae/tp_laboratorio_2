@@ -54,6 +54,10 @@
       <Project>{a18f5c6f-6242-41d4-bc83-50cecd4c0088}</Project>
       <Name>Entidades</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Serializadora\Serializadora.csproj">
+      <Project>{cb684e6e-5df2-4e44-8038-c4391c5f7e67}</Project>
+      <Name>Serializadora</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

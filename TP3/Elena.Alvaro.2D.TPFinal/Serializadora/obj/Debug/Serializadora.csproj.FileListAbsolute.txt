@@ -1,0 +1,9 @@
+D:\Users\Trabajo\Desktop\tp_laboratorio_2\TP3\Elena.Alvaro.2D.TPFinal\Serializadora\bin\Debug\Serializadora.dll
+D:\Users\Trabajo\Desktop\tp_laboratorio_2\TP3\Elena.Alvaro.2D.TPFinal\Serializadora\bin\Debug\Serializadora.pdb
+D:\Users\Trabajo\Desktop\tp_laboratorio_2\TP3\Elena.Alvaro.2D.TPFinal\Serializadora\bin\Debug\Entidades.dll
+D:\Users\Trabajo\Desktop\tp_laboratorio_2\TP3\Elena.Alvaro.2D.TPFinal\Serializadora\bin\Debug\Entidades.pdb
+D:\Users\Trabajo\Desktop\tp_laboratorio_2\TP3\Elena.Alvaro.2D.TPFinal\Serializadora\obj\Debug\Serializadora.csprojAssemblyReference.cache
+D:\Users\Trabajo\Desktop\tp_laboratorio_2\TP3\Elena.Alvaro.2D.TPFinal\Serializadora\obj\Debug\Serializadora.csproj.CoreCompileInputs.cache
+D:\Users\Trabajo\Desktop\tp_laboratorio_2\TP3\Elena.Alvaro.2D.TPFinal\Serializadora\obj\Debug\Serializadora.csproj.CopyComplete
+D:\Users\Trabajo\Desktop\tp_laboratorio_2\TP3\Elena.Alvaro.2D.TPFinal\Serializadora\obj\Debug\Serializadora.dll
+D:\Users\Trabajo\Desktop\tp_laboratorio_2\TP3\Elena.Alvaro.2D.TPFinal\Serializadora\obj\Debug\Serializadora.pdb

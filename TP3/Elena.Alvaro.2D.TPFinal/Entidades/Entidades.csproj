@@ -46,6 +46,7 @@
     <Compile Include="Herramienta.cs" />
     <Compile Include="IClass.cs" />
     <Compile Include="Materiales.cs" />
+    <Compile Include="MisExcepciones.cs" />
     <Compile Include="Producto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
