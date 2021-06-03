@@ -26,10 +26,17 @@ namespace Test
             bool aux;
             aux = alvaroFabrica + new Alimento(1, 15, 2, "Cindor", 500, 250, "Chocolate");
             aux = alvaroFabrica + new Herramienta(2, 1050, 5, "Pinza multiuso", 560, "Metal", "Black & Decker");
-
             Materiales leche = new Materiales("Leche", 25, true);
-            Materiales hierro = new Materiales("Hierro", 35, false);
-            
+
+            listaMateriales.Add( new Materiales("Leche", 25, true));
+            listaMateriales.Add(new Materiales("Agua", 25, true));
+            listaMateriales.Add(new Materiales("Azucar", 25, true));
+            listaMateriales.Add(new Materiales("Harina", 25, true));
+            listaMateriales.Add(new Materiales("Chocolate", 25, true));
+            listaMateriales.Add(new Materiales("Huevo", 25, true));
+
+
+
             foreach (Producto item in alvaroFabrica.Listaproductos)
             {
                 Console.WriteLine(item.Informacion());
@@ -60,10 +67,14 @@ namespace Test
             Console.WriteLine(leche.Informacion());
 
             Serializadora<Materiales> serializadora = new Serializadora<Materiales>();
-            if (serializadora.Guardar(leche))
-                Console.WriteLine("Se guardo con exito");
-            else
-                Console.WriteLine("Hubo un problema con el guardado");
+            foreach (Materiales item in listaMateriales)
+            {
+                if (serializadora.Guardar(item.Nombre, item))
+                    Console.WriteLine("Se guardo con exito");
+                else
+                    Console.WriteLine("Hubo un problema con el guardado");
+            }
+            
 
             Console.ReadLine();
         }

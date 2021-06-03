@@ -10,14 +10,14 @@ namespace Serializadora
     public class Serializadora<T> : IArchivos<T>
     {
         public string mensaje;
-        public bool Guardar(string Ruta,T t)
+        public bool Guardar(string ruta, T t)
         {
             bool retorno = false;
 
             try
             {
                 Xml<T> guardarT = new Xml<T>();
-                retorno = guardarT.Guardar(AppDomain.CurrentDomain.BaseDirectory + @"leche.xml", t);
+                retorno = guardarT.Guardar(AppDomain.CurrentDomain.BaseDirectory +("Material - " + ruta + ".xml"), t);
             }
             catch (MisExcepciones e)
             {

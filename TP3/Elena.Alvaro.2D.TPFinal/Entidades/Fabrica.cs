@@ -27,10 +27,17 @@ namespace Entidades
         /// <param name="lista">Una lista generica de fabrica</param>
         /// <param name="item"> un item generico</param>
         /// <returns>true</returns>
-        public static bool operator +(Fabrica<T> lista, T item)
+        public static bool operator +(Fabrica<T> lista, T item) 
         {
-            lista.Listaproductos.Add(item);
-            return true;
+            try
+            {
+                lista.Listaproductos.Add(item);
+                return true;
+            }catch(Exception)
+            {
+                return false;
+            }
+            
         }
     }
 }

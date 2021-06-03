@@ -82,6 +82,8 @@ namespace TP_03
             {
                 if (ValidarCasillas(1))
                 {
+                    try 
+                    {
                     Alimento aux = new Alimento((int)nudId.Value, (int)nudValor.Value, (int)nudStock.Value, tbNombre.Text, (int)nudPeso.Value, (int)nudCalorias.Value, tbSabor.Text);
                     if (((Materiales)cmbIngredientes.SelectedItem).ConsumirMateriales((int)nudStock.Value) && alvaroFabrica + aux)
                     {
@@ -90,6 +92,11 @@ namespace TP_03
                         CleanAll();
                     }else
                         MessageBox.Show("No tiene suficiente materiales para crear el producto", "Error");
+                    }catch(Exception)
+                    {
+                        MessageBox.Show("Hubo un problema con los datos ingresados", "Error");
+                    }
+
                 }
 
 
