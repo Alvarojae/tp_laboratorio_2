@@ -27,14 +27,14 @@ namespace Serializadora
             return retorno;
         }
 
-        public T Leer()
+        public T Leer(string ruta)
         {
             T t = default(T);
             try
             {
                 Xml<T> leerT = new Xml<T>();
 
-                if (leerT.Leer(AppDomain.CurrentDomain.BaseDirectory + @"leche.xml", out T auxT))
+                if (leerT.Leer(AppDomain.CurrentDomain.BaseDirectory + ("Material - " + ruta + ".xml"), out T auxT))
                 {
                     t = auxT;
                 }

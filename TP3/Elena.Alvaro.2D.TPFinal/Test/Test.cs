@@ -24,9 +24,14 @@ namespace Test
             Fabrica<Producto> alvaroFabrica = new Fabrica<Producto>("Alvaro");
             List<Materiales> listaMateriales = new List<Materiales>();
             bool aux;
-            aux = alvaroFabrica + new Alimento(1, 15, 2, "Cindor", 500, 250, "Chocolate");
+            Alimento cindor30 = new Alimento(1, 15, 30, "Cindor", 500, 250, "Chocolate");
+
+            Alimento cindor23 = new Alimento(1, 15, 23, "Cindor", 500, 250, "Chocolate");
+
+            aux = alvaroFabrica + cindor30;
             aux = alvaroFabrica + new Herramienta(2, 1050, 5, "Pinza multiuso", 560, "Metal", "Black & Decker");
-            Materiales leche = new Materiales("Leche", 25, true);
+            Materiales leche25 = new Materiales("Leche", 25, true);
+
 
             listaMateriales.Add( new Materiales("Leche", 25, true));
             listaMateriales.Add(new Materiales("Agua", 25, true));
@@ -50,7 +55,7 @@ namespace Test
             }
 
             Console.WriteLine("Se intenta de crear 30 paquetes de cindor - Con solamente 25 de leche");
-            if (leche.ConsumirMateriales(30))
+            if (leche25.ConsumirMateriales(cindor30))
                 Console.WriteLine("Se crearon correctamente");
             else
                 Console.WriteLine("No hay suficiente materiales");
@@ -59,12 +64,12 @@ namespace Test
             Console.ReadLine();
 
             Console.WriteLine("Se intenta de crear 23 paquetes de cindor - Con solamente 25 de leche");
-            if (leche.ConsumirMateriales(23))
+            if (leche25.ConsumirMateriales(cindor23))
                 Console.WriteLine("Se crearon correctamente");
             else
                 Console.WriteLine("No hay suficiente materiales");
 
-            Console.WriteLine(leche.Informacion());
+            Console.WriteLine(leche25.Informacion());
 
             Serializadora<Materiales> serializadora = new Serializadora<Materiales>();
             foreach (Materiales item in listaMateriales)

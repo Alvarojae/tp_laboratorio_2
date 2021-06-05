@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
+using Serializadora;
 
 namespace TP_03
 {
@@ -21,20 +22,29 @@ namespace TP_03
         Fabrica<Producto> alvaroFabrica = new Fabrica<Producto>("Alvaro");
         List<Materiales> listaMateriales = new List<Materiales>();
 
-  
+        List<string> nombreMateriales = new List<string>();
 
         private void FrmFabrica_Load(object sender, EventArgs e)
         {
+            /*
             listaMateriales.Add(new Materiales("Harina", 25, true));
-            listaMateriales.Add(new Materiales("Leche", 25, true));
-            listaMateriales.Add(new Materiales("Chocolate", 25, true));
+            listaMateriales.Add(new Materiales("Leche", 30, true));
+            listaMateriales.Add(new Materiales("Chocolate", 35, true));
 
             listaMateriales.Add(new Materiales("Hierro", 35, false));
-            listaMateriales.Add(new Materiales("Aluminio", 35, false)); 
-            listaMateriales.Add(new Materiales("Cobre", 35, false));
-
+            listaMateriales.Add(new Materiales("Aluminio", 40, false)); 
+            listaMateriales.Add(new Materiales("Cobre", 45, false));
+            */
             ActualizarMateriales();
-            
+
+            nombreMateriales.Add("Harina");
+            nombreMateriales.Add("Leche");
+            nombreMateriales.Add("Chocolate");
+            nombreMateriales.Add("Hierro");
+            nombreMateriales.Add("Aluminio");
+            nombreMateriales.Add("Cobre");
+
+
         }
 
 
@@ -85,7 +95,7 @@ namespace TP_03
                     try 
                     {
                     Alimento aux = new Alimento((int)nudId.Value, (int)nudValor.Value, (int)nudStock.Value, tbNombre.Text, (int)nudPeso.Value, (int)nudCalorias.Value, tbSabor.Text);
-                    if (((Materiales)cmbIngredientes.SelectedItem).ConsumirMateriales((int)nudStock.Value) && alvaroFabrica + aux)
+                    if (((Materiales)cmbIngredientes.SelectedItem).ConsumirMateriales(aux) && alvaroFabrica + aux)
                     {
                         lstProductos.Items.Add(aux);
                         MessageBox.Show("Se agreo correctamente un alimento");
@@ -108,7 +118,7 @@ namespace TP_03
                 if(ValidarCasillas(0))
                 {
                     Herramienta aux = new Herramienta((int)nudId.Value, (int)nudValor.Value, (int)nudStock.Value, tbNombre.Text, (int)nudPeso.Value, tbMaterial.Text, tbMarca.Text);
-                    if (((Materiales)cmbIngredientes.SelectedItem).ConsumirMateriales((int)nudStock.Value) && alvaroFabrica + aux)
+                    if (((Materiales)cmbIngredientes.SelectedItem).ConsumirMateriales(aux) && alvaroFabrica + aux)
                     {
                         lstProductos.Items.Add(aux);
                         MessageBox.Show("Se agreo correctamente una herramienta");
@@ -249,5 +259,34 @@ namespace TP_03
             }
         }
 
+        private void btnCargarMateriales_Click(object sender, EventArgs e)
+        {
+            Serializadora<Materiales> serializadora = new Serializadora<Materiales>();
+            foreach (string nombre in nombreMateriales)
+            {
+                listaMateriales.Add((Materiales)serializadora.Leer(nombre));
+            }
+            ActualizarMateriales();
+        }
+
+        private void btnGuardarMateriales_Click(object sender, EventArgs e)
+        {
+            Serializadora<Materiales> serializadora = new Serializadora<Materiales>();
+            foreach (Materiales item in listaMateriales)
+            {
+                if (!(serializadora.Guardar(item.Nombre, item)))
+                    Console.WriteLine("Hubo un problema con el guardado");
+            }
+        }
+
+        private void btnAgregarMateriales_Click(object sender, EventArgs e)
+        {
+            if(lstMateriales.SelectedItem != null)
+            {
+                Materiales aux = (Materiales)lstMateriales.SelectedItem;
+                aux.Cantidad = aux.Cantidad + 10;
+                ActualizarMateriales();
+            }
+        }
     }
 }

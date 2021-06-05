@@ -67,12 +67,15 @@ namespace Entidades
 
    
 
-        public bool ConsumirMateriales(int cantidad)
+        public bool ConsumirMateriales(Producto producto)
         {
-            if(this.Cantidad>= cantidad)
+            if((this.alimento==true && producto is Alimento) || (this.alimento == false && producto is Herramienta))
             {
-                this.Cantidad = this.Cantidad - cantidad;
-                return true;
+                if (this.Cantidad >= producto.Cantidad)
+                {
+                    this.Cantidad = this.Cantidad - producto.Cantidad;
+                    return true;
+                }   
             }
             return false;
         }

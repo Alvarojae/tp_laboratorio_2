@@ -20,3 +20,5 @@ C:\Users\Alvaro\Desktop\tp_laboratorio_2\TP3\Elena.Alvaro.2D.TPFinal\Test\obj\De
 C:\Users\Alvaro\Desktop\tp_laboratorio_2\TP3\Elena.Alvaro.2D.TPFinal\Test\obj\Debug\Test.pdb
 D:\Users\Trabajo\Desktop\tp_laboratorio_2\TP3\Elena.Alvaro.2D.TPFinal\Test\bin\Debug\Serializadora.dll
 D:\Users\Trabajo\Desktop\tp_laboratorio_2\TP3\Elena.Alvaro.2D.TPFinal\Test\bin\Debug\Serializadora.pdb
+C:\Users\Alvaro\Desktop\tp_laboratorio_2\TP3\Elena.Alvaro.2D.TPFinal\Test\bin\Debug\Serializadora.dll
+C:\Users\Alvaro\Desktop\tp_laboratorio_2\TP3\Elena.Alvaro.2D.TPFinal\Test\bin\Debug\Serializadora.pdb

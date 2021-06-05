@@ -50,5 +50,8 @@ namespace Entidades
         {
             return this.nombre;
         }
+
+        public int Stock { get { return this.stock; } }
+        public int Cantidad { get { return this.stock; } }
     }
 }

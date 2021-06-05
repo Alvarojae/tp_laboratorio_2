@@ -57,6 +57,9 @@ namespace TP_03
             this.cmbIngredientes = new System.Windows.Forms.ComboBox();
             this.lblMaterial = new System.Windows.Forms.Label();
             this.tbMaterial = new System.Windows.Forms.TextBox();
+            this.btnCargarMateriales = new System.Windows.Forms.Button();
+            this.btnGuardarMateriales = new System.Windows.Forms.Button();
+            this.btnAgregarMateriales = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPeso)).BeginInit();
@@ -69,7 +72,7 @@ namespace TP_03
             this.lstProductos.FormattingEnabled = true;
             this.lstProductos.Location = new System.Drawing.Point(415, 12);
             this.lstProductos.Name = "lstProductos";
-            this.lstProductos.Size = new System.Drawing.Size(314, 472);
+            this.lstProductos.Size = new System.Drawing.Size(314, 446);
             this.lstProductos.TabIndex = 9;
             // 
             // btnGuardarInforme
@@ -303,7 +306,7 @@ namespace TP_03
             // lstMateriales
             // 
             this.lstMateriales.FormattingEnabled = true;
-            this.lstMateriales.Location = new System.Drawing.Point(735, 259);
+            this.lstMateriales.Location = new System.Drawing.Point(735, 99);
             this.lstMateriales.Name = "lstMateriales";
             this.lstMateriales.Size = new System.Drawing.Size(280, 225);
             this.lstMateriales.TabIndex = 37;
@@ -333,11 +336,44 @@ namespace TP_03
             this.tbMaterial.Size = new System.Drawing.Size(117, 20);
             this.tbMaterial.TabIndex = 10;
             // 
+            // btnCargarMateriales
+            // 
+            this.btnCargarMateriales.Location = new System.Drawing.Point(735, 380);
+            this.btnCargarMateriales.Name = "btnCargarMateriales";
+            this.btnCargarMateriales.Size = new System.Drawing.Size(280, 36);
+            this.btnCargarMateriales.TabIndex = 38;
+            this.btnCargarMateriales.Text = "Cargar Materiales";
+            this.btnCargarMateriales.UseVisualStyleBackColor = true;
+            this.btnCargarMateriales.Click += new System.EventHandler(this.btnCargarMateriales_Click);
+            // 
+            // btnGuardarMateriales
+            // 
+            this.btnGuardarMateriales.Location = new System.Drawing.Point(735, 422);
+            this.btnGuardarMateriales.Name = "btnGuardarMateriales";
+            this.btnGuardarMateriales.Size = new System.Drawing.Size(280, 36);
+            this.btnGuardarMateriales.TabIndex = 39;
+            this.btnGuardarMateriales.Text = "Guardar Materiales";
+            this.btnGuardarMateriales.UseVisualStyleBackColor = true;
+            this.btnGuardarMateriales.Click += new System.EventHandler(this.btnGuardarMateriales_Click);
+            // 
+            // btnAgregarMateriales
+            // 
+            this.btnAgregarMateriales.Location = new System.Drawing.Point(735, 338);
+            this.btnAgregarMateriales.Name = "btnAgregarMateriales";
+            this.btnAgregarMateriales.Size = new System.Drawing.Size(280, 36);
+            this.btnAgregarMateriales.TabIndex = 40;
+            this.btnAgregarMateriales.Text = "Agregar Materiales";
+            this.btnAgregarMateriales.UseVisualStyleBackColor = true;
+            this.btnAgregarMateriales.Click += new System.EventHandler(this.btnAgregarMateriales_Click);
+            // 
             // FrmFabrica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1027, 507);
+            this.Controls.Add(this.btnAgregarMateriales);
+            this.Controls.Add(this.btnGuardarMateriales);
+            this.Controls.Add(this.btnCargarMateriales);
             this.Controls.Add(this.cmbIngredientes);
             this.Controls.Add(this.lstMateriales);
             this.Controls.Add(this.btMostrar);
@@ -410,6 +446,9 @@ namespace TP_03
         private System.Windows.Forms.ComboBox cmbIngredientes;
         private System.Windows.Forms.Label lblMaterial;
         private System.Windows.Forms.TextBox tbMaterial;
+        private System.Windows.Forms.Button btnCargarMateriales;
+        private System.Windows.Forms.Button btnGuardarMateriales;
+        private System.Windows.Forms.Button btnAgregarMateriales;
     }
 }
 
