@@ -4,7 +4,7 @@ using Entidades;
 namespace Test_Unitario
 {
     [TestClass]
-    public class UnitTest1
+    public class TestUnitario
     {
         [TestMethod]
         public void CreacionDeUnProductoAlimentoExistoso()
@@ -39,7 +39,8 @@ namespace Test_Unitario
             bool resultado = herramienta.ConsumirMateriales(aux);
 
             Assert.AreEqual(false, resultado);
-
         }
+
+
     }
 }

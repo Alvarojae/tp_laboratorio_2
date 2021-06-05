@@ -27,6 +27,7 @@ namespace Entidades
         public override string Informacion()
         {
             StringBuilder sb = new StringBuilder();
+            sb.AppendLine("\nAlimento");
             sb.Append(base.Informacion());
             sb.AppendLine($"Calorias: {this.calorias}");
             sb.AppendLine($"Sabor: {this.sabor}");

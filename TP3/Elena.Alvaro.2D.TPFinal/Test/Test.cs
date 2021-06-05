@@ -63,7 +63,7 @@ namespace Test
             Console.WriteLine("Enter para continuar");
             Console.ReadLine();
 
-            Console.WriteLine("Se intenta de crear 23 paquetes de cindor - Con solamente 25 de leche");
+            Console.WriteLine("Se intenta de crear 23 paquetes de cindor - Con 25 de leche");
             if (leche25.ConsumirMateriales(cindor23))
                 Console.WriteLine("Se crearon correctamente");
             else
@@ -71,6 +71,10 @@ namespace Test
 
             Console.WriteLine(leche25.Informacion());
 
+            Console.WriteLine("Enter para continuar");
+            Console.ReadLine();
+
+            Console.WriteLine("Se guardan los materiales serializandolos");
             Serializadora<Materiales> serializadora = new Serializadora<Materiales>();
             foreach (Materiales item in listaMateriales)
             {

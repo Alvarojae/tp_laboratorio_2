@@ -31,7 +31,6 @@ namespace TP_03
         {
             this.lstProductos = new System.Windows.Forms.ListBox();
             this.btnGuardarInforme = new System.Windows.Forms.Button();
-            this.btnVerInforme = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.rbComida = new System.Windows.Forms.RadioButton();
             this.rbHerramienta = new System.Windows.Forms.RadioButton();
@@ -60,6 +59,9 @@ namespace TP_03
             this.btnCargarMateriales = new System.Windows.Forms.Button();
             this.btnGuardarMateriales = new System.Windows.Forms.Button();
             this.btnAgregarMateriales = new System.Windows.Forms.Button();
+            this.lblProductos = new System.Windows.Forms.Label();
+            this.lbMateriales = new System.Windows.Forms.Label();
+            this.lblInformacion = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPeso)).BeginInit();
@@ -70,9 +72,9 @@ namespace TP_03
             // lstProductos
             // 
             this.lstProductos.FormattingEnabled = true;
-            this.lstProductos.Location = new System.Drawing.Point(415, 12);
+            this.lstProductos.Location = new System.Drawing.Point(432, 25);
             this.lstProductos.Name = "lstProductos";
-            this.lstProductos.Size = new System.Drawing.Size(314, 446);
+            this.lstProductos.Size = new System.Drawing.Size(280, 290);
             this.lstProductos.TabIndex = 9;
             // 
             // btnGuardarInforme
@@ -83,20 +85,11 @@ namespace TP_03
             this.btnGuardarInforme.TabIndex = 7;
             this.btnGuardarInforme.Text = "Guardar Informe";
             this.btnGuardarInforme.UseVisualStyleBackColor = true;
-            // 
-            // btnVerInforme
-            // 
-            this.btnVerInforme.Location = new System.Drawing.Point(15, 289);
-            this.btnVerInforme.Name = "btnVerInforme";
-            this.btnVerInforme.Size = new System.Drawing.Size(397, 35);
-            this.btnVerInforme.TabIndex = 6;
-            this.btnVerInforme.Text = "Ver Informe";
-            this.btnVerInforme.UseVisualStyleBackColor = true;
-            this.btnVerInforme.Click += new System.EventHandler(this.btnVerInforme_Click);
+            this.btnGuardarInforme.Click += new System.EventHandler(this.btnGuardarInforme_Click);
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(15, 248);
+            this.btnAgregar.Location = new System.Drawing.Point(15, 280);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(397, 35);
             this.btnAgregar.TabIndex = 13;
@@ -107,6 +100,7 @@ namespace TP_03
             // rbComida
             // 
             this.rbComida.AutoSize = true;
+            this.rbComida.Enabled = false;
             this.rbComida.Location = new System.Drawing.Point(159, 30);
             this.rbComida.Name = "rbComida";
             this.rbComida.Size = new System.Drawing.Size(70, 17);
@@ -119,6 +113,7 @@ namespace TP_03
             // rbHerramienta
             // 
             this.rbHerramienta.AutoSize = true;
+            this.rbHerramienta.Enabled = false;
             this.rbHerramienta.Location = new System.Drawing.Point(292, 30);
             this.rbHerramienta.Name = "rbHerramienta";
             this.rbHerramienta.Size = new System.Drawing.Size(87, 17);
@@ -295,7 +290,7 @@ namespace TP_03
             // 
             // btMostrar
             // 
-            this.btMostrar.Location = new System.Drawing.Point(735, 12);
+            this.btMostrar.Location = new System.Drawing.Point(432, 330);
             this.btMostrar.Name = "btMostrar";
             this.btMostrar.Size = new System.Drawing.Size(280, 35);
             this.btMostrar.TabIndex = 36;
@@ -306,9 +301,9 @@ namespace TP_03
             // lstMateriales
             // 
             this.lstMateriales.FormattingEnabled = true;
-            this.lstMateriales.Location = new System.Drawing.Point(735, 99);
+            this.lstMateriales.Location = new System.Drawing.Point(735, 25);
             this.lstMateriales.Name = "lstMateriales";
-            this.lstMateriales.Size = new System.Drawing.Size(280, 225);
+            this.lstMateriales.Size = new System.Drawing.Size(280, 199);
             this.lstMateriales.TabIndex = 37;
             // 
             // cmbIngredientes
@@ -338,9 +333,10 @@ namespace TP_03
             // 
             // btnCargarMateriales
             // 
-            this.btnCargarMateriales.Location = new System.Drawing.Point(735, 380);
+            this.btnCargarMateriales.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.btnCargarMateriales.Location = new System.Drawing.Point(735, 280);
             this.btnCargarMateriales.Name = "btnCargarMateriales";
-            this.btnCargarMateriales.Size = new System.Drawing.Size(280, 36);
+            this.btnCargarMateriales.Size = new System.Drawing.Size(280, 35);
             this.btnCargarMateriales.TabIndex = 38;
             this.btnCargarMateriales.Text = "Cargar Materiales";
             this.btnCargarMateriales.UseVisualStyleBackColor = true;
@@ -348,9 +344,10 @@ namespace TP_03
             // 
             // btnGuardarMateriales
             // 
-            this.btnGuardarMateriales.Location = new System.Drawing.Point(735, 422);
+            this.btnGuardarMateriales.Enabled = false;
+            this.btnGuardarMateriales.Location = new System.Drawing.Point(735, 330);
             this.btnGuardarMateriales.Name = "btnGuardarMateriales";
-            this.btnGuardarMateriales.Size = new System.Drawing.Size(280, 36);
+            this.btnGuardarMateriales.Size = new System.Drawing.Size(280, 35);
             this.btnGuardarMateriales.TabIndex = 39;
             this.btnGuardarMateriales.Text = "Guardar Materiales";
             this.btnGuardarMateriales.UseVisualStyleBackColor = true;
@@ -358,19 +355,49 @@ namespace TP_03
             // 
             // btnAgregarMateriales
             // 
-            this.btnAgregarMateriales.Location = new System.Drawing.Point(735, 338);
+            this.btnAgregarMateriales.Enabled = false;
+            this.btnAgregarMateriales.Location = new System.Drawing.Point(735, 230);
             this.btnAgregarMateriales.Name = "btnAgregarMateriales";
-            this.btnAgregarMateriales.Size = new System.Drawing.Size(280, 36);
+            this.btnAgregarMateriales.Size = new System.Drawing.Size(280, 35);
             this.btnAgregarMateriales.TabIndex = 40;
-            this.btnAgregarMateriales.Text = "Agregar Materiales";
+            this.btnAgregarMateriales.Text = "Recargar materiales";
             this.btnAgregarMateriales.UseVisualStyleBackColor = true;
             this.btnAgregarMateriales.Click += new System.EventHandler(this.btnAgregarMateriales_Click);
+            // 
+            // lblProductos
+            // 
+            this.lblProductos.AutoSize = true;
+            this.lblProductos.Location = new System.Drawing.Point(429, 9);
+            this.lblProductos.Name = "lblProductos";
+            this.lblProductos.Size = new System.Drawing.Size(55, 13);
+            this.lblProductos.TabIndex = 41;
+            this.lblProductos.Text = "Productos";
+            // 
+            // lbMateriales
+            // 
+            this.lbMateriales.AutoSize = true;
+            this.lbMateriales.Location = new System.Drawing.Point(732, 9);
+            this.lbMateriales.Name = "lbMateriales";
+            this.lbMateriales.Size = new System.Drawing.Size(55, 13);
+            this.lbMateriales.TabIndex = 42;
+            this.lbMateriales.Text = "Materiales";
+            // 
+            // lblInformacion
+            // 
+            this.lblInformacion.AutoSize = true;
+            this.lblInformacion.Location = new System.Drawing.Point(156, 224);
+            this.lblInformacion.Name = "lblInformacion";
+            this.lblInformacion.Size = new System.Drawing.Size(0, 13);
+            this.lblInformacion.TabIndex = 43;
             // 
             // FrmFabrica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1027, 507);
+            this.ClientSize = new System.Drawing.Size(1027, 383);
+            this.Controls.Add(this.lblInformacion);
+            this.Controls.Add(this.lbMateriales);
+            this.Controls.Add(this.lblProductos);
             this.Controls.Add(this.btnAgregarMateriales);
             this.Controls.Add(this.btnGuardarMateriales);
             this.Controls.Add(this.btnCargarMateriales);
@@ -400,7 +427,6 @@ namespace TP_03
             this.Controls.Add(this.rbComida);
             this.Controls.Add(this.lstProductos);
             this.Controls.Add(this.btnGuardarInforme);
-            this.Controls.Add(this.btnVerInforme);
             this.Controls.Add(this.btnAgregar);
             this.Name = "FrmFabrica";
             this.Text = "Tp3 - Alvaro Elena 2D";
@@ -420,7 +446,6 @@ namespace TP_03
 
         private System.Windows.Forms.ListBox lstProductos;
         private System.Windows.Forms.Button btnGuardarInforme;
-        private System.Windows.Forms.Button btnVerInforme;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.RadioButton rbComida;
         private System.Windows.Forms.RadioButton rbHerramienta;
@@ -449,6 +474,9 @@ namespace TP_03
         private System.Windows.Forms.Button btnCargarMateriales;
         private System.Windows.Forms.Button btnGuardarMateriales;
         private System.Windows.Forms.Button btnAgregarMateriales;
+        private System.Windows.Forms.Label lblProductos;
+        private System.Windows.Forms.Label lbMateriales;
+        private System.Windows.Forms.Label lblInformacion;
     }
 }
 

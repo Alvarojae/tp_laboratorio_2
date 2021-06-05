@@ -25,6 +25,7 @@ namespace Entidades
         public override string Informacion()
         {
             StringBuilder sb = new StringBuilder();
+            sb.AppendLine("\nHerramienta");
             sb.Append(base.Informacion());
             sb.AppendLine($"Material: {this.material}");
             sb.AppendLine($"Marca: {this.marca}");

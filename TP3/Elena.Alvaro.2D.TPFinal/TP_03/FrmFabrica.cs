@@ -26,17 +26,9 @@ namespace TP_03
 
         private void FrmFabrica_Load(object sender, EventArgs e)
         {
-            /*
-            listaMateriales.Add(new Materiales("Harina", 25, true));
-            listaMateriales.Add(new Materiales("Leche", 30, true));
-            listaMateriales.Add(new Materiales("Chocolate", 35, true));
-
-            listaMateriales.Add(new Materiales("Hierro", 35, false));
-            listaMateriales.Add(new Materiales("Aluminio", 40, false)); 
-            listaMateriales.Add(new Materiales("Cobre", 45, false));
-            */
+            cmbIngredientes.DropDownStyle = ComboBoxStyle.DropDownList;
             ActualizarMateriales();
-
+            lblInformacion.Text = "Es necesario cargar los Materiales para poder continuar";
             nombreMateriales.Add("Harina");
             nombreMateriales.Add("Leche");
             nombreMateriales.Add("Chocolate");
@@ -69,7 +61,7 @@ namespace TP_03
 
         private void rbComida_MouseClick(object sender, MouseEventArgs e)
         {
-            ActivarBotones(1);
+             ActivarBotones(1);
         }
 
         /// <summary>
@@ -242,7 +234,8 @@ namespace TP_03
             tbSabor.Enabled = false;
             tbMaterial.Enabled = false;
             tbMarca.Enabled = false;
-
+            
+                
             if (estado == 1)
             {
                 ActualizarIngredientes(estado);
@@ -267,6 +260,12 @@ namespace TP_03
                 listaMateriales.Add((Materiales)serializadora.Leer(nombre));
             }
             ActualizarMateriales();
+            btnCargarMateriales.Enabled = false;
+            btnAgregarMateriales.Enabled = true;
+            btnGuardarMateriales.Enabled = true;
+            lblInformacion.Text = "";
+            rbComida.Enabled = true;
+            rbHerramienta.Enabled = true;
         }
 
         private void btnGuardarMateriales_Click(object sender, EventArgs e)
@@ -275,7 +274,7 @@ namespace TP_03
             foreach (Materiales item in listaMateriales)
             {
                 if (!(serializadora.Guardar(item.Nombre, item)))
-                    Console.WriteLine("Hubo un problema con el guardado");
+                    MessageBox.Show("No se pudo guardar uno de los materiales", "Error");
             }
         }
 
@@ -286,7 +285,19 @@ namespace TP_03
                 Materiales aux = (Materiales)lstMateriales.SelectedItem;
                 aux.Cantidad = aux.Cantidad + 10;
                 ActualizarMateriales();
+            }else
+                MessageBox.Show("No seleccionaste ningun material", "Error");
+        }
+
+        private void btnGuardarInforme_Click(object sender, EventArgs e)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            foreach (Producto item in alvaroFabrica.Listaproductos)
+            {
+                sb.Append(item.Informacion());
             }
+            Texto.EscribirTexto(sb.ToString());
         }
     }
 }
