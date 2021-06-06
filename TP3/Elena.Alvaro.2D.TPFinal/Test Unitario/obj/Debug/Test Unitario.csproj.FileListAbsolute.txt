@@ -17,3 +17,5 @@ C:\Users\Alvaro\Desktop\tp_laboratorio_2\TP3\Elena.Alvaro.2D.TPFinal\Test Unitar
 C:\Users\Alvaro\Desktop\tp_laboratorio_2\TP3\Elena.Alvaro.2D.TPFinal\Test Unitario\obj\Debug\Test Unitario.csproj.CopyComplete
 C:\Users\Alvaro\Desktop\tp_laboratorio_2\TP3\Elena.Alvaro.2D.TPFinal\Test Unitario\obj\Debug\Test Unitario.dll
 C:\Users\Alvaro\Desktop\tp_laboratorio_2\TP3\Elena.Alvaro.2D.TPFinal\Test Unitario\obj\Debug\Test Unitario.pdb
+C:\Users\Alvaro\Desktop\tp_laboratorio_2\TP3\Elena.Alvaro.2D.TPFinal\Test Unitario\bin\Debug\Serializadora.dll
+C:\Users\Alvaro\Desktop\tp_laboratorio_2\TP3\Elena.Alvaro.2D.TPFinal\Test Unitario\bin\Debug\Serializadora.pdb

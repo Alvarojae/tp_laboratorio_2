@@ -21,8 +21,8 @@ namespace TP_03
         }
         Fabrica<Producto> alvaroFabrica = new Fabrica<Producto>("Alvaro");
         List<Materiales> listaMateriales = new List<Materiales>();
-
         List<string> nombreMateriales = new List<string>();
+        static int id = 1;
 
         private void FrmFabrica_Load(object sender, EventArgs e)
         {
@@ -86,16 +86,17 @@ namespace TP_03
                 {
                     try 
                     {
-                    Alimento aux = new Alimento((int)nudId.Value, (int)nudValor.Value, (int)nudStock.Value, tbNombre.Text, (int)nudPeso.Value, (int)nudCalorias.Value, tbSabor.Text);
-                    if (((Materiales)cmbIngredientes.SelectedItem).ConsumirMateriales(aux) && alvaroFabrica + aux)
-                    {
-                        lstProductos.Items.Add(aux);
-                        MessageBox.Show("Se agreo correctamente un alimento");
-                        CleanAll();
-                    }else
-                        MessageBox.Show("No tiene suficiente materiales para crear el producto", "Error");
+                        Alimento aux = new Alimento(id, (int)nudValor.Value, (int)nudStock.Value, tbNombre.Text, (int)nudPeso.Value, (int)nudCalorias.Value, tbSabor.Text);
+                        if (((Materiales)cmbIngredientes.SelectedItem).ConsumirMateriales(aux) && alvaroFabrica + aux)
+                        {
+                            lstProductos.Items.Add(aux);
+                            id++;
+                            MessageBox.Show("Se agreo correctamente un alimento");
+                        }else
+                            MessageBox.Show("No tiene suficiente materiales para crear el producto", "Error");
                     }catch(Exception)
                     {
+                        Texto.EscribirExcepciones("Hubo un problema con los datos ingresados");
                         MessageBox.Show("Hubo un problema con los datos ingresados", "Error");
                     }
 
@@ -109,20 +110,28 @@ namespace TP_03
             {
                 if(ValidarCasillas(0))
                 {
-                    Herramienta aux = new Herramienta((int)nudId.Value, (int)nudValor.Value, (int)nudStock.Value, tbNombre.Text, (int)nudPeso.Value, tbMaterial.Text, tbMarca.Text);
+                    try
+                    {
+                        Herramienta aux = new Herramienta(id, (int)nudValor.Value, (int)nudStock.Value, tbNombre.Text, (int)nudPeso.Value, tbMaterial.Text, tbMarca.Text);
                     if (((Materiales)cmbIngredientes.SelectedItem).ConsumirMateriales(aux) && alvaroFabrica + aux)
                     {
                         lstProductos.Items.Add(aux);
+                        id++;
                         MessageBox.Show("Se agreo correctamente una herramienta");
-                        CleanAll();
                     }else
                         MessageBox.Show("No tiene suficiente materiales para crear el producto", "Error");
+                    }
+                    catch (Exception)
+                    {
+                        Texto.EscribirExcepciones("Hubo un problema con los datos ingresados");
+                        MessageBox.Show("Hubo un problema con los datos ingresados", "Error");
+                    }
                 }
-               
             }
             else
                 MessageBox.Show("Es necesario marcar un tipo de producto", "Error");
 
+            CleanAll();
             ActualizarMateriales();
             ActivarBotones(3);
         }
@@ -152,7 +161,7 @@ namespace TP_03
         /// <returns></returns>
         private bool ValidarCasillas(int tipoDeProducto)
         {
-            if (nudId.Value != 0 && nudValor.Value != 0 && nudStock.Value != 0 && tbNombre.Text != "" && nudPeso.Value != 0 && cmbIngredientes.Text != "")
+            if (nudValor.Value != 0 && nudStock.Value != 0 && tbNombre.Text != "" && nudPeso.Value != 0 && cmbIngredientes.Text != "")
             {
                 if (tipoDeProducto == 0 && tbMaterial.Text != "" && tbMarca.Text != "")
                     return true;
@@ -168,25 +177,7 @@ namespace TP_03
 
         }
 
-        /// <summary>
-        /// Limpia todo los valores del form
-        /// </summary>
-        private void CleanAll()
-        {
-            nudId.Value = 0;
-            nudValor.Value = 0;
-            nudStock.Value = 0;
-            tbNombre.Text = "";
-            nudPeso.Value = 0;
-
-            nudCalorias.Value = 0;
-            tbSabor.Text = "";
-
-            tbMaterial.Text = "";
-            tbMarca.Text = "";
-
-            cmbIngredientes.Text = "";
-        }
+     
 
         private void btnVerInforme_Click(object sender, EventArgs e)
         {
@@ -199,13 +190,20 @@ namespace TP_03
         /// </summary>
         private void ActualizarMateriales()
         {
-            lstMateriales.Items.Clear();
-            foreach (Materiales item in listaMateriales)
+            try
             {
-                lstMateriales.Items.Add(item);
-                
+                lstMateriales.Items.Clear();
+                foreach (Materiales item in listaMateriales)
+                {
+                    lstMateriales.Items.Add(item);
+                }
+            }catch(Exception)
+            {
+                MessageBox.Show("Hubo un error al intentar actualizar la lista ");
+                Texto.EscribirExcepciones("Hubo un problema con actualizar la lista");
             }
         }
+           
 
         /// <summary>
         /// Actualiza el ComboBox segun el estado recibido
@@ -225,11 +223,33 @@ namespace TP_03
 
 
         /// <summary>
+        /// Limpia todo los valores del form
+        /// </summary>
+        private void CleanAll()
+        {
+            nudValor.Value = 0;
+            nudStock.Value = 0;
+            tbNombre.Text = "";
+            nudPeso.Value = 0;
+
+            nudCalorias.Value = 0;
+            tbSabor.Text = "";
+
+            tbMaterial.Text = "";
+            tbMarca.Text = "";
+
+            cmbIngredientes.Text = "";
+            rbHerramienta.Checked = false;
+            rbComida.Checked = false;
+        }
+
+        /// <summary>
         /// Activa los botones segun el parametro recibido
         /// </summary>
         /// <param name="estado">1-Alimentos | 2-Herrramientas</param>
         protected void ActivarBotones(int estado)
         {
+            
             nudCalorias.Enabled = false;
             tbSabor.Enabled = false;
             tbMaterial.Enabled = false;
@@ -252,6 +272,11 @@ namespace TP_03
             }
         }
 
+        /// <summary>
+        /// Boton que carga los materiales
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCargarMateriales_Click(object sender, EventArgs e)
         {
             Serializadora<Materiales> serializadora = new Serializadora<Materiales>();
@@ -268,6 +293,11 @@ namespace TP_03
             rbHerramienta.Enabled = true;
         }
 
+        /// <summary>
+        /// Boton que guarda los materiales
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnGuardarMateriales_Click(object sender, EventArgs e)
         {
             Serializadora<Materiales> serializadora = new Serializadora<Materiales>();
@@ -278,6 +308,11 @@ namespace TP_03
             }
         }
 
+        /// <summary>
+        /// Boton que agrega los materiales 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAgregarMateriales_Click(object sender, EventArgs e)
         {
             if(lstMateriales.SelectedItem != null)
@@ -289,6 +324,11 @@ namespace TP_03
                 MessageBox.Show("No seleccionaste ningun material", "Error");
         }
 
+        /// <summary>
+        /// Boton que guarda el informe  de productos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnGuardarInforme_Click(object sender, EventArgs e)
         {
             StringBuilder sb = new StringBuilder();

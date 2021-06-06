@@ -28,8 +28,6 @@ namespace Entidades
 
         public Materiales()
         {
-
-
         }
 
         public int Cantidad
@@ -66,7 +64,11 @@ namespace Entidades
         }
 
    
-
+        /// <summary>
+        /// Comprueba que es capas de crear un producto segun la cantidad de productos y su material
+        /// </summary>
+        /// <param name="producto">un producto</param>
+        /// <returns>true si se pudo consumir. false si no se pudo consumir</returns>
         public bool ConsumirMateriales(Producto producto)
         {
             if((this.alimento==true && producto is Alimento) || (this.alimento == false && producto is Herramienta))

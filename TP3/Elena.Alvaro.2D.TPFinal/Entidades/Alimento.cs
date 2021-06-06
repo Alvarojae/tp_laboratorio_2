@@ -17,7 +17,6 @@ namespace Entidades
         {
             this.calorias = calorias;
             this.sabor = sabor;
-
         }
 
         /// <summary>
@@ -34,9 +33,5 @@ namespace Entidades
 
             return sb.ToString();
         }
-
-
-        
-
     }
 }
