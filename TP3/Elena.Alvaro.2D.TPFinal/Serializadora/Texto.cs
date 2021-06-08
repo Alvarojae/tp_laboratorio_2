@@ -26,8 +26,6 @@ namespace Serializadora
             {
                 throw new MisExcepciones(string.Format("No se puedo escribir los Productos"), ex);
             }
-            
         }
-
     }
 }

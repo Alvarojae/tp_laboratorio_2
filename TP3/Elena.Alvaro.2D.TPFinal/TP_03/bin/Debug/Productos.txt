@@ -1,8 +1,0 @@
-
-Alimento
-Nombre: Cindor
-Id: 1
-Stock: 6 - Valor:$ 3
-Peso: 40 grm
-Calorias: 3
-Sabor: choloate

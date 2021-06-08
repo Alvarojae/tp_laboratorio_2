@@ -84,7 +84,6 @@ namespace TP_03
                 {
                     if (ValidarCasillas(1))
                     {
-                    
                             Alimento aux = new Alimento(id, (int)nudValor.Value, (int)nudStock.Value, tbNombre.Text, (int)nudPeso.Value, (int)nudCalorias.Value, tbSabor.Text);
                             if (((Materiales)cmbIngredientes.SelectedItem).ConsumirMateriales(aux) && alvaroFabrica + aux)
                             {
@@ -93,8 +92,6 @@ namespace TP_03
                                 MessageBox.Show("Se agreo correctamente un alimento");
                             }else
                                 MessageBox.Show("No tiene suficiente materiales para crear el producto", "Error");
-                   
-
                     }
                 }
                 else if(rbHerramienta.Checked )
@@ -279,6 +276,7 @@ namespace TP_03
                 {
                     listaMateriales.Add((Materiales)serializadora.Leer(nombre));
                 }
+
             }catch(Exception cargarMateriales)
             {
                 MessageBox.Show(cargarMateriales.Message);
@@ -300,11 +298,19 @@ namespace TP_03
         private void btnGuardarMateriales_Click(object sender, EventArgs e)
         {
             Serializadora<Materiales> serializadora = new Serializadora<Materiales>();
-            foreach (Materiales item in listaMateriales)
+            try
             {
-                if (!(serializadora.Guardar(item.Nombre, item)))
-                    MessageBox.Show("No se pudo guardar uno de los materiales", "Error");
+                foreach (Materiales item in listaMateriales)
+                {
+                    if (!(serializadora.Guardar(item.Nombre, item)))
+                        MessageBox.Show("No se pudo guardar uno de los materiales", "Error");
+                }
+            }catch(Exception guardarMateriales)
+            {
+                MessageBox.Show(guardarMateriales.Message);
             }
+            MessageBox.Show("Se guardaron los materiales exitosamente", "Exito");
+
         }
 
         /// <summary>
@@ -330,13 +336,21 @@ namespace TP_03
         /// <param name="e"></param>
         private void btnGuardarInforme_Click(object sender, EventArgs e)
         {
-            StringBuilder sb = new StringBuilder();
-
-            foreach (Producto item in alvaroFabrica.Listaproductos)
+            
+            try
             {
-                sb.Append(item.Informacion());
+                StringBuilder sb = new StringBuilder();
+                foreach (Producto item in alvaroFabrica.Listaproductos)
+                {
+                    sb.Append(item.Informacion());
+                }
+                Texto.EscribirTexto(sb.ToString());
             }
-            Texto.EscribirTexto(sb.ToString());
+            catch(Exception GuardarInforme)
+            {
+                MessageBox.Show(GuardarInforme.Message, "Error");
+            }
+            MessageBox.Show("Se guardo le informe exitosamente", "Exito");
         }
     }
 }
