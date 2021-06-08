@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Entidades
+namespace Serializadora
 {
-    public interface IInformacion
+    public interface IArchivosGuardar<T>
     {
-        string Informacion();
+        bool Guardar(string archivo, T datos);
+
     }
 }

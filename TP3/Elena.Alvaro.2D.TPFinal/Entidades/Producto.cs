@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public abstract class Producto : IClass
+    public abstract class Producto : IInformacion
     {
         protected int id;
         protected int stock;

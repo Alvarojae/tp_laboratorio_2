@@ -26,7 +26,7 @@ namespace TP_03
 
         private void FrmFabrica_Load(object sender, EventArgs e)
         {
-            cmbIngredientes.DropDownStyle = ComboBoxStyle.DropDownList;
+            //cmbIngredientes.DropDownStyle = ComboBoxStyle.DropDownList;
             ActualizarMateriales();
             lblInformacion.Text = "Es necesario cargar los Materiales para poder continuar";
             nombreMateriales.Add("Harina");
@@ -35,8 +35,6 @@ namespace TP_03
             nombreMateriales.Add("Hierro");
             nombreMateriales.Add("Aluminio");
             nombreMateriales.Add("Cobre");
-
-
         }
 
 
@@ -94,17 +92,13 @@ namespace TP_03
                             MessageBox.Show("Se agreo correctamente un alimento");
                         }else
                             MessageBox.Show("No tiene suficiente materiales para crear el producto", "Error");
-                    }catch(Exception)
+                    }catch(Exception ex)
                     {
-                        Texto.EscribirExcepciones("Hubo un problema con los datos ingresados");
-                        MessageBox.Show("Hubo un problema con los datos ingresados", "Error");
+                        Texto.EscribirExcepciones(ex.Message);
+                        MessageBox.Show(ex.Message, "Error");
                     }
 
                 }
-
-
-                //MessageBox.Show("id = "+nudId.Value.ToString()+ "\nvalor = " + nudValor.Value.ToString()+ "\nStock = " + nudStock.Value.ToString()+ "\nNombre = " +  tbNombre.Text, "\nCalorias = " +  nudCalorias.Value.ToString()+ "\nSabor = " +  tbSabor.Text+ "\nIngredientes = " +  tbIngredientes.Text);
-
             }
             else if(rbHerramienta.Checked )
             {
@@ -112,19 +106,19 @@ namespace TP_03
                 {
                     try
                     {
-                        Herramienta aux = new Herramienta(id, (int)nudValor.Value, (int)nudStock.Value, tbNombre.Text, (int)nudPeso.Value, tbMaterial.Text, tbMarca.Text);
-                    if (((Materiales)cmbIngredientes.SelectedItem).ConsumirMateriales(aux) && alvaroFabrica + aux)
-                    {
-                        lstProductos.Items.Add(aux);
-                        id++;
-                        MessageBox.Show("Se agreo correctamente una herramienta");
-                    }else
-                        MessageBox.Show("No tiene suficiente materiales para crear el producto", "Error");
+                            Herramienta aux = new Herramienta(id, (int)nudValor.Value, (int)nudStock.Value, tbNombre.Text, (int)nudPeso.Value, tbMaterial.Text, tbMarca.Text);
+                        if (((Materiales)cmbIngredientes.SelectedItem).ConsumirMateriales(aux) && alvaroFabrica + aux)
+                        {
+                            lstProductos.Items.Add(aux);
+                            id++;
+                            MessageBox.Show("Se agreo correctamente una herramienta");
+                        }else
+                            MessageBox.Show("No tiene suficiente materiales para crear el producto", "Error");
                     }
-                    catch (Exception)
+                    catch (Exception exa)
                     {
-                        Texto.EscribirExcepciones("Hubo un problema con los datos ingresados");
-                        MessageBox.Show("Hubo un problema con los datos ingresados", "Error");
+                        Texto.EscribirExcepciones(exa.Message);
+                        MessageBox.Show(exa.Message, "Error");
                     }
                 }
             }
@@ -284,6 +278,7 @@ namespace TP_03
             {
                 listaMateriales.Add((Materiales)serializadora.Leer(nombre));
             }
+
             ActualizarMateriales();
             btnCargarMateriales.Enabled = false;
             btnAgregarMateriales.Enabled = true;

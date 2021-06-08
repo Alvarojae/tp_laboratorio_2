@@ -7,9 +7,8 @@ using Entidades;
 
 namespace Serializadora
 {
-    public class Serializadora<T> : IArchivos<T>
+    public class Serializadora<T> : IArchivosGuardar<T>
     {
-        public string mensaje;
 
         /// <summary>
         /// 
@@ -25,10 +24,9 @@ namespace Serializadora
                 Xml<T> guardarT = new Xml<T>();
                 retorno = guardarT.Guardar(AppDomain.CurrentDomain.BaseDirectory +("Material - " + ruta + ".xml"), t);
             }
-            catch (Exception e)
+            catch (Exception exa)
             {
-                Texto.EscribirExcepciones(e.ToString());
-                this.mensaje = e.Message;
+                throw new MisExcepciones(string.Format("No se puedo guardar el archivo"), exa);
             }
 
             return retorno;
@@ -45,24 +43,16 @@ namespace Serializadora
             try
             {
                 Xml<T> leerT = new Xml<T>();
-
                 if (leerT.Leer(AppDomain.CurrentDomain.BaseDirectory + ("Material - " + ruta + ".xml"), out T auxT))
                 {
                     t = auxT;
                 }
-
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                Texto.EscribirExcepciones(e.ToString());
-                this.mensaje = e.Message;
+                throw new MisExcepciones(string.Format("No se puedo leer el archivo"), ex);
             }
             return t;
-        }
-
-        bool IArchivos<T>.Leer(string archivo, out T datos)
-        {
-            throw new NotImplementedException();
         }
     }
 }

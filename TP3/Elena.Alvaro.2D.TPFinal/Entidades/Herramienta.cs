@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class Herramienta : Producto , IClass
+    public class Herramienta : Producto , IInformacion
     {
         protected string material;
         protected string marca;

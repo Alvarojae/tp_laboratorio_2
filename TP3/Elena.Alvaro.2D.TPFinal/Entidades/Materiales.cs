@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class Materiales : IClass
+    public class Materiales : IInformacion
     {
         private string nombre;
         private int cantidad;

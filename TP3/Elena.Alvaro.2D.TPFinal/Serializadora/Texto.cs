@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using Entidades;
 
 namespace Serializadora
 {
@@ -15,9 +16,17 @@ namespace Serializadora
         /// <param name="texto">texto a guardar en el archivo</param>
         public static void EscribirTexto(string texto)
         {
-            StreamWriter file = new StreamWriter("Productos.txt");
-            file.Write(texto);
-            file.Close();
+            try
+            {
+                StreamWriter file = new StreamWriter("Productos.txt");
+                file.Write(texto);
+                file.Close();
+            }
+            catch(Exception ex)
+            {
+                throw new MisExcepciones(string.Format("No se puedo escribir los Productos"), ex);
+            }
+            
         }
 
         /// <summary>
@@ -26,11 +35,22 @@ namespace Serializadora
         /// <param name="texto">texto a guardar en el archivo</param>
         public static void EscribirExcepciones(string texto)
         {
-            StreamWriter file = new StreamWriter("Excepciones.txt", append: true);
-            file.WriteLine(texto);
-            file.Close();
-        }
-        
+            StreamWriter file = null;
+            try
+            {
+                file = new StreamWriter("Excepciones.txt", append: true);
+                file.WriteLine(texto);
 
+            } catch (Exception)
+            {
+
+            }
+            finally
+            {
+                if(file != null)
+                    file.Close();
+            }
+
+        }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class Alimento : Producto , IClass
+    public class Alimento : Producto , IInformacion
     {
         protected int calorias;
         protected string sabor;
