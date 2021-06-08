@@ -37,7 +37,7 @@ namespace TP_03
             nombreMateriales.Add("Cobre");
         }
 
-
+        
         /// <summary>
         /// Consulta si se desea cerrar el programa con un cuadro de si o no
         /// </summary>
@@ -78,57 +78,57 @@ namespace TP_03
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if(rbComida.Checked)
+            try
             {
-                if (ValidarCasillas(1))
+                if (rbComida.Checked)
                 {
-                    try 
+                    if (ValidarCasillas(1))
                     {
-                        Alimento aux = new Alimento(id, (int)nudValor.Value, (int)nudStock.Value, tbNombre.Text, (int)nudPeso.Value, (int)nudCalorias.Value, tbSabor.Text);
-                        if (((Materiales)cmbIngredientes.SelectedItem).ConsumirMateriales(aux) && alvaroFabrica + aux)
-                        {
-                            lstProductos.Items.Add(aux);
-                            id++;
-                            MessageBox.Show("Se agreo correctamente un alimento");
-                        }else
-                            MessageBox.Show("No tiene suficiente materiales para crear el producto", "Error");
-                    }catch(Exception ex)
-                    {
-                        Texto.EscribirExcepciones(ex.Message);
-                        MessageBox.Show(ex.Message, "Error");
-                    }
+                    
+                            Alimento aux = new Alimento(id, (int)nudValor.Value, (int)nudStock.Value, tbNombre.Text, (int)nudPeso.Value, (int)nudCalorias.Value, tbSabor.Text);
+                            if (((Materiales)cmbIngredientes.SelectedItem).ConsumirMateriales(aux) && alvaroFabrica + aux)
+                            {
+                                lstProductos.Items.Add(aux);
+                                id++;
+                                MessageBox.Show("Se agreo correctamente un alimento");
+                            }else
+                                MessageBox.Show("No tiene suficiente materiales para crear el producto", "Error");
+                   
 
+                    }
                 }
-            }
-            else if(rbHerramienta.Checked )
-            {
-                if(ValidarCasillas(0))
+                else if(rbHerramienta.Checked )
                 {
-                    try
-                    {
-                            Herramienta aux = new Herramienta(id, (int)nudValor.Value, (int)nudStock.Value, tbNombre.Text, (int)nudPeso.Value, tbMaterial.Text, tbMarca.Text);
-                        if (((Materiales)cmbIngredientes.SelectedItem).ConsumirMateriales(aux) && alvaroFabrica + aux)
-                        {
-                            lstProductos.Items.Add(aux);
-                            id++;
-                            MessageBox.Show("Se agreo correctamente una herramienta");
-                        }else
-                            MessageBox.Show("No tiene suficiente materiales para crear el producto", "Error");
+                    if(ValidarCasillas(0))
+                    { 
+                                Herramienta aux = new Herramienta(id, (int)nudValor.Value, (int)nudStock.Value, tbNombre.Text, (int)nudPeso.Value, tbMaterial.Text, tbMarca.Text);
+                            if (((Materiales)cmbIngredientes.SelectedItem).ConsumirMateriales(aux) && alvaroFabrica + aux)
+                            {
+                                lstProductos.Items.Add(aux);
+                                id++;
+                                MessageBox.Show("Se agreo correctamente una herramienta");
+                            }else
+                                MessageBox.Show("No tiene suficiente materiales para crear el producto", "Error");
                     }
-                    catch (Exception exa)
-                    {
-                        Texto.EscribirExcepciones(exa.Message);
-                        MessageBox.Show(exa.Message, "Error");
-                    }
+                  
                 }
+                else
+                    MessageBox.Show("Es necesario marcar un tipo de producto", "Error");
             }
-            else
-                MessageBox.Show("Es necesario marcar un tipo de producto", "Error");
+            catch (Exception ex)
+            {
+                new MisExcepciones("Hubo un problema al crear el producto", ex);
+                MessageBox.Show("Hubo un problema al crear el producto", "Error");
+            }
 
             CleanAll();
             ActualizarMateriales();
             ActivarBotones(3);
         }
+    
+          
+          
+        
 
         /// <summary>
         /// Muestra la informacion de la lista de productos creados
@@ -194,7 +194,6 @@ namespace TP_03
             }catch(Exception)
             {
                 MessageBox.Show("Hubo un error al intentar actualizar la lista ");
-                Texto.EscribirExcepciones("Hubo un problema con actualizar la lista");
             }
         }
            
@@ -274,11 +273,16 @@ namespace TP_03
         private void btnCargarMateriales_Click(object sender, EventArgs e)
         {
             Serializadora<Materiales> serializadora = new Serializadora<Materiales>();
-            foreach (string nombre in nombreMateriales)
+            try 
+            { 
+                foreach (string nombre in nombreMateriales)
+                {
+                    listaMateriales.Add((Materiales)serializadora.Leer(nombre));
+                }
+            }catch(Exception cargarMateriales)
             {
-                listaMateriales.Add((Materiales)serializadora.Leer(nombre));
+                MessageBox.Show(cargarMateriales.Message);
             }
-
             ActualizarMateriales();
             btnCargarMateriales.Enabled = false;
             btnAgregarMateriales.Enabled = true;

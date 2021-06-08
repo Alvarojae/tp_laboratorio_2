@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace Serializadora
 {
+    public interface IArchivos<T>
+    {
+        T Leer(string archivo);
+    }
+
     public interface IArchivosGuardar<T>
     {
         bool Guardar(string archivo, T datos);

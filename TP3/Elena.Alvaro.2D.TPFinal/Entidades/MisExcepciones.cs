@@ -33,17 +33,12 @@ namespace Entidades
                 file = new StreamWriter("Excepciones.txt", append: true);
                 file.WriteLine(texto);
             }
-            catch (Exception)
-            {
-
-            }
+            catch (Exception){ }
             finally
             {
                 if (file != null)
                     file.Close();
             }
-
         }
-
     }
 }

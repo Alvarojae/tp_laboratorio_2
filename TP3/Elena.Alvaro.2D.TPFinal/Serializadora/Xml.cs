@@ -10,7 +10,7 @@ using Entidades;
 namespace Serializadora
 {
 
-    public class Xml<T> : IArchivosLeer<T>, IArchivosGuardar<T>
+    public class Xml<T> : IArchivos<T>
     {
         /// <summary>
         /// Guarda el dato generico que es pasado como XMl
@@ -44,25 +44,21 @@ namespace Serializadora
         /// <param name="ruta">Ruta adonde se va a leer el archivo</param>
         /// <param name="datos">Dato generico que se va a leer</param>
         /// <returns>true si pudo guardar, false si no pudo </returns>
-        /// 
-        //TODO Devolver T Datos por return
-        public bool Leer(string ruta, out T datos)
+        public T Leer(string ruta)
         {
-            bool retorno = false;
             try
             {
                 XmlSerializer nuevoXml = new XmlSerializer(typeof(T));
                 using (XmlTextReader newTR = new XmlTextReader(ruta))
                 {
-                    datos = (T)nuevoXml.Deserialize(newTR);
-                    retorno = true;
+                    return (T)nuevoXml.Deserialize(newTR);  
                 }
             }
             catch (Exception ex)
             {
                 throw new MisExcepciones(string.Format("No se puedo leer el archivo"), ex);
             }
-            return retorno;
+            
         }
     }
 }
