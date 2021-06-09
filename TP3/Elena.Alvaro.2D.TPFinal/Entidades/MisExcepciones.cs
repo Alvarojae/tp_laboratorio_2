@@ -28,10 +28,11 @@ namespace Entidades
         public static void EscribirExcepciones(string texto)
         {
             StreamWriter file = null;
+            DateTime thisDay = DateTime.Today;
             try
             {
                 file = new StreamWriter("Excepciones.txt", append: true);
-                file.WriteLine(texto);
+                file.WriteLine(texto + " - " + thisDay.ToString("d"));
             }
             catch (Exception){ }
             finally

@@ -8,9 +8,8 @@ namespace Serializadora
 {
     public interface IArchivos<T>
     {
-        T Leer(string archivo);
-  
         bool Guardar(string archivo, T datos);
 
+        T Leer(string archivo);
     }
 }

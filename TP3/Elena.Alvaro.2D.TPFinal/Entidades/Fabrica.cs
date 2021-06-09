@@ -31,7 +31,8 @@ namespace Entidades
         {
             try
             {
-                lista.Listaproductos.Add(item);
+                if(lista !=null && item !=null)
+                    lista.Listaproductos.Add(item);
                 return true;
             }catch(Exception)
             {

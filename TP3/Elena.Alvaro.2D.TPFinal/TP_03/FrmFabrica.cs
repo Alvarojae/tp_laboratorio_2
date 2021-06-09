@@ -16,8 +16,7 @@ namespace TP_03
     {
         public FrmFabrica()
         {
-            InitializeComponent();
-            
+            InitializeComponent();  
         }
         Fabrica<Producto> alvaroFabrica = new Fabrica<Producto>("Alvaro");
         List<Materiales> listaMateriales = new List<Materiales>();
@@ -26,7 +25,7 @@ namespace TP_03
 
         private void FrmFabrica_Load(object sender, EventArgs e)
         {
-            //cmbIngredientes.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbIngredientes.DropDownStyle = ComboBoxStyle.DropDownList;
             ActualizarMateriales();
             lblInformacion.Text = "Es necesario cargar los Materiales para poder continuar";
             nombreMateriales.Add("Harina");
@@ -114,8 +113,7 @@ namespace TP_03
             }
             catch (Exception ex)
             {
-                new MisExcepciones("Hubo un problema al crear el producto", ex);
-                MessageBox.Show("Hubo un problema al crear el producto", "Error");
+                MessageBox.Show(new MisExcepciones("Hubo un problema al crear el producto", ex).Message, "Error");
             }
 
             CleanAll();
@@ -123,9 +121,6 @@ namespace TP_03
             ActivarBotones(3);
         }
     
-          
-          
-        
 
         /// <summary>
         /// Muestra la informacion de la lista de productos creados
@@ -134,15 +129,13 @@ namespace TP_03
         {
             if(lstProductos.SelectedItem!=null)
             {
-                Producto aux = (Producto)lstProductos.SelectedItem;
-                MessageBox.Show(aux.Informacion(), "Informacion del producto");
+                MessageBox.Show(((Producto)lstProductos.SelectedItem).Informacion(), "Informacion del producto");
             }else
             {
                 MessageBox.Show("No marcaste ningun producto para ver la informacion " , "Error");
             }
             
         }
-
 
 
         /// <summary>
@@ -166,14 +159,6 @@ namespace TP_03
 
             return false;
 
-        }
-
-     
-
-        private void btnVerInforme_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show(ValidarCasillas(1).ToString());
-            //MessageBox.Show(nudId.Value.ToString());
         }
 
         /// <summary>
@@ -336,7 +321,6 @@ namespace TP_03
         /// <param name="e"></param>
         private void btnGuardarInforme_Click(object sender, EventArgs e)
         {
-            
             try
             {
                 StringBuilder sb = new StringBuilder();

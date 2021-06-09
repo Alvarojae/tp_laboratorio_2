@@ -16,15 +16,21 @@ namespace Serializadora
         /// <param name="texto">texto a guardar en el archivo</param>
         public static void EscribirTexto(string texto)
         {
+
+            StreamWriter file = null;
             try
             {
-                StreamWriter file = new StreamWriter("Productos.txt");
+                file = new StreamWriter("Productos.txt", append: true);
                 file.Write(texto);
-                file.Close();
             }
             catch(Exception ex)
             {
                 throw new MisExcepciones(string.Format("No se puedo escribir los Productos"), ex);
+            }
+            finally
+            {
+                if (file != null)
+                    file.Close();
             }
         }
     }
