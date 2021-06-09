@@ -58,6 +58,18 @@ namespace Test
             Console.WriteLine("Se guardan los materiales ");
             Texto.EscribirTexto(cindor23.Informacion());
 
+            
+
+            List<string> materiales = new List<string>();
+            Serializadora<List<string>> serializadoralista = new Serializadora<List<string>>();
+            materiales.Add("Harina");
+            materiales.Add("Leche");
+            materiales.Add("Chocolate");
+            materiales.Add("Hierro");
+            materiales.Add("Aluminio");
+            materiales.Add("Cobre");
+            serializadoralista.Guardar("ListaMateriales", materiales);
+
             Console.ReadLine();
         }
     }
