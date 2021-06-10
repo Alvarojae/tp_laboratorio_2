@@ -19,8 +19,6 @@ namespace Entidades
             EscribirExcepciones(message);
         }
 
-
-
         /// <summary>
         /// Guarda haciendo append la infomarcion pasada en un archivo llamado "Excepciones.txt"
         /// </summary>

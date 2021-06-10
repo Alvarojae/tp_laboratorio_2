@@ -34,9 +34,9 @@ namespace Entidades
                 if(lista !=null && item !=null)
                     lista.Listaproductos.Add(item);
                 return true;
-            }catch(Exception)
+            }catch(Exception agregarALista)
             {
-                return false;
+                throw new MisExcepciones("No se pudo agregar la el item a la lista de fabrica", agregarALista);
             }
             
         }

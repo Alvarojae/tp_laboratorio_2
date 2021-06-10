@@ -72,6 +72,7 @@ namespace TP_03
 
 
         /// <summary>
+        /// Excepcion
         /// Agrega el producto tomando todos los datos del form y validando todo(Creo)
         /// </summary>
 
@@ -93,7 +94,7 @@ namespace TP_03
                                 MessageBox.Show("No tiene suficiente materiales para crear el producto", "Error");
                     }
                 }
-                else if(rbHerramienta.Checked )
+                else if(rbHerramienta.Checked)
                 {
                     if(ValidarCasillas(0))
                     { 
@@ -106,7 +107,6 @@ namespace TP_03
                             }else
                                 MessageBox.Show("No tiene suficiente materiales para crear el producto", "Error");
                     }
-                  
                 }
                 else
                     MessageBox.Show("Es necesario marcar un tipo de producto", "Error");
@@ -173,9 +173,9 @@ namespace TP_03
                 {
                     lstMateriales.Items.Add(item);
                 }
-            }catch(Exception)
+            }catch(Exception ex)
             {
-                MessageBox.Show("Hubo un error al intentar actualizar la lista ");
+                MessageBox.Show(ex.Message);
             }
         }
            
@@ -248,6 +248,7 @@ namespace TP_03
         }
 
         /// <summary>
+        /// SERIALIZACION CARGA
         /// Boton que carga los materiales
         /// </summary>
         /// <param name="sender"></param>
@@ -276,6 +277,7 @@ namespace TP_03
         }
 
         /// <summary>
+        /// /// SERIALIZACION GUARDAR
         /// Boton que guarda los materiales
         /// </summary>
         /// <param name="sender"></param>
@@ -305,13 +307,21 @@ namespace TP_03
         /// <param name="e"></param>
         private void btnAgregarMateriales_Click(object sender, EventArgs e)
         {
-            if(lstMateriales.SelectedItem != null)
+            try
             {
-                Materiales aux = (Materiales)lstMateriales.SelectedItem;
-                aux.Cantidad = aux.Cantidad + 10;
-                ActualizarMateriales();
-            }else
-                MessageBox.Show("No seleccionaste ningun material", "Error");
+                if (lstMateriales.SelectedItem != null)
+                {
+                    Materiales aux = (Materiales)lstMateriales.SelectedItem;
+                    aux.Cantidad = aux.Cantidad + 10;
+                    ActualizarMateriales();
+                }
+                else
+                    MessageBox.Show("No seleccionaste ningun material", "Error");
+            }catch(Exception)
+            {
+                MessageBox.Show("No se pudo agregar materiales", "error");
+            }
+           
         }
 
         /// <summary>

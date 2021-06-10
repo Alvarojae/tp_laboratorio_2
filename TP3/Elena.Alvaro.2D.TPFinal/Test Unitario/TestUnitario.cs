@@ -54,7 +54,18 @@ namespace Test_Unitario
             Assert.AreEqual(true, resultado);
         }
 
+        public void GuardarSerializacionDeMaterialYconsultarIgualdad()
+        {
+            Materiales herramienta = new Materiales("Leche", 30, false);
 
+            Serializadora<Materiales> serializadora = new Serializadora<Materiales>();
+
+            bool resultado = serializadora.Guardar(herramienta.Nombre, herramienta);
+
+            Materiales leer = serializadora.Leer(herramienta.Nombre);
+
+            Assert.AreEqual(leer, herramienta);
+        }
 
     }
 }

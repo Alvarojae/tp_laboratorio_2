@@ -33,7 +33,7 @@ namespace Serializadora
             }
             catch (Exception e)
             {
-                throw new MisExcepciones(string.Format("No se puedo leer el archivo"), e);
+                throw new MisExcepciones(string.Format("No se puedo Guardar el archivo"), e);
             }
             return retorno;
         }
