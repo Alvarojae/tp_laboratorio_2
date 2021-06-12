@@ -82,6 +82,14 @@ namespace Entidades
             return false;
         }
 
+        /// <summary>
+        /// Recarga los materiales en 10 unidades
+        /// </summary>
+        public void AgregarMateriales()
+        {
+            this.Cantidad += 10;
+        }
+
     
     }
 }

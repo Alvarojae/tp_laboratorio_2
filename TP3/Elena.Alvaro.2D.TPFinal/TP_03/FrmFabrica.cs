@@ -311,8 +311,7 @@ namespace TP_03
             {
                 if (lstMateriales.SelectedItem != null)
                 {
-                    Materiales aux = (Materiales)lstMateriales.SelectedItem;
-                    aux.Cantidad = aux.Cantidad + 10;
+                    ((Materiales)lstMateriales.SelectedItem).AgregarMateriales();
                     ActualizarMateriales();
                 }
                 else
@@ -344,7 +343,7 @@ namespace TP_03
             {
                 MessageBox.Show(GuardarInforme.Message, "Error");
             }
-            MessageBox.Show("Se guardo le informe exitosamente", "Exito");
+            MessageBox.Show("Se guardo el informe exitosamente", "Exito");
         }
     }
 }

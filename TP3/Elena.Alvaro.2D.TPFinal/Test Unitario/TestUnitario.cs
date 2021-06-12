@@ -7,6 +7,7 @@ namespace Test_Unitario
     [TestClass]
     public class TestUnitario
     {
+
         [TestMethod]
         public void CreacionDeUnProductoAlimentoExistoso()
         {
@@ -46,7 +47,6 @@ namespace Test_Unitario
         public void GuardarSerializacionDeMaterial()
         {
             Materiales herramienta = new Materiales("Leche", 30, false);
-
             Serializadora<Materiales> serializadora = new Serializadora<Materiales>();
          
              bool resultado = serializadora.Guardar(herramienta.Nombre, herramienta);
@@ -57,9 +57,7 @@ namespace Test_Unitario
         public void GuardarSerializacionDeMaterialYconsultarIgualdad()
         {
             Materiales herramienta = new Materiales("Leche", 30, false);
-
             Serializadora<Materiales> serializadora = new Serializadora<Materiales>();
-
             bool resultado = serializadora.Guardar(herramienta.Nombre, herramienta);
 
             Materiales leer = serializadora.Leer(herramienta.Nombre);

@@ -14,6 +14,11 @@ namespace Entidades
             
         }
 
+        /// <summary>
+        /// Constructor para crear una excepcion custom, guarda en un txt el mensaje
+        /// </summary>
+        /// <param name="message">mensaje a guardar en la excepcion</param>
+        /// <param name="inner">la excepcion</param>
         public MisExcepciones(string message, Exception inner) : base(message, inner) 
         {
             EscribirExcepciones(message);
