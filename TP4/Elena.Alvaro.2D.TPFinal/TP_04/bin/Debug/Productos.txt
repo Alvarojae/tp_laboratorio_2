@@ -1,0 +1,8 @@
+
+Alimento
+Nombre: .
+Id: 1
+Stock: 3 - Valor:$ 3
+Peso: 3 grm
+Calorias: 3
+Sabor: 123
