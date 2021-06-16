@@ -34,6 +34,8 @@ namespace TP_03
             nombreMateriales.Add("Hierro");
             nombreMateriales.Add("Aluminio");
             nombreMateriales.Add("Cobre");
+
+            
         }
 
         
@@ -89,6 +91,7 @@ namespace TP_03
                             {
                                 lstProductos.Items.Add(aux);
                                 id++;
+                                CleanAll();
                                 MessageBox.Show("Se agreo correctamente un alimento");
                             }else
                                 MessageBox.Show("No tiene suficiente materiales para crear el producto", "Error");
@@ -103,6 +106,7 @@ namespace TP_03
                             {
                                 lstProductos.Items.Add(aux);
                                 id++;
+                                CleanAll();
                                 MessageBox.Show("Se agreo correctamente una herramienta");
                             }else
                                 MessageBox.Show("No tiene suficiente materiales para crear el producto", "Error");
@@ -116,7 +120,7 @@ namespace TP_03
                 MessageBox.Show(new MisExcepciones("Hubo un problema al crear el producto", ex).Message, "Error");
             }
 
-            CleanAll();
+            
             ActualizarMateriales();
             ActivarBotones(3);
         }
@@ -145,14 +149,14 @@ namespace TP_03
         /// <returns></returns>
         private bool ValidarCasillas(int tipoDeProducto)
         {
-            if (nudValor.Value != 0 && nudStock.Value != 0 && tbNombre.Text != "" && nudPeso.Value != 0 && cmbIngredientes.Text != "")
+            if (nudValor.Value != 0 && nudStock.Value != 0 && tbNombre.Text != "" && nudPeso.Value != 0 )
             {
-                if (tipoDeProducto == 0 && tbMaterial.Text != "" && tbMarca.Text != "")
+                if (tipoDeProducto == 0 && tbMaterial.Text != "" && tbMarca.Text != "" && cmbIngredientes.Text != "")
                     return true;
-                else if (tipoDeProducto == 1 && nudCalorias.Value != 0 && tbSabor.Text != "" )
+                else if (tipoDeProducto == 1 && nudCalorias.Value != 0 && tbSabor.Text != "" && cmbIngredientes.Text != "")
                     return true;
                 else
-                    MessageBox.Show("No ingresaste dato de Alimentos o Herramientas", "Error");
+                    MessageBox.Show("No ingresaste dato de Alimentos o Herramientas o falta completar los ingredientes", "Error");
             }
             else
                 MessageBox.Show("No ingresaste datos de la primera columna o unos de los valores es 0", "Error");
@@ -271,6 +275,11 @@ namespace TP_03
             btnCargarMateriales.Enabled = false;
             btnAgregarMateriales.Enabled = true;
             btnGuardarMateriales.Enabled = true;
+            btMostrar.Enabled = true;
+            btnAgregar.Enabled = true;
+            btnGuardarInforme.Enabled = true;
+
+
             lblInformacion.Text = "";
             rbComida.Enabled = true;
             rbHerramienta.Enabled = true;

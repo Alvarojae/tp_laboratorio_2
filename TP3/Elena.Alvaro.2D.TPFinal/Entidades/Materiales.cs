@@ -90,6 +90,14 @@ namespace Entidades
             this.Cantidad += 10;
         }
 
-    
+
+        public bool SonIguales(Materiales obj)
+        {
+            if (this.Nombre == obj.Nombre && this.Material == obj.Material && this.Cantidad == obj.Cantidad)
+                return true;
+
+            return false;
+        }
+
     }
 }

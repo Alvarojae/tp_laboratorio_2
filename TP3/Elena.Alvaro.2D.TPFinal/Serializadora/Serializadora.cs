@@ -44,9 +44,9 @@ namespace Serializadora
                 Xml<T> leerT = new Xml<T>();
                 t = leerT.Leer(AppDomain.CurrentDomain.BaseDirectory + ("Material - " + ruta + ".xml"));   
             }
-            catch (Exception ex)
+            catch (Exception ProblemaAlLeer)
             {
-                throw new MisExcepciones(string.Format("No se puedo leer el archivo"), ex);
+                throw new MisExcepciones(string.Format("No se puedo leer el archivo"), ProblemaAlLeer);
             }
             return t;
         }

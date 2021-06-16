@@ -76,6 +76,7 @@ namespace TP_03
             // 
             // btnGuardarInforme
             // 
+            this.btnGuardarInforme.Enabled = false;
             this.btnGuardarInforme.Location = new System.Drawing.Point(12, 255);
             this.btnGuardarInforme.Name = "btnGuardarInforme";
             this.btnGuardarInforme.Size = new System.Drawing.Size(397, 35);
@@ -86,6 +87,7 @@ namespace TP_03
             // 
             // btnAgregar
             // 
+            this.btnAgregar.Enabled = false;
             this.btnAgregar.Location = new System.Drawing.Point(12, 202);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(397, 35);
@@ -266,6 +268,8 @@ namespace TP_03
             // 
             // btMostrar
             // 
+            this.btMostrar.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btMostrar.Enabled = false;
             this.btMostrar.Location = new System.Drawing.Point(432, 255);
             this.btMostrar.Name = "btMostrar";
             this.btMostrar.Size = new System.Drawing.Size(280, 35);

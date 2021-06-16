@@ -62,3 +62,11 @@ Stock: 23 - Valor:$ 15
 Peso: 500 grm
 Calorias: 250
 Sabor: Chocolate
+
+Alimento
+Nombre: Cindor
+Id: 1
+Stock: 23 - Valor:$ 15
+Peso: 500 grm
+Calorias: 250
+Sabor: Chocolate
