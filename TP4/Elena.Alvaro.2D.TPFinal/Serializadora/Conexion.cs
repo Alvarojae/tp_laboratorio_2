@@ -42,35 +42,35 @@ namespace Serializadora
             return materiales;
         }
 
-        public bool GuardarMaterial()
+        public bool GuardarMaterial(List<Materiales> material)
         {
-            List<Materiales> personas = new List<Materiales>();
             String connectionStr = @"Data Source=.;Initial Catalog = TP4; Integrated Security = True";
-            bool aux = true;
             try
-            {
+            {  
                 using (SqlConnection connection = new SqlConnection(connectionStr))
                 {
                     connection.Open();
+                    
                     SqlCommand command = new SqlCommand();
                     command.CommandType = System.Data.CommandType.Text;
                     command.Connection = connection;
+
                     command.CommandText = string.Format("SELECT * FROM [Tp4-Tabla]");
-
                     SqlDataReader dataReader = command.ExecuteReader();
-
-                    while (dataReader.Read() != false)
-                    {
-                        if ((int)dataReader["tipo"] == 0)
-                            aux = false;
-                        personas.Add(new Materiales(dataReader["nombre"].ToString(), (int)dataReader["cantidad"], aux));
-                    }
                     dataReader.Close();
+
+                    foreach (Materiales item in material)
+                    {
+                        command.CommandText = string.Format($"UPDATE [Tp4-Tabla] SET cantidad = {item.Cantidad} WHERE nombre = '{item.Nombre}' ");
+                        dataReader = command.ExecuteReader();
+                        dataReader.Close();
+                    }
+                    return true;
                 }
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.ToString());
+                Console.WriteLine(e.Message);
             }
             return false; ;
         }

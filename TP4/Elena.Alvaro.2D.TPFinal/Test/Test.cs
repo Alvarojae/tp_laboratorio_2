@@ -21,7 +21,7 @@ namespace Test
             Alimento cindor23 = new Alimento(1, 15, 23, "Cindor", 500, 250, "Chocolate");
             Materiales leche25 = new Materiales("Leche", 25, true);
             Serializadora<Materiales> serializadora = new Serializadora<Materiales>();
-
+            
             //se intente de validar la creacion del producto y hay mas productos que materiales
             Console.WriteLine("Se intenta de crear 30 paquetes de cindor - Con solamente 25 de leche");
             if (leche25.ConsumirMateriales(cindor30))
@@ -67,12 +67,31 @@ namespace Test
             Console.WriteLine("Enter para continuar");
             Console.ReadLine();
 
+            Console.WriteLine("Se cargan los materiales por Sql");
+
             Conexion conexion = new Conexion();
             List<Materiales> materialesSql = conexion.LeerMaterial();
+
             foreach (Materiales item in materialesSql)
             {
                 Console.WriteLine(item.Informacion());
-                Console.WriteLine(item.Material);
+            }
+
+            Console.WriteLine("Enter para continuar");
+            Console.ReadLine();
+            Console.WriteLine("Cambio los materiales a 15 y los guardo en el sql y los vuelvo a leer");
+            foreach (Materiales item in materialesSql)
+            {
+                item.Cantidad = 15;
+            }
+
+            conexion.GuardarMaterial(materialesSql);
+
+            materialesSql = conexion.LeerMaterial();
+
+            foreach (Materiales item in materialesSql)
+            {
+                Console.WriteLine(item.Informacion());
             }
             Console.ReadLine();
         }

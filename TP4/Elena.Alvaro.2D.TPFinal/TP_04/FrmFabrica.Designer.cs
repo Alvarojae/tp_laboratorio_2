@@ -374,7 +374,7 @@ namespace TP_03
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1035, 306);
+            this.ClientSize = new System.Drawing.Size(1035, 310);
             this.Controls.Add(this.lblInformacion);
             this.Controls.Add(this.lbMateriales);
             this.Controls.Add(this.lblProductos);

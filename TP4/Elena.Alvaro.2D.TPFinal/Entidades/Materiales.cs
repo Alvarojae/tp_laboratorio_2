@@ -21,9 +21,9 @@ namespace Entidades
         
         public Materiales(string nombre, int cantidad, bool alimento)
         {
-            this.nombre = nombre;
-            this.cantidad = cantidad;
-            this.alimento = alimento;
+            this.Nombre = nombre;
+            this.Cantidad = cantidad;
+            this.Material = alimento;
         }
 
         public Materiales()
@@ -33,7 +33,7 @@ namespace Entidades
         public int Cantidad
         {
             get { return this.cantidad; }
-            set {this.cantidad = value; }
+            set { if (value >= 0) this.cantidad = value; }
         }
 
         public bool Material
