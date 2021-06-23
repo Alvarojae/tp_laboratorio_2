@@ -63,8 +63,10 @@ namespace Test_Unitario
 
             Materiales leer = serializadora.Leer(herramienta.Nombre);
 
-            Assert.IsTrue(herramienta.SonIguales(leer));
-            
+            Assert.IsTrue(herramienta == leer );
+
+            // -> Assert.AreEqual(herramienta, leer);
+
         }
 
         [TestMethod]
@@ -76,7 +78,7 @@ namespace Test_Unitario
 
             Materiales leer = serializadora.Leer(herramienta.Nombre);
 
-            Assert.IsFalse(herramienta.SonIguales(leer));
+            Assert.IsFalse(herramienta == leer);
 
         }
 
@@ -101,7 +103,7 @@ namespace Test_Unitario
 
             Materiales leer = serializadora.Leer(herramienta.Nombre);
 
-            Assert.IsFalse(herramienta.SonIguales(leer));
+            Assert.IsFalse(herramienta == leer);
 
         }
     }

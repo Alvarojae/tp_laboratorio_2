@@ -35,9 +35,9 @@ namespace Serializadora
                     dataReader.Close();
                 }
             }
-            catch (Exception e)
+            catch (Exception leerSql)
             {
-                Console.WriteLine(e.ToString());
+                throw new MisExcepciones("No se puedo leer la base de datos", leerSql);
             }
             return materiales;
         }
@@ -68,9 +68,9 @@ namespace Serializadora
                     return true;
                 }
             }
-            catch (Exception e)
+            catch (Exception guardarSql)
             {
-                Console.WriteLine(e.Message);
+                throw new MisExcepciones("No se puedo guardar en la base de datos", guardarSql);
             }
             return false; ;
         }

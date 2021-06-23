@@ -19,3 +19,24 @@ C:\Users\Alvaro\Desktop\tp_laboratorio_2\TP3\Elena.Alvaro.2D.TPFinal\Test Unitar
 C:\Users\Alvaro\Desktop\tp_laboratorio_2\TP3\Elena.Alvaro.2D.TPFinal\Test Unitario\obj\Debug\Test Unitario.pdb
 C:\Users\Alvaro\Desktop\tp_laboratorio_2\TP3\Elena.Alvaro.2D.TPFinal\Test Unitario\bin\Debug\Serializadora.dll
 C:\Users\Alvaro\Desktop\tp_laboratorio_2\TP3\Elena.Alvaro.2D.TPFinal\Test Unitario\bin\Debug\Serializadora.pdb
+C:\Users\Alvaro\Desktop\tp_laboratorio_2\TP4\Elena.Alvaro.2D.TPFinal\Test Unitario\bin\Debug\es\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.resources.dll
+C:\Users\Alvaro\Desktop\tp_laboratorio_2\TP4\Elena.Alvaro.2D.TPFinal\Test Unitario\bin\Debug\es\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.resources.dll
+C:\Users\Alvaro\Desktop\tp_laboratorio_2\TP4\Elena.Alvaro.2D.TPFinal\Test Unitario\bin\Debug\es\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+C:\Users\Alvaro\Desktop\tp_laboratorio_2\TP4\Elena.Alvaro.2D.TPFinal\Test Unitario\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\Alvaro\Desktop\tp_laboratorio_2\TP4\Elena.Alvaro.2D.TPFinal\Test Unitario\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\Alvaro\Desktop\tp_laboratorio_2\TP4\Elena.Alvaro.2D.TPFinal\Test Unitario\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\Alvaro\Desktop\tp_laboratorio_2\TP4\Elena.Alvaro.2D.TPFinal\Test Unitario\bin\Debug\Test Unitario.dll
+C:\Users\Alvaro\Desktop\tp_laboratorio_2\TP4\Elena.Alvaro.2D.TPFinal\Test Unitario\bin\Debug\Test Unitario.pdb
+C:\Users\Alvaro\Desktop\tp_laboratorio_2\TP4\Elena.Alvaro.2D.TPFinal\Test Unitario\bin\Debug\Entidades.dll
+C:\Users\Alvaro\Desktop\tp_laboratorio_2\TP4\Elena.Alvaro.2D.TPFinal\Test Unitario\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\Alvaro\Desktop\tp_laboratorio_2\TP4\Elena.Alvaro.2D.TPFinal\Test Unitario\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\Alvaro\Desktop\tp_laboratorio_2\TP4\Elena.Alvaro.2D.TPFinal\Test Unitario\bin\Debug\Serializadora.dll
+C:\Users\Alvaro\Desktop\tp_laboratorio_2\TP4\Elena.Alvaro.2D.TPFinal\Test Unitario\bin\Debug\Entidades.pdb
+C:\Users\Alvaro\Desktop\tp_laboratorio_2\TP4\Elena.Alvaro.2D.TPFinal\Test Unitario\bin\Debug\Serializadora.pdb
+C:\Users\Alvaro\Desktop\tp_laboratorio_2\TP4\Elena.Alvaro.2D.TPFinal\Test Unitario\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\Alvaro\Desktop\tp_laboratorio_2\TP4\Elena.Alvaro.2D.TPFinal\Test Unitario\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\Alvaro\Desktop\tp_laboratorio_2\TP4\Elena.Alvaro.2D.TPFinal\Test Unitario\obj\Debug\Test Unitario.csprojAssemblyReference.cache
+C:\Users\Alvaro\Desktop\tp_laboratorio_2\TP4\Elena.Alvaro.2D.TPFinal\Test Unitario\obj\Debug\Test Unitario.csproj.CoreCompileInputs.cache
+C:\Users\Alvaro\Desktop\tp_laboratorio_2\TP4\Elena.Alvaro.2D.TPFinal\Test Unitario\obj\Debug\Test Unitario.csproj.CopyComplete
+C:\Users\Alvaro\Desktop\tp_laboratorio_2\TP4\Elena.Alvaro.2D.TPFinal\Test Unitario\obj\Debug\Test Unitario.dll
+C:\Users\Alvaro\Desktop\tp_laboratorio_2\TP4\Elena.Alvaro.2D.TPFinal\Test Unitario\obj\Debug\Test Unitario.pdb

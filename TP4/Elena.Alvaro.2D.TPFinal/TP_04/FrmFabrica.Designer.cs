@@ -314,11 +314,11 @@ namespace TP_03
             // btnCargarMateriales
             // 
             this.btnCargarMateriales.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.btnCargarMateriales.Location = new System.Drawing.Point(735, 205);
+            this.btnCargarMateriales.Location = new System.Drawing.Point(735, 202);
             this.btnCargarMateriales.Name = "btnCargarMateriales";
             this.btnCargarMateriales.Size = new System.Drawing.Size(280, 35);
             this.btnCargarMateriales.TabIndex = 38;
-            this.btnCargarMateriales.Text = "Cargar Materiales";
+            this.btnCargarMateriales.Text = "Cargar Materiales BackUp";
             this.btnCargarMateriales.UseVisualStyleBackColor = true;
             this.btnCargarMateriales.Click += new System.EventHandler(this.btnCargarMateriales_Click);
             // 
@@ -329,14 +329,14 @@ namespace TP_03
             this.btnGuardarMateriales.Name = "btnGuardarMateriales";
             this.btnGuardarMateriales.Size = new System.Drawing.Size(280, 35);
             this.btnGuardarMateriales.TabIndex = 39;
-            this.btnGuardarMateriales.Text = "Guardar Materiales";
+            this.btnGuardarMateriales.Text = "Guardar Materiales  BackUp";
             this.btnGuardarMateriales.UseVisualStyleBackColor = true;
             this.btnGuardarMateriales.Click += new System.EventHandler(this.btnGuardarMateriales_Click);
             // 
             // btnAgregarMateriales
             // 
             this.btnAgregarMateriales.Enabled = false;
-            this.btnAgregarMateriales.Location = new System.Drawing.Point(735, 155);
+            this.btnAgregarMateriales.Location = new System.Drawing.Point(735, 146);
             this.btnAgregarMateriales.Name = "btnAgregarMateriales";
             this.btnAgregarMateriales.Size = new System.Drawing.Size(280, 35);
             this.btnAgregarMateriales.TabIndex = 40;

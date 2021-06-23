@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
@@ -21,9 +22,10 @@ namespace TP_03
         
         Fabrica<Producto> alvaroFabrica = new Fabrica<Producto>("Alvaro");
         List<Materiales> listaMateriales = new List<Materiales>();
+        List<Thread> listaThreads;
         List<string> nombreMateriales = new List<string>();
         static int id = 1;
-
+        
         private void FrmFabrica_Load(object sender, EventArgs e)
         {
             cmbIngredientes.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -35,8 +37,37 @@ namespace TP_03
             nombreMateriales.Add("Hierro");
             nombreMateriales.Add("Aluminio");
             nombreMateriales.Add("Cobre");
+            listaThreads = new List<Thread>();
+            listaThreads.Add(new Thread(GuardarMateriales));
 
-            
+            try
+            {
+                Conexion conexion = new Conexion();
+                List<Materiales> materialesSql = conexion.LeerMaterial();
+                if(materialesSql.Count>0)
+                {
+                    foreach (Materiales item in materialesSql)
+                    {
+                        listaMateriales.Add(item);
+                    }
+                    ActualizarMateriales();
+                    ActivarBotonesCargaMateriales();
+                }
+
+            }catch
+            {
+                MessageBox.Show("Hubo un problema al cargar los archivos de la base de datos", "Error");
+            }
+
+            foreach (Thread item in listaThreads)
+            {
+                if (!(item.ThreadState == ThreadState.Stopped) && !item.IsAlive)
+                {
+                    item.Start();
+                }
+                
+            }
+
         }
 
         
@@ -51,6 +82,10 @@ namespace TP_03
             "Cerrar el programa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogo == DialogResult.No)
                 e.Cancel = true;
+            else
+                foreach (Thread item in listaThreads)
+                    if (item.IsAlive)
+                        item.Abort();
         }
 
 
@@ -115,13 +150,15 @@ namespace TP_03
                 }
                 else
                     MessageBox.Show("Es necesario marcar un tipo de producto", "Error");
+
+                
             }
             catch (Exception ex)
             {
                 MessageBox.Show(new MisExcepciones("Hubo un problema al crear el producto", ex).Message, "Error");
             }
 
-            
+            SubirMaterialesSql();
             ActualizarMateriales();
             ActivarBotones(3);
         }
@@ -260,20 +297,31 @@ namespace TP_03
         /// <param name="e"></param>
         private void btnCargarMateriales_Click(object sender, EventArgs e)
         {
-            Serializadora<Materiales> serializadora = new Serializadora<Materiales>();
-            try 
-            { 
-                foreach (string nombre in nombreMateriales)
-                {
-                    listaMateriales.Add((Materiales)serializadora.Leer(nombre));
-                }
-
-            }catch(Exception cargarMateriales)
+            DialogResult dialogo = MessageBox.Show("¿Desea cargar el backUp de los materiales? sera necesario guardarlos antes de cerrar",
+           "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogo == DialogResult.Yes)
             {
-                MessageBox.Show(cargarMateriales.Message);
+
+                Serializadora<Materiales> serializadora = new Serializadora<Materiales>();
+                try 
+                {
+                    listaMateriales.Clear();
+                    foreach (string nombre in nombreMateriales)
+                    {
+                        listaMateriales.Add((Materiales)serializadora.Leer(nombre));
+                    }
+
+                }catch(Exception cargarMateriales)
+                {
+                    MessageBox.Show(cargarMateriales.Message);
+                }
+                ActualizarMateriales();
+                ActivarBotonesCargaMateriales();
             }
-            ActualizarMateriales();
-            btnCargarMateriales.Enabled = false;
+        }
+        private void ActivarBotonesCargaMateriales()
+        {
+            //btnCargarMateriales.Enabled = false;
             btnAgregarMateriales.Enabled = true;
             btnGuardarMateriales.Enabled = true;
             btMostrar.Enabled = true;
@@ -302,14 +350,27 @@ namespace TP_03
                     if (!(serializadora.Guardar(item.Nombre, item)))
                         MessageBox.Show("No se pudo guardar uno de los materiales", "Error");
                 }
-            }catch(Exception guardarMateriales)
+            }
+            catch(Exception guardarMateriales)
             {
                 MessageBox.Show(guardarMateriales.Message);
             }
             MessageBox.Show("Se guardaron los materiales exitosamente", "Exito");
 
         }
-
+        private void GuardarMateriales()
+        {
+            Serializadora<Materiales> serializadora = new Serializadora<Materiales>();
+            while(true)
+            {
+                foreach (Materiales item in listaMateriales)
+                {
+                    if (!(serializadora.Guardar(item.Nombre, item)))
+                        MessageBox.Show("No se pudo guardar uno de los materiales", "Error");
+                }
+                Thread.Sleep(60000);
+            }
+        }
         /// <summary>
         /// Boton que agrega los materiales 
         /// </summary>
@@ -319,9 +380,11 @@ namespace TP_03
         {
             try
             {
+                Conexion conexion = new Conexion();
                 if (lstMateriales.SelectedItem != null)
                 {
                     ((Materiales)lstMateriales.SelectedItem).AgregarMateriales();
+                    SubirMaterialesSql();
                     ActualizarMateriales();
                 }
                 else
@@ -330,9 +393,22 @@ namespace TP_03
             {
                 MessageBox.Show("No se pudo agregar materiales", "error");
             }
-           
+
         }
 
+        private void SubirMaterialesSql()
+        {
+            try
+            {
+                Conexion conexion = new Conexion();
+                conexion.GuardarMaterial(listaMateriales);
+            }
+            catch (Exception SqlGuardar)
+            {
+                MessageBox.Show(SqlGuardar.Message);
+            }
+        }
+       
         /// <summary>
         /// Boton que guarda el informe  de productos
         /// </summary>
@@ -355,5 +431,7 @@ namespace TP_03
             }
             MessageBox.Show("Se guardo el informe exitosamente", "Exito");
         }
+
+     
     }
 }

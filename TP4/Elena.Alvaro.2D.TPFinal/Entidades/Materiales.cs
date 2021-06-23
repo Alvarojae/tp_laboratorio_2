@@ -99,5 +99,17 @@ namespace Entidades
             return false;
         }
 
+        public static bool operator ==(Materiales a, Materiales b)
+        {
+            if (a.Nombre == b.Nombre && a.Material == b.Material && a.Cantidad == b.Cantidad)
+                return true;
+
+            return false;
+        }
+
+        public static bool operator !=(Materiales a, Materiales b)
+        {
+            return !(a==b);
+        }
     }
 }
