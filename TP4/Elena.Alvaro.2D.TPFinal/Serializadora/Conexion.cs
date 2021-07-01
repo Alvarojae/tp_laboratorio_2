@@ -72,7 +72,6 @@ namespace Serializadora
             {
                 throw new MisExcepciones("No se puedo guardar en la base de datos", guardarSql);
             }
-            return false; ;
         }
     }
 }

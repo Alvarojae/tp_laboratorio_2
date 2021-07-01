@@ -17,9 +17,18 @@ namespace TP_03
     {
         public FrmFabrica()
         {
-            InitializeComponent();  
+            InitializeComponent();
+
+            this.ActivarComida += ActivarBotones;
+            this.ActivarHerramienta += ActivarBotones;
+
         }
-        
+        public delegate void Activar(int estado);
+
+        public event Activar ActivarComida;
+        public event Activar ActivarHerramienta;
+
+
         Fabrica<Producto> alvaroFabrica = new Fabrica<Producto>("Alvaro");
         List<Materiales> listaMateriales = new List<Materiales>();
         List<Thread> listaThreads;
@@ -37,8 +46,6 @@ namespace TP_03
             nombreMateriales.Add("Hierro");
             nombreMateriales.Add("Aluminio");
             nombreMateriales.Add("Cobre");
-            listaThreads = new List<Thread>();
-            listaThreads.Add(new Thread(GuardarMateriales));
 
             try
             {
@@ -59,6 +66,10 @@ namespace TP_03
                 MessageBox.Show("Hubo un problema al cargar los archivos de la base de datos", "Error");
             }
 
+
+            listaThreads = new List<Thread>();
+            listaThreads.Add(new Thread(GuardarMateriales));
+
             foreach (Thread item in listaThreads)
             {
                 if (!(item.ThreadState == ThreadState.Stopped) && !item.IsAlive)
@@ -78,9 +89,7 @@ namespace TP_03
         /// <param name="e"></param>
         private void FrmFabrica_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult dialogo = MessageBox.Show("¿Desea cerrar el programa?",
-            "Cerrar el programa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dialogo == DialogResult.No)
+            if ("¿Desea cerrar el programa?".YesOrNo() == DialogResult.No)
                 e.Cancel = true;
             else
                 foreach (Thread item in listaThreads)
@@ -96,7 +105,7 @@ namespace TP_03
 
         private void rbComida_MouseClick(object sender, MouseEventArgs e)
         {
-             ActivarBotones(1);
+            this.ActivarComida.Invoke(1);
         }
 
         /// <summary>
@@ -105,10 +114,10 @@ namespace TP_03
 
         private void rbHerramienta_MouseClick(object sender, MouseEventArgs e)
         {
-            ActivarBotones(0);
+            this.ActivarHerramienta.Invoke(0);
         }
 
-
+        
         /// <summary>
         /// Excepcion
         /// Agrega el producto tomando todos los datos del form y validando todo(Creo)
@@ -151,7 +160,6 @@ namespace TP_03
                 else
                     MessageBox.Show("Es necesario marcar un tipo de producto", "Error");
 
-                
             }
             catch (Exception ex)
             {
@@ -175,8 +183,7 @@ namespace TP_03
             }else
             {
                 MessageBox.Show("No marcaste ningun producto para ver la informacion " , "Error");
-            }
-            
+            } 
         }
 
 
@@ -266,13 +273,11 @@ namespace TP_03
         /// <param name="estado">1-Alimentos | 2-Herrramientas</param>
         protected void ActivarBotones(int estado)
         {
-            
             nudCalorias.Enabled = false;
             tbSabor.Enabled = false;
             tbMaterial.Enabled = false;
             tbMarca.Enabled = false;
             
-                
             if (estado == 1)
             {
                 ActualizarIngredientes(estado);
@@ -361,7 +366,7 @@ namespace TP_03
         private void GuardarMateriales()
         {
             Serializadora<Materiales> serializadora = new Serializadora<Materiales>();
-            while(true)
+            while (true)
             {
                 foreach (Materiales item in listaMateriales)
                 {
@@ -370,6 +375,14 @@ namespace TP_03
                 }
                 Thread.Sleep(60000);
             }
+        }
+        //TODO
+        private void CambiarLabelInfo(int estado)
+        {
+            if(estado==1)
+                lblInformacion.Text = "Se guardo el backUp automatico ";
+            else
+                lblInformacion.Text = "";
         }
         /// <summary>
         /// Boton que agrega los materiales 
@@ -393,7 +406,6 @@ namespace TP_03
             {
                 MessageBox.Show("No se pudo agregar materiales", "error");
             }
-
         }
 
         private void SubirMaterialesSql()
@@ -430,8 +442,9 @@ namespace TP_03
                 MessageBox.Show(GuardarInforme.Message, "Error");
             }
             MessageBox.Show("Se guardo el informe exitosamente", "Exito");
-        }
 
-     
+
+            
+        }
     }
 }

@@ -73,6 +73,7 @@ namespace TP_03
             this.lstProductos.Name = "lstProductos";
             this.lstProductos.Size = new System.Drawing.Size(280, 212);
             this.lstProductos.TabIndex = 9;
+
             // 
             // btnGuardarInforme
             // 
