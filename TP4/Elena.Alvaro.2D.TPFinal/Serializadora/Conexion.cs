@@ -9,6 +9,10 @@ namespace Serializadora
 {
     public class Conexion
     {
+        /// <summary>
+        /// Le la base de datos y trae los materiales
+        /// </summary>
+        /// <returns>lista con los materiales a cargar</returns>
         public List<Materiales> LeerMaterial()
         {
             List<Materiales> materiales = new List<Materiales>();
@@ -28,20 +32,27 @@ namespace Serializadora
 
                     while (dataReader.Read() != false)
                     {
+                        aux = true;
                         if ((int)dataReader["tipo"] == 0)
                             aux = false;
                         materiales.Add(new Materiales(dataReader["nombre"].ToString(), (int)dataReader["cantidad"], aux));
                     }
                     dataReader.Close();
                 }
+                return materiales;
             }
             catch (Exception leerSql)
             {
                 throw new MisExcepciones("No se puedo leer la base de datos", leerSql);
             }
-            return materiales;
+            
         }
 
+        /// <summary>
+        /// Guarda En la base de datos todos los materiales
+        /// </summary>
+        /// <param name="material">lista de materiales que recibe para guardar</param>
+        /// <returns></returns>
         public bool GuardarMaterial(List<Materiales> material)
         {
             String connectionStr = @"Data Source=.;Initial Catalog = TP4; Integrated Security = True";

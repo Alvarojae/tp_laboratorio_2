@@ -19,11 +19,11 @@ namespace TP_03
         {
             InitializeComponent();
 
-            this.ActivarComida += ActivarBotones;
-            this.ActivarHerramienta += ActivarBotones;
+            this.ActivarComida += ActivarBotonesComida;
+            this.ActivarHerramienta += ActivarBotonesHerramientas;
 
         }
-        public delegate void Activar(int estado);
+        public delegate void Activar();
 
         public event Activar ActivarComida;
         public event Activar ActivarHerramienta;
@@ -66,7 +66,6 @@ namespace TP_03
                 MessageBox.Show("Hubo un problema al cargar los archivos de la base de datos", "Error");
             }
 
-
             listaThreads = new List<Thread>();
             listaThreads.Add(new Thread(GuardarMateriales));
 
@@ -76,9 +75,7 @@ namespace TP_03
                 {
                     item.Start();
                 }
-                
             }
-
         }
 
         
@@ -105,7 +102,7 @@ namespace TP_03
 
         private void rbComida_MouseClick(object sender, MouseEventArgs e)
         {
-            this.ActivarComida.Invoke(1);
+            this.ActivarComida.Invoke();
         }
 
         /// <summary>
@@ -114,15 +111,13 @@ namespace TP_03
 
         private void rbHerramienta_MouseClick(object sender, MouseEventArgs e)
         {
-            this.ActivarHerramienta.Invoke(0);
+            this.ActivarHerramienta.Invoke();
         }
 
-        
         /// <summary>
         /// Excepcion
         /// Agrega el producto tomando todos los datos del form y validando todo(Creo)
         /// </summary>
-
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             try
@@ -168,7 +163,7 @@ namespace TP_03
 
             SubirMaterialesSql();
             ActualizarMateriales();
-            ActivarBotones(3);
+            DesactivarBotones();
         }
     
 
@@ -268,39 +263,48 @@ namespace TP_03
         }
 
         /// <summary>
-        /// Activa los botones segun el parametro recibido
+        /// Activa los botones de alimentos
         /// </summary>
-        /// <param name="estado">1-Alimentos | 2-Herrramientas</param>
-        protected void ActivarBotones(int estado)
+        private void ActivarBotonesComida()
+        {
+            DesactivarBotones();
+            ActualizarIngredientes(1);
+            nudCalorias.Enabled = true;
+            tbSabor.Enabled = true;
+            cmbIngredientes.Text = "";
+          
+        }
+
+        /// <summary>
+        /// Activa los botones de herramientas
+        /// </summary>
+        private void ActivarBotonesHerramientas()
+        {
+            DesactivarBotones();
+            ActualizarIngredientes(0);
+            tbMaterial.Enabled = true;
+            tbMarca.Enabled = true;
+            cmbIngredientes.Text = "";
+        }
+
+        /// <summary>
+        /// desactiva los botones de alimentos y herramientas
+        /// </summary>
+        private void DesactivarBotones()
         {
             nudCalorias.Enabled = false;
             tbSabor.Enabled = false;
             tbMaterial.Enabled = false;
             tbMarca.Enabled = false;
-            
-            if (estado == 1)
-            {
-                ActualizarIngredientes(estado);
-                nudCalorias.Enabled = true;
-                tbSabor.Enabled = true;
-                cmbIngredientes.Text = "";
-            }
-            else if (estado == 0)
-            {
-                ActualizarIngredientes(estado);
-                tbMaterial.Enabled = true;
-                tbMarca.Enabled = true;
-                cmbIngredientes.Text = "";
-            }
         }
 
-        /// <summary>
-        /// SERIALIZACION CARGA
-        /// Boton que carga los materiales
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnCargarMateriales_Click(object sender, EventArgs e)
+            /// <summary>
+            /// SERIALIZACION CARGA
+            /// Boton que carga los materiales
+            /// </summary>
+            /// <param name="sender"></param>
+            /// <param name="e"></param>
+            private void btnCargarMateriales_Click(object sender, EventArgs e)
         {
             DialogResult dialogo = MessageBox.Show("¿Desea cargar el backUp de los materiales? sera necesario guardarlos antes de cerrar",
            "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -324,6 +328,10 @@ namespace TP_03
                 ActivarBotonesCargaMateriales();
             }
         }
+
+        /// <summary>
+        /// Activa todos los botenes si la carga fue de materiales fue existoso
+        /// </summary>
         private void ActivarBotonesCargaMateriales()
         {
             //btnCargarMateriales.Enabled = false;
@@ -361,8 +369,11 @@ namespace TP_03
                 MessageBox.Show(guardarMateriales.Message);
             }
             MessageBox.Show("Se guardaron los materiales exitosamente", "Exito");
-
         }
+
+        /// <summary>
+        /// Thread que guarda un backup de los materiales en la carpeta del proyecto
+        /// </summary>
         private void GuardarMateriales()
         {
             Serializadora<Materiales> serializadora = new Serializadora<Materiales>();
@@ -376,14 +387,8 @@ namespace TP_03
                 Thread.Sleep(60000);
             }
         }
-        //TODO
-        private void CambiarLabelInfo(int estado)
-        {
-            if(estado==1)
-                lblInformacion.Text = "Se guardo el backUp automatico ";
-            else
-                lblInformacion.Text = "";
-        }
+ 
+
         /// <summary>
         /// Boton que agrega los materiales 
         /// </summary>
@@ -408,6 +413,10 @@ namespace TP_03
             }
         }
 
+
+        /// <summary>
+        /// Actualiza la base de datos de sql
+        /// </summary>
         private void SubirMaterialesSql()
         {
             try
@@ -441,10 +450,7 @@ namespace TP_03
             {
                 MessageBox.Show(GuardarInforme.Message, "Error");
             }
-            MessageBox.Show("Se guardo el informe exitosamente", "Exito");
-
-
-            
+            MessageBox.Show("Se guardo el informe exitosamente", "Exito"); 
         }
     }
 }
